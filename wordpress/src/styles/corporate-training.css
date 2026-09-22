@@ -1,0 +1,187 @@
+.corp-training-flow__arrow {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .corp-training-flow {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .corp-training-flow > div {
+    flex-direction: row;
+    flex: 1;
+  }
+
+  .corp-training-flow__arrow {
+    transform: rotate(-90deg);
+    padding: 0 0.5rem;
+  }
+}
+
+.corp-training-timeline__track {
+  position: relative;
+}
+
+.corp-training-timeline__item {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .corp-training-timeline__connector {
+    position: absolute;
+    top: 1.25rem;
+    left: calc(50% + 1.25rem);
+    width: calc(100% - 2.5rem);
+    height: 2px;
+    background: linear-gradient(90deg, #18479f 0%, rgba(24, 71, 159, 0.2) 100%);
+  }
+}
+
+.corp-training-form .elementor-message {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.corp-training-form .elementor-message-success {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+
+.corp-training-form .elementor-message-danger {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.corp-training-page .shadow-card {
+  box-shadow:
+    0 4px 24px -12px rgba(15, 23, 42, 0.08),
+    0 1px 0 rgba(255, 255, 255, 1) inset;
+}
+
+/* ── Page rhythm: consistent section padding ── */
+.corp-training-page > section {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+@media (min-width: 768px) {
+  .corp-training-page > section {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+}
+
+.corp-training-page > section.corp-training-hero {
+  padding-top: 2.5rem !important;
+  padding-bottom: 1.75rem !important;
+}
+
+@media (min-width: 768px) {
+  .corp-training-page > section.corp-training-hero {
+    padding-top: 3.25rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
+
+.corp-training-page > section.corp-training-trusted {
+  padding-top: 1.5rem !important;
+}
+
+@media (min-width: 768px) {
+  .corp-training-page > section.corp-training-trusted {
+    padding-top: 1.75rem !important;
+  }
+}
+
+.corp-training-page > section.corp-training-footer {
+  padding-top: 1.5rem !important;
+  padding-bottom: 2rem !important;
+}
+
+@media (min-width: 768px) {
+  .corp-training-page > section.corp-training-footer {
+    padding-top: 1.75rem !important;
+    padding-bottom: 2.25rem !important;
+  }
+}
+
+/* Tighter handoff between FAQ → form */
+.corp-training-page > #corporate-faq {
+  padding-bottom: 1.5rem !important;
+}
+
+.corp-training-page > #corporate-faq + section {
+  padding-top: 1.5rem !important;
+}
+
+@media (min-width: 768px) {
+  .corp-training-page > #corporate-faq {
+    padding-bottom: 2rem !important;
+  }
+
+  .corp-training-page > #corporate-faq + section {
+    padding-top: 1.75rem !important;
+  }
+}
+
+/* ── Section headers: less air below titles ── */
+.corp-training-page .corp-training-header {
+  margin-bottom: 1.25rem !important;
+}
+
+@media (min-width: 768px) {
+  .corp-training-page .corp-training-header {
+    margin-bottom: 1.75rem !important;
+  }
+
+  .corp-training-page .corp-training-header .inline-flex {
+    margin-bottom: 0.75rem !important;
+  }
+}
+
+.corp-training-page #corporate-faq .text-center.max-w-3xl {
+  margin-bottom: 1.25rem !important;
+}
+
+@media (min-width: 768px) {
+  .corp-training-page #corporate-faq .text-center.max-w-3xl {
+    margin-bottom: 1.75rem !important;
+  }
+}
+
+/* ── Internal content gaps ── */
+.corp-training-page .corp-training-stats {
+  margin-bottom: 1.5rem !important;
+}
+
+.corp-training-page .corp-training-why-grid {
+  margin-bottom: 1.5rem !important;
+}
+
+@media (min-width: 768px) {
+  .corp-training-page .corp-training-stats,
+  .corp-training-page .corp-training-why-grid {
+    margin-bottom: 2rem !important;
+  }
+}
+
+.corp-training-page #corporate-faq .relative.rounded-\[28px\] {
+  padding: 0.75rem !important;
+}
+
+@media (min-width: 768px) {
+  .corp-training-page #corporate-faq .relative.rounded-\[28px\] {
+    padding: 1rem 1.25rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .corp-training-page #corporate-faq .relative.rounded-\[28px\] {
+    padding: 1.25rem 1.5rem !important;
+  }
+}

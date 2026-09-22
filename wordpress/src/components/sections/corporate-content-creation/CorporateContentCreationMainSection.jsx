@@ -1,0 +1,400 @@
+import { Link } from 'react-router-dom';
+
+function CorporateContentCreationMainSection() {
+  return (
+    <>
+      <section data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-section elementor-top-section elementor-element elementor-element-8522b38 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="8522b38" data-element_type="section" id="mainbody">
+      						<div className="elementor-container elementor-column-gap-default">
+      					<div className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-5a6f8d4" data-id="5a6f8d4" data-element_type="column">
+      			<div className="elementor-widget-wrap elementor-element-populated">
+      						<section data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-section elementor-inner-section elementor-element elementor-element-6f11d83 elementor-hidden-tablet elementor-hidden-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6f11d83" data-element_type="section" data-settings={'{"background_background":"classic","sticky":"top","sticky_parent":"yes","sticky_offset":75,"sticky_on":["desktop","tablet","mobile"],"sticky_effects_offset":0}'}>
+      						<div className="elementor-container elementor-column-gap-default">
+      					<div className="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-451ba77" data-id="451ba77" data-element_type="column">
+      			<div className="elementor-widget-wrap elementor-element-populated">
+      						<div className="elementor-element elementor-element-c752fc3 elementor-align-center elementor-tablet-align-right elementor-widget__width-auto elementor-widget elementor-widget-button" data-id="c752fc3" data-element_type="widget" data-widget_type="button.default">
+      				<div className="elementor-widget-container">
+      					<div className="elementor-button-wrapper">
+      			<Link to="/corporate" className="elementor-button elementor-button-link elementor-size-sm" >
+      						<span className="elementor-button-content-wrapper">
+      						<span className="elementor-button-icon">
+      				<svg aria-hidden="true" className="e-font-icon-svg e-fas-angle-right" viewBox="0 0 256 512" xmlns="http://www.w3.org/2000/svg"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg>			</span>
+      									<span className="elementor-button-text">Corporate</span>
+      					</span>
+      					</Link>
+      		</div>
+      				</div>
+      				</div>
+      				<div className="elementor-element elementor-element-e4a5773 elementor-align-center elementor-tablet-align-right elementor-widget__width-auto buttons1 elementor-widget elementor-widget-button" data-id="e4a5773" data-element_type="widget" data-widget_type="button.default">
+      				<div className="elementor-widget-container">
+      					<div className="elementor-button-wrapper">
+      			<a className="elementor-button elementor-button-link elementor-size-sm" href="#section1">
+      						<span className="elementor-button-content-wrapper">
+      									<span className="elementor-button-text">Overview</span>
+      					</span>
+      					</a>
+      		</div>
+      				</div>
+      				</div>
+      				<div className="elementor-element elementor-element-f0c42e8 elementor-align-center elementor-tablet-align-right elementor-widget__width-auto buttons2 elementor-widget elementor-widget-button" data-id="f0c42e8" data-element_type="widget" data-widget_type="button.default">
+      				<div className="elementor-widget-container">
+      					<div className="elementor-button-wrapper">
+      			<a className="elementor-button elementor-button-link elementor-size-sm" href="#section2">
+      						<span className="elementor-button-content-wrapper">
+      									<span className="elementor-button-text">Our Content Creation Services</span>
+      					</span>
+      					</a>
+      		</div>
+      				</div>
+      				</div>
+      				<div className="elementor-element elementor-element-32f4a2f elementor-align-center elementor-tablet-align-right elementor-widget__width-auto buttons3 elementor-widget elementor-widget-button" data-id="32f4a2f" data-element_type="widget" data-widget_type="button.default">
+      				<div className="elementor-widget-container">
+      					<div className="elementor-button-wrapper">
+      			<a className="elementor-button elementor-button-link elementor-size-sm" href="#section3">
+      						<span className="elementor-button-content-wrapper">
+      									<span className="elementor-button-text">Why Choose iBridge360 for Content Creation?</span>
+      					</span>
+      					</a>
+      		</div>
+      				</div>
+      				</div>
+      				<div className="elementor-element elementor-element-36ae0c8 elementor-align-center elementor-tablet-align-right elementor-widget__width-auto buttons4 elementor-widget elementor-widget-button" data-id="36ae0c8" data-element_type="widget" data-widget_type="button.default">
+      				<div className="elementor-widget-container">
+      					<div className="elementor-button-wrapper">
+      			<a className="elementor-button elementor-button-link elementor-size-sm" href="#section4">
+      						<span className="elementor-button-content-wrapper">
+      									<span className="elementor-button-text">Our Process</span>
+      					</span>
+      					</a>
+      		</div>
+      				</div>
+      				</div>
+      					</div>
+      		</div>
+      					</div>
+      		</section>
+      				<section data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-section elementor-inner-section elementor-element elementor-element-ceb3626 panel elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="ceb3626" data-element_type="section" id="section1" data-color="purple">
+      						<div className="elementor-container elementor-column-gap-default">
+      					<div className="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-46cebf4" data-id="46cebf4" data-element_type="column">
+      			<div className="elementor-widget-wrap elementor-element-populated">
+      						<div className="elementor-element elementor-element-92e0359 elementor-widget elementor-widget-heading" data-id="92e0359" data-element_type="widget" data-widget_type="heading.default">
+      				<div className="elementor-widget-container">
+      			<h2 className="elementor-heading-title elementor-size-default">Overview</h2>		</div>
+      				</div>
+      				<div className="elementor-element elementor-element-9043de8 elementor-widget elementor-widget-text-editor" data-id="9043de8" data-element_type="widget" data-widget_type="text-editor.default">
+      				<div className="elementor-widget-container">
+      							<p><strong>Content That Does More Than Just Exist—It Performs.<br /></strong>Great content should generate leads, build authority, and convert visitors into paying customers. That&#8217;s what we build. We craft customized content ecosystems designed to attract the right eyes, engage the right leads, and drive measurable business growth. Stop guessing what your audience wants—give them exactly what they need to say &#8220;yes.&#8221;</p>						</div>
+      				</div>
+      				<section data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-section elementor-inner-section elementor-element elementor-element-0dc27d9 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="0dc27d9" data-element_type="section" data-settings={'{"background_background":"classic"}'}>
+      							<div className="elementor-background-overlay"></div>
+      							<div className="elementor-container elementor-column-gap-default">
+      					<div className="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-2dcc560" data-id="2dcc560" data-element_type="column" data-settings={'{"background_background":"classic"}'}>
+      			<div className="elementor-widget-wrap elementor-element-populated">
+      						<div className="elementor-element elementor-element-2b17b1d elementor-widget elementor-widget-heading" data-id="2b17b1d" data-element_type="widget" data-widget_type="heading.default">
+      				<div className="elementor-widget-container">
+      			<h2 className="elementor-heading-title elementor-size-default">Elevate your online presence and engage your audience with content engineered for results.</h2>		</div>
+      				</div>
+      					</div>
+      		</div>
+      				<div className="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-3608ba0" data-id="3608ba0" data-element_type="column" data-settings={'{"background_background":"classic"}'}>
+      			<div className="elementor-widget-wrap elementor-element-populated">
+      						<div className="elementor-element elementor-element-aab9836 elementor-align-center elementor-tablet-align-right elementor-mobile-align-center elementor-widget elementor-widget-button" data-id="aab9836" data-element_type="widget" data-widget_type="button.default">
+      				<div className="elementor-widget-container">
+      					<div className="elementor-button-wrapper">
+      			<button type="button" className="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" data-open-popup="17162">
+      						<span className="elementor-button-content-wrapper">
+      									<span className="elementor-button-text">Partner with us</span>
+      					</span>
+      					</button>
+      		</div>
+      				</div>
+      				</div>
+      					</div>
+      		</div>
+      					</div>
+      		</section>
+      					</div>
+      		</div>
+      					</div>
+      		</section>
+      				<section data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-section elementor-inner-section elementor-element elementor-element-e79e352 panel elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="e79e352" data-element_type="section" id="section2" data-color="blue">
+      						<div className="elementor-container elementor-column-gap-default">
+      					<div className="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-6c0cc00" data-id="6c0cc00" data-element_type="column">
+      			<div className="elementor-widget-wrap elementor-element-populated">
+      						<div className="elementor-element elementor-element-1e2f3d3 elementor-widget elementor-widget-heading" data-id="1e2f3d3" data-element_type="widget" data-widget_type="heading.default">
+      				<div className="elementor-widget-container">
+      			<h2 className="elementor-heading-title elementor-size-default">Our  <span className="gradient-text">Content Creation</span> Services </h2>		</div>
+      				</div>
+      				<section data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-section elementor-inner-section elementor-element elementor-element-f2d9d9d elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="f2d9d9d" data-element_type="section" data-settings={'{"background_background":"classic"}'}>
+      						<div className="elementor-container elementor-column-gap-default">
+      					<div className="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-336c519" data-id="336c519" data-element_type="column" data-settings={'{"background_background":"classic"}'}>
+      			<div className="elementor-widget-wrap elementor-element-populated">
+      						<div className="elementor-element elementor-element-41adace elementor-position-left elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="41adace" data-element_type="widget" data-widget_type="image-box.default">
+      				<div className="elementor-widget-container">
+      			<div className="elementor-image-box-wrapper"><figure className="elementor-image-box-img"><img decoding="async" width="175" height="152" src="/wp-content/uploads/2024/12/Content-Creation-Services-1.png" className="attachment-full size-full wp-image-19997" alt="" /></figure><div className="elementor-image-box-content"><h3 className="elementor-image-box-title">Turn Scrollers into Followers. Followers Into Fans</h3><p className="elementor-image-box-description">Move beyond passive posting. We craft platform-native social content that fuels engagement, strengthens communities, and supports tangible business outcomes. <br /><br /><br /><br /></p></div></div>		</div>
+      				</div>
+      				<div className="elementor-element elementor-element-827e93a elementor-position-left elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="827e93a" data-element_type="widget" data-widget_type="image-box.default">
+      				<div className="elementor-widget-container">
+      			<div className="elementor-image-box-wrapper"><figure className="elementor-image-box-img"><img decoding="async" width="175" height="152" src="/wp-content/uploads/2024/12/Content-Creation-Services-3.png" className="attachment-full size-full wp-image-19993" alt="" /></figure><div className="elementor-image-box-content"><h3 className="elementor-image-box-title">SEO-Driven Content Strategy</h3><p className="elementor-image-box-description">Your blog should be your best salesperson. We create articles built to do two things:<br />
+      - Rank high on search engines so your audience finds you.<br />
+      - Resonate with real readers so they trust you.<br />
+      By uncovering the questions your customers are asking and answering them with authority, we drive organic traffic and turn it into qualified leads for your business.
+      </p></div></div>		</div>
+      				</div>
+      				<div className="elementor-element elementor-element-5ef3ba7 elementor-position-left elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="5ef3ba7" data-element_type="widget" data-widget_type="image-box.default">
+      				<div className="elementor-widget-container">
+      			<div className="elementor-image-box-wrapper"><figure className="elementor-image-box-img"><img decoding="async" width="175" height="152" src="/wp-content/uploads/2024/12/Content-Creation-Services-2.png" className="attachment-full size-full wp-image-19992" alt="" /></figure><div className="elementor-image-box-content"><h3 className="elementor-image-box-title">Social Media Content</h3><p className="elementor-image-box-description">We create platform-specific social media content that drives engagement, grows followers, and strengthens your online community.</p></div></div>		</div>
+      				</div>
+      					</div>
+      		</div>
+      				<div className="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-f2bce14" data-id="f2bce14" data-element_type="column" data-settings={'{"background_background":"classic"}'}>
+      			<div className="elementor-widget-wrap elementor-element-populated">
+      						<div className="elementor-element elementor-element-a26c794 elementor-position-left elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="a26c794" data-element_type="widget" data-widget_type="image-box.default">
+      				<div className="elementor-widget-container">
+      			<div className="elementor-image-box-wrapper"><figure className="elementor-image-box-img"><img loading="lazy" decoding="async" width="175" height="152" src="/wp-content/uploads/2024/12/Content-Creation-Services-5.png" className="attachment-full size-full wp-image-19995" alt="" /></figure><div className="elementor-image-box-content"><h3 className="elementor-image-box-title">Visual Storytelling</h3><p className="elementor-image-box-description">In a fast-paced digital world, video is the most effective way to stop the scroll. We produce high-definition promotional content and tutorials designed to convert passive viewers into active customers. Our team combines creative direction with strategic messaging to ensure every second of footage drives engagement and supports your sales funnel</p></div></div>		</div>
+      				</div>
+      				<div className="elementor-element elementor-element-cbecedd elementor-position-left elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="cbecedd" data-element_type="widget" data-widget_type="image-box.default">
+      				<div className="elementor-widget-container">
+      			<div className="elementor-image-box-wrapper"><figure className="elementor-image-box-img"><img loading="lazy" decoding="async" width="175" height="152" src="/wp-content/uploads/2024/12/Content-Creation-Services-4.png" className="attachment-full size-full wp-image-19994" alt="" /></figure><div className="elementor-image-box-content"><h3 className="elementor-image-box-title">Turn Complex Data into Visual Mastery</h3><p className="elementor-image-box-description">Stop overwhelming your audience. We transform dense information into eye-catching infographics that boost retention, simplify learning, and demand to be shared. <br /><br /><br /><br /><br /><br /></p></div></div>		</div>
+      				</div>
+      				<div className="elementor-element elementor-element-3e07a1d elementor-position-left elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="3e07a1d" data-element_type="widget" data-widget_type="image-box.default">
+      				<div className="elementor-widget-container">
+      			<div className="elementor-image-box-wrapper"><figure className="elementor-image-box-img"><img loading="lazy" decoding="async" width="175" height="152" src="/wp-content/uploads/2024/12/Content-Creation-Services-6.png" className="attachment-full size-full wp-image-19996" alt="" /></figure><div className="elementor-image-box-content"><h3 className="elementor-image-box-title">E-books and Whitepapers</h3><p className="elementor-image-box-description">Attract leads effortlessly—let them come to you. We craft authoritative e-books and whitepapers that establish your expertise, deliver irresistible value, and fuel your sales pipeline 24/7.</p></div></div>		</div>
+      				</div>
+      					</div>
+      		</div>
+      					</div>
+      		</section>
+      					</div>
+      		</div>
+      					</div>
+      		</section>
+      				<section data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-section elementor-inner-section elementor-element elementor-element-577c72c panel elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="577c72c" data-element_type="section" id="section3" data-color="peach">
+      						<div className="elementor-container elementor-column-gap-default">
+      					<div className="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-2351d1f" data-id="2351d1f" data-element_type="column">
+      			<div className="elementor-widget-wrap elementor-element-populated">
+      						<div className="elementor-element elementor-element-871bfd6 elementor-widget elementor-widget-heading" data-id="871bfd6" data-element_type="widget" data-widget_type="heading.default">
+      				<div className="elementor-widget-container">
+      			<h2 className="elementor-heading-title elementor-size-default">Why Choose <span className="gradient-text">iBridge360 for Content Creation?</span></h2>		</div>
+      				</div>
+      				<section data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-section elementor-inner-section elementor-element elementor-element-22b240f elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="22b240f" data-element_type="section">
+      						<div className="elementor-container elementor-column-gap-default">
+      					<div className="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-6f2fbad" data-id="6f2fbad" data-element_type="column">
+      			<div className="elementor-widget-wrap elementor-element-populated">
+      						<div className="elementor-element elementor-element-49a209d elementor-flip-box--effect-flip elementor-flip-box--direction-up elementor-widget elementor-widget-flip-box" data-id="49a209d" data-element_type="widget" data-widget_type="flip-box.default">
+      				<div className="elementor-widget-container">
+      					<div className="elementor-flip-box" tabIndex="0">
+      			<div className="elementor-flip-box__layer elementor-flip-box__front">
+      				<div className="elementor-flip-box__layer__overlay">
+      					<div className="elementor-flip-box__layer__inner">
+
+      													<h3 className="elementor-flip-box__layer__title">
+      								Customized Solutions							</h3>
+
+      											</div>
+      				</div>
+      			</div>
+      			<div className="elementor-flip-box__layer elementor-flip-box__back">
+      			<div className="elementor-flip-box__layer__overlay">
+      				<div className="elementor-flip-box__layer__inner">
+      											<h3 className="elementor-flip-box__layer__title">
+      							Customized Solutions						</h3>
+
+      											<div className="elementor-flip-box__layer__description">
+      							We understand that every business is unique. Our content strategies are tailored to align with your specific goals, target audience, and industry trends.						</div>
+
+      								</div>
+      		</div>
+      		</div>
+      		</div>
+      				</div>
+      				</div>
+      				<div className="elementor-element elementor-element-a961fb5 elementor-flip-box--effect-flip elementor-flip-box--direction-up elementor-widget elementor-widget-flip-box" data-id="a961fb5" data-element_type="widget" data-widget_type="flip-box.default">
+      				<div className="elementor-widget-container">
+      					<div className="elementor-flip-box" tabIndex="0">
+      			<div className="elementor-flip-box__layer elementor-flip-box__front">
+      				<div className="elementor-flip-box__layer__overlay">
+      					<div className="elementor-flip-box__layer__inner">
+
+      													<h3 className="elementor-flip-box__layer__title">
+      								SEO Optimization							</h3>
+
+      											</div>
+      				</div>
+      			</div>
+      			<div className="elementor-flip-box__layer elementor-flip-box__back">
+      			<div className="elementor-flip-box__layer__overlay">
+      				<div className="elementor-flip-box__layer__inner">
+      											<h3 className="elementor-flip-box__layer__title">
+      							SEO Optimization						</h3>
+
+      											<div className="elementor-flip-box__layer__description">
+      							We incorporate effective SEO practices to enhance your content's visibility, driving organic traffic and improving search engine rankings.						</div>
+
+      								</div>
+      		</div>
+      		</div>
+      		</div>
+      				</div>
+      				</div>
+      				<div className="elementor-element elementor-element-a91f937 elementor-flip-box--effect-flip elementor-flip-box--direction-up elementor-widget elementor-widget-flip-box" data-id="a91f937" data-element_type="widget" data-widget_type="flip-box.default">
+      				<div className="elementor-widget-container">
+      					<div className="elementor-flip-box" tabIndex="0">
+      			<div className="elementor-flip-box__layer elementor-flip-box__front">
+      				<div className="elementor-flip-box__layer__overlay">
+      					<div className="elementor-flip-box__layer__inner">
+
+      													<h3 className="elementor-flip-box__layer__title">
+      								Timely Delivery							</h3>
+
+      											</div>
+      				</div>
+      			</div>
+      			<div className="elementor-flip-box__layer elementor-flip-box__back">
+      			<div className="elementor-flip-box__layer__overlay">
+      				<div className="elementor-flip-box__layer__inner">
+      											<h3 className="elementor-flip-box__layer__title">
+      							Timely Delivery						</h3>
+
+      											<div className="elementor-flip-box__layer__description">
+      							We value your time and adhere to agreed-upon timelines, ensuring that your content is delivered promptly to support your marketing initiatives.						</div>
+
+      								</div>
+      		</div>
+      		</div>
+      		</div>
+      				</div>
+      				</div>
+      					</div>
+      		</div>
+      				<div className="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-eea1e84" data-id="eea1e84" data-element_type="column">
+      			<div className="elementor-widget-wrap elementor-element-populated">
+      						<div className="elementor-element elementor-element-6c69b6c elementor-flip-box--effect-flip elementor-flip-box--direction-up elementor-widget elementor-widget-flip-box" data-id="6c69b6c" data-element_type="widget" data-widget_type="flip-box.default">
+      				<div className="elementor-widget-container">
+      					<div className="elementor-flip-box" tabIndex="0">
+      			<div className="elementor-flip-box__layer elementor-flip-box__front">
+      				<div className="elementor-flip-box__layer__overlay">
+      					<div className="elementor-flip-box__layer__inner">
+
+      													<h3 className="elementor-flip-box__layer__title">
+      								Expert Team							</h3>
+
+      											</div>
+      				</div>
+      			</div>
+      			<div className="elementor-flip-box__layer elementor-flip-box__back">
+      			<div className="elementor-flip-box__layer__overlay">
+      				<div className="elementor-flip-box__layer__inner">
+      											<h3 className="elementor-flip-box__layer__title">
+      							Expert Team						</h3>
+
+      											<div className="elementor-flip-box__layer__description">
+      							Our content creators are seasoned professionals with extensive experience across various industries, ensuring high-quality and relevant content.						</div>
+
+      								</div>
+      		</div>
+      		</div>
+      		</div>
+      				</div>
+      				</div>
+      				<div className="elementor-element elementor-element-83919ee elementor-flip-box--effect-flip elementor-flip-box--direction-up elementor-widget elementor-widget-flip-box" data-id="83919ee" data-element_type="widget" data-widget_type="flip-box.default">
+      				<div className="elementor-widget-container">
+      					<div className="elementor-flip-box" tabIndex="0">
+      			<div className="elementor-flip-box__layer elementor-flip-box__front">
+      				<div className="elementor-flip-box__layer__overlay">
+      					<div className="elementor-flip-box__layer__inner">
+
+      													<h3 className="elementor-flip-box__layer__title">
+      								Consistent Quality							</h3>
+
+      											</div>
+      				</div>
+      			</div>
+      			<div className="elementor-flip-box__layer elementor-flip-box__back">
+      			<div className="elementor-flip-box__layer__overlay">
+      				<div className="elementor-flip-box__layer__inner">
+      											<h3 className="elementor-flip-box__layer__title">
+      							Consistent Quality						</h3>
+
+      											<div className="elementor-flip-box__layer__description">
+      							We maintain a rigorous quality assurance process to ensure that all content meets the highest standards and reflects your brand's voice accurately.						</div>
+
+      								</div>
+      		</div>
+      		</div>
+      		</div>
+      				</div>
+      				</div>
+      					</div>
+      		</div>
+      					</div>
+      		</section>
+      					</div>
+      		</div>
+      					</div>
+      		</section>
+      				<section data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-section elementor-inner-section elementor-element elementor-element-757ff63 panel elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="757ff63" data-element_type="section" id="section4" data-color="tan">
+      						<div className="elementor-container elementor-column-gap-default">
+      					<div className="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-94b767d" data-id="94b767d" data-element_type="column">
+      			<div className="elementor-widget-wrap elementor-element-populated">
+      						<div className="elementor-element elementor-element-7b7299b elementor-widget elementor-widget-heading" data-id="7b7299b" data-element_type="widget" data-widget_type="heading.default">
+      				<div className="elementor-widget-container">
+      			<h2 className="elementor-heading-title elementor-size-default">Our  <span className="gradient-text">Process</span></h2>		</div>
+      				</div>
+      				<section data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-section elementor-inner-section elementor-element elementor-element-887d3d3 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="887d3d3" data-element_type="section">
+      						<div className="elementor-container elementor-column-gap-default">
+      					<div className="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-667ab5a" data-id="667ab5a" data-element_type="column">
+      			<div className="elementor-widget-wrap elementor-element-populated">
+      						<div className="elementor-element elementor-element-43b0835 elementor-position-top elementor-widget elementor-widget-image-box" data-id="43b0835" data-element_type="widget" data-widget_type="image-box.default">
+      				<div className="elementor-widget-container">
+      			<div className="elementor-image-box-wrapper"><figure className="elementor-image-box-img"><img loading="lazy" decoding="async" width="55" height="52" src="/wp-content/uploads/2024/12/Content-Creation-ServicesSkills-for-College-Students.png" className="attachment-full size-full wp-image-20012" alt="" /></figure><div className="elementor-image-box-content"><h3 className="elementor-image-box-title">Consultation</h3><p className="elementor-image-box-description">We start by gaining a deep understanding of your business goals, target audience, and content requirements through in-depth discussions.</p></div></div>		</div>
+      				</div>
+      				<div className="elementor-element elementor-element-b259829 elementor-position-top elementor-widget elementor-widget-image-box" data-id="b259829" data-element_type="widget" data-widget_type="image-box.default">
+      				<div className="elementor-widget-container">
+      			<div className="elementor-image-box-wrapper"><figure className="elementor-image-box-img"><img loading="lazy" decoding="async" width="55" height="52" src="/wp-content/uploads/2024/12/Content-Creation-ServicesSkills-for-College-Students-4.png" className="attachment-full size-full wp-image-20009" alt="" /></figure><div className="elementor-image-box-content"><h3 className="elementor-image-box-title">Review and Feedback</h3><p className="elementor-image-box-description">We collaborate with you to review the content, incorporating your feedback to ensure it meets your expectations.
+
+      </p></div></div>		</div>
+      				</div>
+      					</div>
+      		</div>
+      				<div className="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-827f7f4" data-id="827f7f4" data-element_type="column">
+      			<div className="elementor-widget-wrap elementor-element-populated">
+      						<div className="elementor-element elementor-element-fabd207 elementor-position-top elementor-widget elementor-widget-image-box" data-id="fabd207" data-element_type="widget" data-widget_type="image-box.default">
+      				<div className="elementor-widget-container">
+      			<div className="elementor-image-box-wrapper"><figure className="elementor-image-box-img"><img loading="lazy" decoding="async" width="55" height="52" src="/wp-content/uploads/2024/12/Content-Creation-ServicesSkills-for-College-Students-2.png" className="attachment-full size-full wp-image-20007" alt="" /></figure><div className="elementor-image-box-content"><h3 className="elementor-image-box-title">Strategy Development</h3><p className="elementor-image-box-description">Based on our insights, we develop a customized content strategy that aligns with your goals and market trends.
+      <br /><br /></p></div></div>		</div>
+      				</div>
+      				<div className="elementor-element elementor-element-5f554f7 elementor-position-top elementor-widget elementor-widget-image-box" data-id="5f554f7" data-element_type="widget" data-widget_type="image-box.default">
+      				<div className="elementor-widget-container">
+      			<div className="elementor-image-box-wrapper"><figure className="elementor-image-box-img"><img loading="lazy" decoding="async" width="55" height="52" src="/wp-content/uploads/2024/12/Content-Creation-ServicesSkills-for-College-Students-5.png" className="attachment-full size-full wp-image-20010" alt="" /></figure><div className="elementor-image-box-content"><h3 className="elementor-image-box-title">Finalization and Delivery</h3><p className="elementor-image-box-description">After revisions, we deliver the finalized content, ready for publication across your chosen platforms.</p></div></div>		</div>
+      				</div>
+      					</div>
+      		</div>
+      				<div className="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-fc27f90" data-id="fc27f90" data-element_type="column">
+      			<div className="elementor-widget-wrap elementor-element-populated">
+      						<div className="elementor-element elementor-element-5cc0c0b elementor-position-top elementor-widget elementor-widget-image-box" data-id="5cc0c0b" data-element_type="widget" data-widget_type="image-box.default">
+      				<div className="elementor-widget-container">
+      			<div className="elementor-image-box-wrapper"><figure className="elementor-image-box-img"><img loading="lazy" decoding="async" width="55" height="52" src="/wp-content/uploads/2024/12/Content-Creation-ServicesSkills-for-College-Students-3.png" className="attachment-full size-full wp-image-20008" alt="" /></figure><div className="elementor-image-box-content"><h3 className="elementor-image-box-title">Content Creation</h3><p className="elementor-image-box-description">Our team produces high-quality content tailored to your specifications, ensuring relevance and engagement.<br /><br />
+
+      </p></div></div>		</div>
+      				</div>
+      				<div className="elementor-element elementor-element-39c4cfe elementor-position-top elementor-widget elementor-widget-image-box" data-id="39c4cfe" data-element_type="widget" data-widget_type="image-box.default">
+      				<div className="elementor-widget-container">
+      			<div className="elementor-image-box-wrapper"><figure className="elementor-image-box-img"><img loading="lazy" decoding="async" width="55" height="52" src="/wp-content/uploads/2024/12/Content-Creation-ServicesSkills-for-College-Students-6.png" className="attachment-full size-full wp-image-20011" alt="" /></figure><div className="elementor-image-box-content"><h3 className="elementor-image-box-title">Performance Monitoring</h3><p className="elementor-image-box-description">We offer continuous support to monitor content performance, providing insights and recommendations for continuous improvement.</p></div></div>		</div>
+      				</div>
+      					</div>
+      		</div>
+      					</div>
+      		</section>
+      					</div>
+      		</div>
+      					</div>
+      		</section>
+      					</div>
+      		</div>
+      					</div>
+      		</section>
+    </>
+  );
+}
+
+export default CorporateContentCreationMainSection;

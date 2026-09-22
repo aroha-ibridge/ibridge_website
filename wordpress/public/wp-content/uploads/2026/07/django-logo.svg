@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="Django">
+  <rect width="128" height="128" rx="24" fill="#092E20"/>
+  <!-- Clean Django-style capital D mark -->
+  <path fill="#FFFFFF" d="M40 28h28c18 0 30 11 30 30s-12 30-30 30H40V28zm16 48h12c9 0 14-5.5 14-18S77 40 68 40H56v36z"/>
+  <circle cx="98" cy="36" r="6" fill="#44B78B"/>
+</svg>

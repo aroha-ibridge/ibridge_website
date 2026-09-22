@@ -1,0 +1,287 @@
+/* Unified scroll experience for program pages (Data Engineering, etc.) */
+
+.elementor-508.program-page-flow {
+	background: linear-gradient(
+		180deg,
+		#ffffff 0%,
+		#f8fafc 280px,
+		#f8fafc calc(100% - 200px),
+		#ffffff 100%
+	);
+}
+
+/* Hero — content-sized, flows into next section */
+.elementor-508.program-page-flow .elementor-element-a2db022 {
+	min-height: 0 !important;
+}
+
+.elementor-508.program-page-flow .elementor-element-a2db022 > .elementor-container {
+	min-height: 0 !important;
+	padding-top: 2rem;
+	padding-bottom: 1.25rem;
+}
+
+@media (min-width: 768px) {
+	.elementor-508.program-page-flow .elementor-element-a2db022 > .elementor-container {
+		padding-top: 2.5rem;
+		padding-bottom: 1.5rem;
+	}
+}
+
+/* Training pages — centered hero (no sidebar form) */
+.elementor-508.program-page-flow .program-hero--centered > .elementor-container {
+	justify-content: center;
+}
+
+.elementor-508.program-page-flow .program-hero--centered .elementor-element-c9c2b4e {
+	max-width: 72rem;
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
+	width: 100%;
+}
+
+.elementor-508.program-page-flow .program-hero--centered .elementor-element-49ac208,
+.elementor-508.program-page-flow .program-hero--centered .elementor-element-e586b52,
+.elementor-508.program-page-flow .program-hero--centered .elementor-element-32ae82c4 {
+	text-align: center;
+}
+
+.elementor-508.program-page-flow .program-hero--centered .elementor-element-e586b52 p {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 56rem;
+}
+
+.elementor-508.program-page-flow .program-hero--centered .elementor-element-15bbb88f {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 60rem;
+}
+
+/* Even section rhythm across curriculum → CTA */
+.elementor-508.program-page-flow .program-page-flow__section {
+	padding-top: 2.25rem !important;
+	padding-bottom: 2.25rem !important;
+}
+
+@media (min-width: 768px) {
+	.elementor-508.program-page-flow .program-page-flow__section {
+		padding-top: 2.75rem !important;
+		padding-bottom: 2.75rem !important;
+	}
+}
+
+@media (max-width: 767px) {
+	.elementor-508.program-page-flow .program-page-flow__section {
+		padding-top: 1.75rem !important;
+		padding-bottom: 1.75rem !important;
+	}
+}
+
+/* Tailwind sections: no banding, tighter rhythm */
+.elementor-508.program-page-flow .tw-scope.bg-transparent:not(.why-ibridge) {
+	background-color: transparent !important;
+}
+
+.elementor-508.program-page-flow .program-page-flow__section > .pointer-events-none.absolute {
+	opacity: 0.55;
+}
+
+/* Testimonials — match surrounding section rhythm */
+.elementor-508.program-page-flow .learner-testimonials {
+	background: transparent;
+	padding-top: 2.25rem !important;
+	padding-bottom: 2.25rem !important;
+}
+
+@media (min-width: 768px) {
+	.elementor-508.program-page-flow .learner-testimonials {
+		padding-top: 2.75rem !important;
+		padding-bottom: 2.75rem !important;
+	}
+}
+
+@media (max-width: 767px) {
+	.elementor-508.program-page-flow .learner-testimonials {
+		padding-top: 1.75rem !important;
+		padding-bottom: 1.75rem !important;
+	}
+}
+
+.elementor-508.program-page-flow .learner-testimonials__bg {
+	opacity: 0.45;
+}
+
+/* Final CTA sits flush on the flow */
+.elementor-508.program-page-flow .program-page-flow__cta {
+	margin-top: 0;
+	padding-top: 2.25rem !important;
+	padding-bottom: 2.25rem !important;
+}
+
+@media (min-width: 768px) {
+	.elementor-508.program-page-flow .program-page-flow__cta {
+		padding-top: 2.75rem !important;
+		padding-bottom: 2.75rem !important;
+	}
+}
+
+/* White Enquire pill on brand band — must beat Elementor/link resets */
+.program-page-flow__cta a.program-page-flow__cta-btn,
+.program-page-flow__cta a.program-page-flow__cta-btn:link,
+.program-page-flow__cta a.program-page-flow__cta-btn:visited,
+.program-page-flow__cta a.program-page-flow__cta-btn:hover,
+.program-page-flow__cta a.program-page-flow__cta-btn:focus,
+.program-page-flow__cta a.program-page-flow__cta-btn:focus-visible,
+.program-page-flow__cta a.program-page-flow__cta-btn:active,
+.program-page-flow__cta button.program-page-flow__cta-btn,
+.program-page-flow__cta button.program-page-flow__cta-btn:hover,
+.program-page-flow__cta button.program-page-flow__cta-btn:focus {
+	background: #ffffff !important;
+	background-color: #ffffff !important;
+	color: #18479f !important;
+	-webkit-text-fill-color: #18479f !important;
+	border: 2px solid #ffffff !important;
+	box-shadow: 0 12px 28px rgba(7, 21, 54, 0.28) !important;
+	opacity: 1 !important;
+	text-decoration: none !important;
+}
+
+.program-page-flow__cta a.program-page-flow__cta-btn:hover,
+.program-page-flow__cta a.program-page-flow__cta-btn:focus,
+.program-page-flow__cta a.program-page-flow__cta-btn:focus-visible,
+.program-page-flow__cta button.program-page-flow__cta-btn:hover,
+.program-page-flow__cta button.program-page-flow__cta-btn:focus {
+	background: #f8fafc !important;
+	background-color: #f8fafc !important;
+	color: #123a85 !important;
+	-webkit-text-fill-color: #123a85 !important;
+	border-color: #f8fafc !important;
+	transform: translateY(-1px);
+}
+
+/* Curriculum sidebar — keep wrapped module titles left-aligned (override button UA center) */
+#course-structure [role='tab'] {
+	text-align: left !important;
+}
+
+#course-structure .course-structure__module-title {
+	display: block;
+	min-width: 0;
+	text-align: left !important;
+}
+
+/* FAQ category list — pin to top (not vertically centered beside accordion) */
+#faq .program-faq-layout {
+	align-items: start !important;
+}
+
+#faq .program-faq-categories {
+	align-self: start !important;
+	justify-content: flex-start !important;
+	height: auto !important;
+	margin-top: 0 !important;
+}
+
+#faq .program-faq-categories [role='tab'] {
+	text-align: left !important;
+}
+
+/* Dual hero CTAs — same outline style as Enquire Now */
+.elementor-508.program-page-flow .elementor-element-cb8a092 .program-hero-cta-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+	justify-content: center;
+}
+
+.elementor-508.program-page-flow .elementor-element-cb8a092 .program-hero-cta-row .elementor-button {
+	padding-left: 28px !important;
+	padding-right: 28px !important;
+}
+
+.elementor-508.program-page-flow .elementor-element-89a8d8e > .elementor-container {
+	flex-wrap: wrap;
+}
+
+.elementor-508.program-page-flow .program-trust {
+	padding-bottom: 0.4rem !important;
+}
+
+.elementor-508.program-page-flow .program-alumni {
+	padding-top: 0.4rem !important;
+	padding-bottom: 1.5rem !important;
+}
+
+.elementor-508.program-page-flow .program-alumni .program-section-header {
+	margin-bottom: 1.25rem;
+}
+
+.elementor-508.program-page-flow .program-alumni__strip {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	border-radius: 16px;
+	background: #ffffff;
+	border: 1px solid rgba(24, 71, 159, 0.08);
+	padding: 1rem 0;
+}
+
+.elementor-508.program-page-flow .program-alumni__strip::before,
+.elementor-508.program-page-flow .program-alumni__strip::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 56px;
+	z-index: 1;
+	pointer-events: none;
+}
+
+.elementor-508.program-page-flow .program-alumni__strip::before {
+	left: 0;
+	background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.elementor-508.program-page-flow .program-alumni__strip::after {
+	right: 0;
+	background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.elementor-508.program-page-flow .program-alumni__marquee {
+	overflow: hidden;
+	width: 100%;
+}
+
+@media (max-width: 767px) {
+	.elementor-508.program-page-flow .program-trust {
+		padding-bottom: 0.25rem !important;
+	}
+
+	.elementor-508.program-page-flow .program-alumni {
+		padding-top: 0.25rem !important;
+		padding-bottom: 1.15rem !important;
+	}
+
+	.elementor-508.program-page-flow .program-alumni__strip {
+		padding: 0.75rem 0;
+	}
+
+	.elementor-508.program-page-flow .program-alumni__strip::before,
+	.elementor-508.program-page-flow .program-alumni__strip::after {
+		width: 32px;
+	}
+}
+
+/* Current H1 type — not the old 55px Elementor gradient heading */
+.elementor-508.program-page-flow .program-hero-h1--current {
+	font-family: Inter, sans-serif !important;
+	font-size: clamp(1.75rem, 2.6vw, 2.5rem) !important;
+	font-weight: 700 !important;
+	line-height: 1.2 !important;
+	letter-spacing: -0.03em !important;
+	color: #18479f !important;
+	-webkit-text-fill-color: #18479f !important;
+	background: none !important;
+}

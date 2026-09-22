@@ -1,0 +1,9 @@
+wordpress/node_modules/
+wordpress/dist/
+wordpress/.astro/
+wordpress/.vercel/
+wordpress/.env
+wordpress/.env.*
+!wordpress/.env.example
+wordpress/.git-nested-backup/
+.DS_Store

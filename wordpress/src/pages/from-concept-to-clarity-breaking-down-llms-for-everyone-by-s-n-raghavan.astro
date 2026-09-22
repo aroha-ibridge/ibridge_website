@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteShell from '../components/layout/SiteShell';
+import { getPageSeo } from '../content/seo/pageSeoRegistry';
+
+const pathname = '/from-concept-to-clarity-breaking-down-llms-for-everyone-by-s-n-raghavan';
+const seo = getPageSeo(pathname);
+---
+
+<BaseLayout seo={seo}>
+  <SiteShell client:load pathname={pathname} />
+</BaseLayout>

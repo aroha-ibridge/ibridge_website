@@ -1,0 +1,204 @@
+/* Reusable "Let's Get You Enrolled" form — matches program-page design */
+
+.ibridge-enquiry-form {
+	--enquiry-brand: #18479f;
+	--enquiry-header-bg: #e7e8ed;
+	--enquiry-border: #d7dee8;
+	--enquiry-text: #0f172a;
+	--enquiry-muted: #64748b;
+	--enquiry-placeholder: #94a3b8;
+
+	width: 100%;
+	max-width: 100%;
+	background: #ffffff;
+	border-radius: 10px;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+	overflow: hidden;
+	font-family: 'Inter', sans-serif;
+}
+
+.ibridge-enquiry-form__header {
+	padding: 20px;
+	text-align: center;
+	background-color: var(--enquiry-header-bg);
+	border-radius: 10px 10px 0 0;
+}
+
+.ibridge-enquiry-form__title {
+	margin: 0;
+	color: var(--enquiry-brand);
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 1.4;
+}
+
+.ibridge-enquiry-form__body {
+	padding: 20px;
+}
+
+.ibridge-enquiry-form__fields {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.ibridge-enquiry-form__field {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	width: 100%;
+}
+
+.ibridge-enquiry-form__label {
+	color: var(--enquiry-text);
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.4;
+}
+
+.ibridge-enquiry-form__input,
+.ibridge-enquiry-form__select {
+	width: 100%;
+	min-width: 0;
+	height: 44px;
+	padding: 0 14px;
+	border: 1px solid #9ca3af !important;
+	border-radius: 4px;
+	background: #ffffff;
+	color: var(--enquiry-text);
+	font-family: inherit;
+	font-size: 14px;
+	line-height: 1.4;
+	box-sizing: border-box;
+	transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ibridge-enquiry-form__select {
+	appearance: none;
+	-webkit-appearance: none;
+	padding-right: 40px;
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e");
+	background-repeat: no-repeat;
+	background-position: right 14px center;
+	background-size: 16px;
+	cursor: pointer;
+}
+
+.ibridge-enquiry-form__input::placeholder {
+	color: var(--enquiry-placeholder);
+}
+
+.ibridge-enquiry-form__input:hover,
+.ibridge-enquiry-form__select:hover {
+	border: 1px solid #9ca3af !important;
+}
+
+.ibridge-enquiry-form__input:focus,
+.ibridge-enquiry-form__select:focus {
+	outline: none;
+	border: 1px solid #1d4ed8 !important;
+	box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.15);
+}
+
+.ibridge-enquiry-form__input.is-invalid,
+.ibridge-enquiry-form__select.is-invalid {
+	border: 1px solid #ef4444 !important;
+}
+
+.ibridge-enquiry-form__input.is-invalid:focus,
+.ibridge-enquiry-form__select.is-invalid:focus {
+	border: 1px solid #dc2626 !important;
+	box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+.ibridge-enquiry-form__error {
+	margin: 0;
+	color: #b91c1c;
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+.ibridge-enquiry-form__submit {
+	width: 100%;
+	height: 44px;
+	margin-top: 4px;
+	padding: 0 16px;
+	border: none !important;
+	border-radius: 4px;
+	background: #18479f !important;
+	background-color: #18479f !important;
+	color: #ffffff !important;
+	-webkit-text-fill-color: #ffffff !important;
+	font-family: inherit;
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 1;
+	cursor: pointer;
+	opacity: 1 !important;
+	visibility: visible !important;
+	transition: background-color 0.2s ease;
+}
+
+.ibridge-enquiry-form__submit:hover:not(:disabled),
+.ibridge-enquiry-form__submit:focus:not(:disabled),
+.ibridge-enquiry-form__submit:focus-visible:not(:disabled) {
+	background: #123a85 !important;
+	background-color: #123a85 !important;
+	color: #ffffff !important;
+	-webkit-text-fill-color: #ffffff !important;
+	opacity: 1 !important;
+	visibility: visible !important;
+	border-color: transparent !important;
+}
+
+.enquire-popup .ibridge-enquiry-form__submit,
+.enquire-popup .ibridge-enquiry-form__submit:hover,
+.enquire-popup .ibridge-enquiry-form__submit:focus,
+.enquire-popup .ibridge-enquiry-form__submit:focus-visible,
+.enquire-popup .ibridge-enquiry-form__submit:active {
+	display: block !important;
+	width: 100% !important;
+	height: 44px !important;
+	min-height: 44px !important;
+	background: #18479f !important;
+	background-color: #18479f !important;
+	color: #ffffff !important;
+	-webkit-text-fill-color: #ffffff !important;
+	opacity: 1 !important;
+	visibility: visible !important;
+	border: none !important;
+}
+
+.enquire-popup .ibridge-enquiry-form__submit:hover:not(:disabled),
+.enquire-popup .ibridge-enquiry-form__submit:focus:not(:disabled),
+.enquire-popup .ibridge-enquiry-form__submit:focus-visible:not(:disabled) {
+	background: #123a85 !important;
+	background-color: #123a85 !important;
+	color: #ffffff !important;
+	-webkit-text-fill-color: #ffffff !important;
+}
+
+.ibridge-enquiry-form__submit:disabled {
+	opacity: 0.65;
+	cursor: not-allowed;
+}
+
+.ibridge-enquiry-form .elementor-message {
+	margin-top: 12px;
+	padding: 10px 12px;
+	border-radius: 8px;
+	font-size: 13px;
+	line-height: 1.45;
+}
+
+.ibridge-enquiry-form .elementor-message-success {
+	background: #ecfdf5;
+	color: #047857;
+	border: 1px solid #a7f3d0;
+}
+
+.ibridge-enquiry-form .elementor-message-danger {
+	background: #fef2f2;
+	color: #b91c1c;
+	border: 1px solid #fecaca;
+}

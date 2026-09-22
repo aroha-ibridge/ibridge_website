@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteShell from '../../components/layout/SiteShell';
+import { getPageSeo } from '../../content/seo/pageSeoRegistry';
+import { getAllTrainingSlugs } from '../../content/training/trainingPrograms';
+
+export function getStaticPaths() {
+  return getAllTrainingSlugs().map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const pathname = `/training/${slug}`;
+const seo = getPageSeo(pathname);
+---
+
+<BaseLayout seo={seo}>
+  <SiteShell client:load pathname={pathname} params={{ slug }} />
+</BaseLayout>

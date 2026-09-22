@@ -1,0 +1,40 @@
+const homeSelfLearningCards = [
+  {
+    id: 'core-python-programming',
+    title: 'Core Python Programming',
+    href: '/programs/course/6a438d248489e9b236091208',
+    image: 'https://ibridge.s3.us-east-2.amazonaws.com/Profile/Images/fWum_GUVFpython.png',
+    duration: '8 total hours',
+    resourcesLabel: 'Documents',
+    levelLabel: 'All Levels',
+    rating: 4.6,
+    price: 3999,
+    summary: 'Learn Python fundamentals, OOP, and hands-on coding for real-world problem solving.',
+  },
+  {
+    id: 'power-bi',
+    title: 'Power BI',
+    href: '/programs/course/6a439f6a8489e9b236091212',
+    image: 'https://ibridge.s3.us-east-2.amazonaws.com/Profile/Images/RGJxdcJ28Power%2BBI.png',
+    duration: '15 total hours',
+    resourcesLabel: 'Documents',
+    levelLabel: 'All Levels',
+    rating: 4.5,
+    price: 1999,
+    summary: 'Build interactive dashboards and business intelligence reports with Microsoft Power BI.',
+  },
+  {
+    id: 'complete-microsoft-excel',
+    title: 'Complete Microsoft Excel',
+    href: '/programs/course/6a43981d8489e9b23609120d',
+    image: 'https://ibridge.s3.us-east-2.amazonaws.com/Profile/Images/0thSqXmyJbenefits_ms_excel.jpg',
+    duration: '2 total hours',
+    resourcesLabel: 'Documents',
+    levelLabel: 'All Levels',
+    rating: 4.4,
+    price: 499,
+    summary: 'Master Excel for data organization, formulas, analysis, and everyday productivity.',
+  },
+];
+
+export default homeSelfLearningCards;

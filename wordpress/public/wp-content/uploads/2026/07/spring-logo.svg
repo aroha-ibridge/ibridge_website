@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="Spring Boot">
+  <rect width="128" height="128" rx="24" fill="#6DB33F"/>
+  <!-- Centered Spring leaf -->
+  <g transform="translate(64 64)">
+    <path fill="#FFFFFF" d="M28-30C12-16 2 4 2 24c0 8 2 16 5.5 22.5C4 43-1 36-4.5 27.5-7 44-1.5 60 10 70-14 67-32 48-34.5 24-31 6-12-16 10-32c7-5 14-8.5 18-2z"/>
+    <path fill="#FFFFFF" opacity="0.95" d="M32-12c9 12 14 28 14 44 0 8-1.5 16-4.5 23 10-10 16-24 16-40 0-14.5-5.5-28-15-38-3.5 3.5-7 7.5-10.5 11z"/>
+    <circle cx="8" cy="14" r="7" fill="#FFFFFF"/>
+  </g>
+</svg>

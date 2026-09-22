@@ -1,0 +1,27 @@
+body.marketing-site {
+  --font-sans: "Roboto", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --default-font-family: "Roboto", "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-family: "Roboto", "Inter", ui-sans-serif, system-ui, sans-serif;
+  margin: 0;
+  background-color: #ffffff;
+}
+
+/* Platform routes must keep Open Sans even if marketing CSS was loaded earlier */
+body.platform-app,
+body.platform-app #root {
+  --font-sans: "Open Sans", sans-serif;
+  --default-font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
+}
+
+body.marketing-site .site-main {
+  min-height: 50vh;
+}
+
+/* While critical Elementor CSS loads, keep the viewport calm under the splash */
+html.marketing-styles-pending,
+html.marketing-styles-pending body {
+  background-color: #ffffff;
+}
+
+/* Soft boot animations live in marketing-boot.css (imported by MarketingStyles) */

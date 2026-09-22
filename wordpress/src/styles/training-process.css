@@ -1,0 +1,448 @@
+/* ── Training Process — premium animated timeline ── */
+
+.training-process-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.training-process {
+  position: relative;
+  --tp-step-width: 168px;
+}
+
+.training-process__backdrop {
+  pointer-events: none;
+  position: absolute;
+  inset: -2rem -1rem;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.training-process__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 1s ease, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.training-process__orb--left {
+  top: 10%;
+  left: -4%;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(24, 71, 159, 0.18) 0%, transparent 70%);
+}
+
+.training-process__orb--right {
+  right: -2%;
+  bottom: 0;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(45, 116, 217, 0.14) 0%, transparent 70%);
+}
+
+.training-process--visible .training-process__orb {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.training-process__shell {
+  position: relative;
+  z-index: 1;
+  padding: 1.25rem 0.75rem 0.5rem;
+  border-radius: 28px;
+  border: 1px solid rgba(24, 71, 159, 0.1);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(248, 250, 252, 0.92) 100%);
+  box-shadow:
+    0 24px 60px -32px rgba(15, 23, 42, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+@media (min-width: 768px) {
+  .training-process__shell {
+    padding: 1.75rem 1.25rem 1rem;
+  }
+}
+
+/* Progress rail */
+.training-process__rail {
+  position: absolute;
+  top: 3.35rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  height: 3px;
+  z-index: 0;
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .training-process__rail {
+    display: block;
+  }
+}
+
+.training-process__rail-line {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #18479f 0%, #4f7bc7 55%, rgba(79, 123, 199, 0.15) 100%);
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+}
+
+.training-process__rail-glow {
+  position: absolute;
+  inset: -4px 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(24, 71, 159, 0.35), transparent 80%);
+  opacity: 0;
+  filter: blur(6px);
+  transition: opacity 1s ease 0.8s;
+}
+
+.training-process--visible .training-process__rail-line {
+  transform: scaleX(1);
+}
+
+.training-process--visible .training-process__rail-glow {
+  opacity: 1;
+}
+
+/* Track */
+.training-process__track {
+  list-style: none;
+  margin: 0;
+  padding: 0.25rem 0.5rem 0.75rem;
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.training-process__track::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .training-process__track {
+    overflow-x: visible;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 0.5rem 0.75rem 1rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .training-process__track {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.25rem 0.75rem;
+    padding: 0.75rem 1rem 1.25rem;
+  }
+
+  .training-process__item {
+    flex: 0 0 calc(20% - 0.75rem);
+    max-width: calc(20% - 0.75rem);
+    min-width: 150px;
+  }
+
+  .training-process__connector {
+    display: none;
+  }
+
+  .training-process__rail {
+    display: none;
+  }
+}
+
+.training-process__item {
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-start;
+  scroll-snap-align: center;
+  min-width: var(--tp-step-width);
+}
+
+@media (min-width: 1024px) {
+  .training-process__item {
+    flex: 0 0 auto;
+    min-width: 148px;
+  }
+}
+
+/* Step card */
+.training-process__card {
+  position: relative;
+  width: 100%;
+  padding: 1rem 0.85rem 1.1rem;
+  border-radius: 20px;
+  border: 1px solid rgba(24, 71, 159, 0.12);
+  background: #ffffff;
+  text-align: center;
+  overflow: hidden;
+  transform: translateY(24px) scale(0.94);
+  opacity: 0;
+  transition:
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.55s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+  transition-delay: var(--step-delay, 0s);
+}
+
+.training-process--visible .training-process__card {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.training-process__card:hover {
+  border-color: rgba(24, 71, 159, 0.28);
+  box-shadow:
+    0 16px 40px -20px rgba(24, 71, 159, 0.35),
+    0 0 0 1px rgba(24, 71, 159, 0.06);
+  transform: translateY(-4px) scale(1.02);
+}
+
+.training-process__shine {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.65) 50%,
+    transparent 60%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+
+.training-process__card:hover .training-process__shine {
+  transform: translateX(120%);
+}
+
+/* Badge */
+.training-process__badge {
+  position: relative;
+  width: 3.25rem;
+  height: 3.25rem;
+  margin: 0 auto 0.85rem;
+  display: grid;
+  place-items: center;
+}
+
+.training-process__number {
+  position: relative;
+  z-index: 2;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+
+.training-process__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  opacity: 0;
+  transform: scale(0.6);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--step-delay, 0s) + 0.15s);
+}
+
+.training-process--visible .training-process__ring {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.training-process__ring--delayed {
+  transition-delay: calc(var(--step-delay, 0s) + 0.35s);
+}
+
+.training-process--visible .training-process__ring--delayed {
+  animation: tp-ring-pulse 2.8s ease-in-out infinite;
+}
+
+.training-process__badge::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  z-index: 1;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.training-process__badge--a::before {
+  background: linear-gradient(145deg, #18479f 0%, #2d74d9 100%);
+}
+
+.training-process__badge--b::before {
+  background: linear-gradient(145deg, #123a85 0%, #4f7bc7 100%);
+}
+
+.training-process__badge--c::before {
+  background: linear-gradient(145deg, #0f2d66 0%, #2d5fb2 100%);
+}
+
+.training-process__badge--d::before {
+  background: linear-gradient(145deg, #18479f 0%, #7c9dd8 100%);
+}
+
+.training-process__badge--a .training-process__ring {
+  border-color: rgba(24, 71, 159, 0.35);
+}
+
+.training-process__badge--b .training-process__ring {
+  border-color: rgba(45, 116, 217, 0.35);
+}
+
+.training-process__badge--c .training-process__ring {
+  border-color: rgba(18, 58, 133, 0.35);
+}
+
+.training-process__badge--d .training-process__ring {
+  border-color: rgba(79, 123, 199, 0.4);
+}
+
+.training-process__label {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #0f172a;
+}
+
+@media (min-width: 768px) {
+  .training-process__label {
+    font-size: 0.875rem;
+  }
+}
+
+/* Connector between steps */
+.training-process__connector {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  margin-top: 2.1rem;
+  color: #94a3b8;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease,
+    color 0.25s ease;
+  transition-delay: calc(var(--step-delay, 0s) + 0.2s);
+}
+
+@media (min-width: 1024px) {
+  .training-process__connector {
+    width: auto;
+    flex: 0 1 28px;
+    margin-top: 2.35rem;
+  }
+}
+
+.training-process--visible .training-process__connector {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.training-process__connector-icon {
+  width: 2rem;
+  height: 1rem;
+  animation: tp-connector-nudge 2.4s ease-in-out infinite;
+}
+
+.training-process__item:hover .training-process__connector,
+.training-process__item:hover + .training-process__item .training-process__connector {
+  color: #18479f;
+}
+
+/* Keyframes */
+@keyframes tp-ring-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.14);
+    opacity: 0.35;
+  }
+}
+
+@keyframes tp-connector-nudge {
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateX(4px);
+    opacity: 1;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .training-process__orb,
+  .training-process__rail-line,
+  .training-process__rail-glow,
+  .training-process__card,
+  .training-process__ring,
+  .training-process__connector {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .training-process__card,
+  .training-process__connector,
+  .training-process__orb {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .training-process__rail-line {
+    transform: scaleX(1) !important;
+  }
+
+  .training-process__shine {
+    display: none;
+  }
+}
+
+/* Fade edges on horizontal scroll (mobile / tablet) */
+@media (max-width: 1023px) {
+  .training-process__shell::before,
+  .training-process__shell::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 28px;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .training-process__shell::before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(248, 250, 252, 0.95), transparent);
+  }
+
+  .training-process__shell::after {
+    right: 0;
+    background: linear-gradient(270deg, rgba(248, 250, 252, 0.95), transparent);
+  }
+}

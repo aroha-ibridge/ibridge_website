@@ -1,0 +1,65 @@
+.rating-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.rating-stars__value {
+  font-weight: 700;
+  line-height: 1;
+}
+
+.rating-stars__icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.08rem;
+}
+
+.rating-stars__star {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.rating-stars__star svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.rating-stars__star-empty {
+  fill: #d1d5db;
+  color: #d1d5db;
+}
+
+.rating-stars__star-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  overflow: hidden;
+}
+
+.rating-stars__star-fill svg {
+  fill: #f59e0b;
+  color: #f59e0b;
+}
+
+/* Dark hero / badge contexts */
+.rating-stars--light .rating-stars__value {
+  color: #fff;
+}
+
+.rating-stars--light .rating-stars__star-empty {
+  fill: rgba(255, 255, 255, 0.28);
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.rating-stars--light .rating-stars__star-fill svg {
+  fill: #fbbf24;
+  color: #fbbf24;
+}
+
+.rating-stars--compact .rating-stars__value {
+  font-size: 0.875rem;
+  color: #b4690e;
+}

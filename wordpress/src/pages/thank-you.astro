@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteShell from '../components/layout/SiteShell';
+import { getPageSeo } from '../content/seo/pageSeoRegistry';
+
+const pathname = '/thank-you';
+const seo = getPageSeo(pathname);
+---
+
+<BaseLayout seo={seo}>
+  <SiteShell client:load pathname={pathname} />
+</BaseLayout>

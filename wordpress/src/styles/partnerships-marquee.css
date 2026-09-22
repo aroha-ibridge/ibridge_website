@@ -1,0 +1,241 @@
+.partnerships-section .elementor-element-ede369b > .elementor-container,
+.partnerships-section .elementor-element-859be5e > .elementor-container {
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.partnerships-marquee-block {
+	margin-top: 28px;
+}
+
+.partnerships-marquee-block + .partnerships-marquee-block {
+	margin-top: 40px;
+}
+
+.partnerships-marquee-block__label {
+	margin: 0 0 18px;
+	color: #0f172a;
+	font-family: 'Inter', sans-serif;
+	font-size: 1.125rem;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+	text-align: center;
+}
+
+/* Bounded viewport — carousel scrolls inside site content width */
+.partnerships-carousel-shell {
+	width: 100%;
+	max-width: min(100%, 900px);
+	margin: 0 auto;
+	overflow: hidden;
+	border-radius: 18px;
+}
+
+.logo-marquee {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+}
+
+.logo-marquee__track {
+	display: flex;
+	width: max-content;
+	will-change: transform;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	animation: partnership-logo-marquee-scroll 40s linear infinite;
+}
+
+.logo-marquee__group {
+	display: flex;
+	align-items: flex-start;
+	flex-shrink: 0;
+	gap: 16px;
+	padding-right: 16px;
+}
+
+.logo-marquee__slide {
+	flex: 0 0 auto;
+	margin: 0;
+	padding: 0;
+}
+
+.partnership-logo-marquee:hover .logo-marquee__track {
+	animation-play-state: paused;
+}
+
+.partnership-logo-marquee--corporate .logo-marquee__group {
+	align-items: center;
+}
+
+.partnership-logo-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	width: 200px;
+}
+
+.partnership-logo-card__name {
+	margin: 0;
+	padding: 0 4px;
+	color: #334155;
+	font-family: 'Inter', sans-serif;
+	font-size: 0.8125rem;
+	font-weight: 500;
+	line-height: 1.35;
+	text-align: center;
+}
+
+.partnership-logo-card__figure.partnership-logo-tile {
+	margin: 0;
+}
+
+.partnership-logo-tile {
+	width: 152px !important;
+	height: 72px !important;
+	min-width: 152px;
+	min-height: 72px;
+	max-width: 152px;
+	max-height: 72px;
+	padding: 12px 14px !important;
+	background: #ffffff !important;
+	border: 1px solid #e8edf5;
+	border-radius: 14px;
+	box-shadow:
+		0 1px 2px rgba(15, 23, 42, 0.04),
+		0 8px 20px rgba(15, 23, 42, 0.05);
+	transition:
+		box-shadow 0.25s ease,
+		border-color 0.25s ease;
+}
+
+.partnerships-carousel-shell .alumni-logo-tile {
+	width: 152px !important;
+	height: 72px !important;
+	min-width: 152px !important;
+	min-height: 72px !important;
+	max-width: 152px !important;
+	max-height: 72px !important;
+	padding: 12px 14px !important;
+	border: 1px solid #e8edf5;
+	border-radius: 14px;
+	box-shadow:
+		0 1px 2px rgba(15, 23, 42, 0.04),
+		0 8px 20px rgba(15, 23, 42, 0.05);
+}
+
+.partnership-logo-marquee:hover .partnership-logo-tile,
+.partnerships-carousel-shell:hover .alumni-logo-tile {
+	border-color: #d7e3f4;
+}
+
+.partnership-logo-tile img,
+.partnerships-carousel-shell .alumni-logo-tile img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	object-position: center;
+}
+
+.logo-marquee__fade {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 48px;
+	z-index: 2;
+	pointer-events: none;
+}
+
+.logo-marquee__fade--left {
+	left: 0;
+	background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.logo-marquee__fade--right {
+	right: 0;
+	background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+@keyframes partnership-logo-marquee-scroll {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+	100% {
+		transform: translate3d(-50%, 0, 0);
+	}
+}
+
+@media (max-width: 1024px) {
+	.partnerships-carousel-shell {
+		max-width: min(100%, 720px);
+	}
+
+	.partnership-logo-tile,
+	.partnerships-carousel-shell .alumni-logo-tile {
+		width: 140px !important;
+		min-width: 140px;
+		max-width: 140px;
+	}
+
+	.partnership-logo-card {
+		width: 180px;
+	}
+}
+
+@media (max-width: 767px) {
+	.partnerships-marquee-block {
+		margin-top: 22px;
+	}
+
+	.partnerships-marquee-block + .partnerships-marquee-block {
+		margin-top: 32px;
+	}
+
+	.partnerships-carousel-shell {
+		max-width: 100%;
+		border-radius: 14px;
+	}
+
+	.partnership-logo-tile,
+	.partnerships-carousel-shell .alumni-logo-tile {
+		width: 128px !important;
+		height: 68px !important;
+		min-width: 128px;
+		min-height: 68px;
+		max-width: 128px;
+		max-height: 68px;
+		padding: 10px 12px !important;
+	}
+
+	.partnership-logo-card {
+		width: 160px;
+	}
+
+	.partnership-logo-card__name {
+		font-size: 0.75rem;
+	}
+
+	.logo-marquee__fade {
+		width: 28px;
+	}
+
+	.logo-marquee__group {
+		gap: 12px;
+		padding-right: 12px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.logo-marquee__track {
+		animation: none;
+		flex-wrap: wrap;
+		justify-content: center;
+		width: 100%;
+	}
+
+	.logo-marquee__fade {
+		display: none;
+	}
+}

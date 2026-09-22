@@ -1,0 +1,44 @@
+{
+  "name": "ibridge360-page",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "node scripts/serve-preview.mjs",
+    "preview:static": "astro preview",
+    "astro": "astro",
+    "generate:astro-pages": "node scripts/generate-astro-pages.mjs",
+    "generate:home": "node scripts/generate-home.mjs",
+    "generate:about": "node scripts/generate-about.mjs",
+    "generate:programs": "node scripts/generate-programs.mjs",
+    "generate:corporate": "node scripts/generate-corporate.mjs",
+    "generate:individual-learner": "node scripts/generate-individual-learner.mjs",
+    "generate:institution": "node scripts/generate-institution.mjs",
+    "generate:blogs": "node scripts/generate-blogs.mjs",
+    "generate:testimonials": "node scripts/generate-testimonials.mjs",
+    "generate:contact-us": "node scripts/generate-contact-us.mjs",
+    "generate:terms-conditions": "node scripts/generate-terms-conditions.mjs",
+    "generate:privacy-policy": "node scripts/generate-privacy-policy.mjs",
+    "generate:data-engineering-program": "node scripts/generate-data-engineering-program.mjs"
+  },
+  "dependencies": {
+    "lucide-react": "^1.47.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "swiper": "^11.2.8"
+  },
+  "devDependencies": {
+    "@astrojs/react": "^4.4.2",
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^5.18.2",
+    "autoprefixer": "^10.5.2",
+    "playwright": "^1.61.1",
+    "postcss": "^8.5.16",
+    "tailwindcss": "^3.4.19"
+  }
+}

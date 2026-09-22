@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="SQL">
+  <rect width="128" height="128" rx="24" fill="#F5F8FC"/>
+  <!-- database stack -->
+  <ellipse cx="64" cy="36" rx="36" ry="14" fill="#0078D4"/>
+  <path fill="#0078D4" d="M28 36v20c0 7.7 16.1 14 36 14s36-6.3 36-14V36"/>
+  <ellipse cx="64" cy="56" rx="36" ry="14" fill="#50E6FF"/>
+  <path fill="#2899F5" d="M28 56v20c0 7.7 16.1 14 36 14s36-6.3 36-14V56"/>
+  <ellipse cx="64" cy="76" rx="36" ry="14" fill="#0078D4"/>
+  <path fill="#106EBE" d="M28 76v16c0 7.7 16.1 14 36 14s36-6.3 36-14V76"/>
+  <ellipse cx="64" cy="92" rx="36" ry="14" fill="#50E6FF"/>
+  <!-- SQL badge -->
+  <circle cx="96" cy="96" r="22" fill="#0078D4"/>
+  <path fill="#FFFFFF" d="M85.2 101.2c0-6.4 4.2-10.6 10.4-10.6 3.2 0 5.6 1 7.4 2.8l-2.6 2.6c-1.2-1.2-2.8-1.8-4.6-1.8-3.4 0-5.8 2.4-5.8 7s2.4 7 5.8 7c1.8 0 3.4-.6 4.6-1.8l2.6 2.6c-1.8 1.8-4.2 2.8-7.4 2.8-6.2 0-10.4-4.2-10.4-10.6z"/>
+</svg>

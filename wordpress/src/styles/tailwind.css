@@ -1,0 +1,33 @@
+/*
+ * Tailwind CSS entry file.
+ *
+ * NOTE: `preflight` is disabled in tailwind.config.js so Tailwind won't reset
+ * the existing WordPress/Elementor styles that the current pages depend on.
+ * Once a page is fully converted to Tailwind, we can enable preflight
+ * selectively via component-scoped class prefixes.
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Scoped preflight-ish defaults for new Tailwind-based components only. */
+  .tw-scope {
+    font-family: theme('fontFamily.sans');
+    color: theme('colors.ink.DEFAULT');
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .tw-scope * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  /* Reusable focus ring for interactive elements built with Tailwind */
+  .tw-focus-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2;
+  }
+}

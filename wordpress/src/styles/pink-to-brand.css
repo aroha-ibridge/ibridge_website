@@ -1,0 +1,487 @@
+/**
+ * Kill Hello Elementor pink/magenta (#c36, #9f1872) on marketing pages.
+ * Scoped to `.marketing-site` so platform / auth UIs are never affected.
+ * Loaded from MarketingStyles — do not import into client/src/main.jsx.
+ */
+
+html.marketing-site,
+html.marketing-site .elementor,
+body.marketing-site,
+body.marketing-site .elementor {
+	--e-global-color-primary: #18479f;
+	--e-global-color-secondary: #18479f;
+	--e-global-color-accent: #18479f;
+	--e-global-color-text: #0f172a;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Links — pink (#c36) → ink / brand blue                                     */
+/* -------------------------------------------------------------------------- */
+html.marketing-site a,
+html.marketing-site a:link,
+html.marketing-site a:visited,
+body.marketing-site a,
+body.marketing-site a:link,
+body.marketing-site a:visited {
+	color: #0f172a;
+	text-decoration: none;
+}
+
+html.marketing-site a:hover,
+html.marketing-site a:active,
+html.marketing-site a:focus,
+body.marketing-site a:hover,
+body.marketing-site a:active,
+body.marketing-site a:focus {
+	color: #18479f;
+}
+
+/* Footer sits on dark navy — keep light link colors */
+html.marketing-site .site-footer a,
+html.marketing-site .site-footer a:link,
+html.marketing-site .site-footer a:visited,
+body.marketing-site .site-footer a,
+body.marketing-site .site-footer a:link,
+body.marketing-site .site-footer a:visited {
+	color: rgba(255, 255, 255, 0.82) !important;
+}
+
+html.marketing-site .site-footer a:hover,
+html.marketing-site .site-footer a:active,
+html.marketing-site .site-footer a:focus,
+body.marketing-site .site-footer a:hover,
+body.marketing-site .site-footer a:active,
+body.marketing-site .site-footer a:focus {
+	color: #ffffff !important;
+}
+
+html.marketing-site a.text-brand,
+html.marketing-site a.text-brand:link,
+html.marketing-site a.text-brand:visited,
+html.marketing-site a.text-brand:hover,
+html.marketing-site a.text-brand:focus,
+html.marketing-site .text-brand,
+body.marketing-site a.text-brand,
+body.marketing-site .text-brand {
+	color: #123a85 !important;
+}
+
+html.marketing-site a.border-brand.text-brand:hover,
+html.marketing-site a.border-brand.text-brand:focus,
+html.marketing-site a.border-brand:hover,
+html.marketing-site a.border-brand:focus,
+body.marketing-site a.border-brand.text-brand:hover,
+body.marketing-site a.border-brand.text-brand:focus,
+body.marketing-site a.border-brand:hover,
+body.marketing-site a.border-brand:focus {
+	color: #ffffff !important;
+	-webkit-text-fill-color: #ffffff !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Native buttons — pink border/text/bg → brand / black                       */
+/* -------------------------------------------------------------------------- */
+html.marketing-site button:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+html.marketing-site [type='button']:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+html.marketing-site [type='submit']:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.bg-brand):not([class*='cc-booking']),
+html.marketing-site [type='reset'],
+body.marketing-site button:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+body.marketing-site [type='button']:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+body.marketing-site [type='submit']:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.bg-brand):not([class*='cc-booking']),
+body.marketing-site [type='reset'] {
+	border-color: #000000 !important;
+	color: #0f172a !important;
+}
+
+html.marketing-site button:hover:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+html.marketing-site button:focus:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+html.marketing-site [type='button']:hover:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+html.marketing-site [type='button']:focus:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+html.marketing-site [type='submit']:hover:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.bg-brand):not([class*='cc-booking']),
+html.marketing-site [type='submit']:focus:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.bg-brand):not([class*='cc-booking']),
+body.marketing-site button:hover:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+body.marketing-site button:focus:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+body.marketing-site [type='button']:hover:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+body.marketing-site [type='button']:focus:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+body.marketing-site [type='submit']:hover:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.bg-brand):not([class*='cc-booking']),
+body.marketing-site [type='submit']:focus:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.bg-brand):not([class*='cc-booking']) {
+	border-color: #000000 !important;
+	background-color: transparent !important;
+	color: #0f172a !important;
+	text-decoration: none;
+}
+
+/* Solid brand CTAs */
+html.marketing-site a.bg-brand,
+html.marketing-site a.bg-brand:link,
+html.marketing-site a.bg-brand:visited,
+html.marketing-site a.bg-brand:hover,
+html.marketing-site a.bg-brand:focus,
+html.marketing-site button.bg-brand,
+html.marketing-site button.bg-brand:hover,
+html.marketing-site button.bg-brand:focus,
+body.marketing-site a.bg-brand,
+body.marketing-site button.bg-brand,
+body.marketing-site button.bg-brand:hover,
+body.marketing-site button.bg-brand:focus {
+	color: #ffffff !important;
+	background-color: #18479f !important;
+	border-color: transparent !important;
+}
+
+html.marketing-site a.bg-brand:hover,
+html.marketing-site a.bg-brand:focus,
+html.marketing-site button.bg-brand:hover,
+html.marketing-site button.bg-brand:focus,
+body.marketing-site a.bg-brand:hover,
+body.marketing-site a.bg-brand:focus,
+body.marketing-site button.bg-brand:hover,
+body.marketing-site button.bg-brand:focus {
+	background-color: #123a85 !important;
+}
+
+body.marketing-site .ibridge-enquiry-form__submit,
+body.marketing-site .ibridge-enquiry-form__submit:hover,
+body.marketing-site .ibridge-enquiry-form__submit:focus,
+body.marketing-site .ibridge-enquiry-form__submit:focus-visible,
+body.marketing-site .ibridge-enquiry-form__submit:active,
+body.marketing-site .program-cta-modal button.program-cta-modal__button,
+body.marketing-site .program-cta-modal button.program-cta-modal__button:hover,
+body.marketing-site .program-cta-modal button.program-cta-modal__button:focus,
+body.marketing-site .program-cta-modal button.program-cta-modal__button:focus-visible,
+body.marketing-site .program-cta-modal button.program-cta-modal__button:active {
+	border-color: transparent !important;
+	color: #ffffff !important;
+	-webkit-text-fill-color: #ffffff !important;
+	background: #18479f !important;
+	background-color: #18479f !important;
+	opacity: 1 !important;
+	visibility: visible !important;
+}
+
+body.marketing-site .ibridge-enquiry-form__submit:hover:not(:disabled),
+body.marketing-site .ibridge-enquiry-form__submit:focus,
+body.marketing-site .ibridge-enquiry-form__submit:focus-visible,
+body.marketing-site .program-cta-modal button.program-cta-modal__button:hover,
+body.marketing-site .program-cta-modal button.program-cta-modal__button:focus,
+body.marketing-site .program-cta-modal button.program-cta-modal__button:focus-visible {
+	background: #123a85 !important;
+	background-color: #123a85 !important;
+	color: #ffffff !important;
+	-webkit-text-fill-color: #ffffff !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Forms                                                                      */
+/* -------------------------------------------------------------------------- */
+html.marketing-site input[type='date'],
+html.marketing-site input[type='email'],
+html.marketing-site input[type='number'],
+html.marketing-site input[type='password'],
+html.marketing-site input[type='search'],
+html.marketing-site input[type='tel'],
+html.marketing-site input[type='text'],
+html.marketing-site input[type='time'],
+html.marketing-site input[type='url'],
+html.marketing-site input[type='file'],
+html.marketing-site select,
+html.marketing-site textarea,
+html.marketing-site .elementor-field-textual,
+html.marketing-site .ibridge-enquiry-form__input,
+html.marketing-site .ibridge-enquiry-form__select,
+body.marketing-site input[type='date'],
+body.marketing-site input[type='email'],
+body.marketing-site input[type='number'],
+body.marketing-site input[type='password'],
+body.marketing-site input[type='search'],
+body.marketing-site input[type='tel'],
+body.marketing-site input[type='text'],
+body.marketing-site input[type='time'],
+body.marketing-site input[type='url'],
+body.marketing-site input[type='file'],
+body.marketing-site select,
+body.marketing-site textarea,
+body.marketing-site .elementor-field-textual,
+body.marketing-site .ibridge-enquiry-form__input,
+body.marketing-site .ibridge-enquiry-form__select {
+	border: 1px solid #9ca3af !important;
+	border-style: solid !important;
+	color: #0f172a;
+}
+
+html.marketing-site input[type='date']:focus,
+html.marketing-site input[type='email']:focus,
+html.marketing-site input[type='number']:focus,
+html.marketing-site input[type='password']:focus,
+html.marketing-site input[type='search']:focus,
+html.marketing-site input[type='tel']:focus,
+html.marketing-site input[type='text']:focus,
+html.marketing-site input[type='time']:focus,
+html.marketing-site input[type='url']:focus,
+html.marketing-site select:focus,
+html.marketing-site textarea:focus,
+html.marketing-site .elementor-field-textual:focus,
+html.marketing-site .ibridge-enquiry-form__input:focus,
+html.marketing-site .ibridge-enquiry-form__select:focus,
+body.marketing-site input[type='date']:focus,
+body.marketing-site input[type='email']:focus,
+body.marketing-site input[type='number']:focus,
+body.marketing-site input[type='password']:focus,
+body.marketing-site input[type='search']:focus,
+body.marketing-site input[type='tel']:focus,
+body.marketing-site input[type='text']:focus,
+body.marketing-site input[type='time']:focus,
+body.marketing-site input[type='url']:focus,
+body.marketing-site select:focus,
+body.marketing-site textarea:focus,
+body.marketing-site .elementor-field-textual:focus,
+body.marketing-site .ibridge-enquiry-form__input:focus,
+body.marketing-site .ibridge-enquiry-form__select:focus {
+	border: 1px solid #1d4ed8 !important;
+	outline-color: #1d4ed8;
+}
+
+/* Keep wrapper-only / chatbot fields intact after the global form rule */
+html.marketing-site .trending-skills__search-input,
+body.marketing-site .trending-skills__search-input,
+html.marketing-site .ibc-root .ibc-composer textarea,
+body.marketing-site .ibc-root .ibc-composer textarea {
+	border: 0 !important;
+}
+
+html.marketing-site .ibc-root .ibc-lead input,
+html.marketing-site .ibc-root .ibc-lead select,
+html.marketing-site .ibc-root .ibc-lead textarea,
+body.marketing-site .ibc-root .ibc-lead input,
+body.marketing-site .ibc-root .ibc-lead select,
+body.marketing-site .ibc-root .ibc-lead textarea {
+	border: 1.5px solid var(--ibc-line, #d6e2f8) !important;
+}
+
+html.marketing-site .elementor-select-wrapper,
+body.marketing-site .elementor-select-wrapper {
+	border: none !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Elementor / ElementsKit — never keep pink accents                          */
+/* -------------------------------------------------------------------------- */
+body.marketing-site .elementor-button,
+body.marketing-site .elementor-button:visited,
+body.marketing-site a.elementor-button,
+body.marketing-site button.elementor-button {
+	/* Default fill buttons → brand blue (outline ones restored below) */
+	--e-global-color-accent: #18479f;
+}
+
+body.marketing-site .elementor-button.elementor-size-sm,
+body.marketing-site .elementor-button.elementor-size-md,
+body.marketing-site .elementor-button.elementor-size-lg,
+body.marketing-site .elementor-button.elementor-size-xl {
+	/* Theme pink borders */
+	border-color: #18479f !important;
+}
+
+body.marketing-site .ekit-wid-con a:hover,
+body.marketing-site .ekit-wid-con a:focus,
+body.marketing-site .ekit-wid-con .elementskit-navbar-nav > li > a:hover,
+body.marketing-site .ekit-wid-con .elementskit-navbar-nav > li > a:focus,
+body.marketing-site .ekit-wid-con .elementskit-navbar-nav > li:hover > a,
+body.marketing-site .ekit-wid-con .elementskit-navbar-nav > li.current-menu-item > a,
+body.marketing-site .ekit-wid-con .elementskit-navbar-nav .elementskit-submenu-panel > li > a:hover {
+	color: #18479f !important;
+}
+
+body.marketing-site .dialog-close-button,
+body.marketing-site .elementor-popup-modal .dialog-close-button,
+body.marketing-site .elementor-lightbox .dialog-close-button,
+body.marketing-site .elementskit-menu-close,
+body.marketing-site .eicon-close,
+body.marketing-site button.dialog-close-button,
+body.marketing-site a.dialog-close-button {
+	color: #0f172a !important;
+	border-color: #cbd5e1 !important;
+	background-color: #f1f5f9 !important;
+	fill: #0f172a !important;
+}
+
+body.marketing-site .dialog-close-button svg,
+body.marketing-site .dialog-close-button i,
+body.marketing-site .eicon-close,
+body.marketing-site .elementor-popup-modal .dialog-close-button svg,
+body.marketing-site .elementskit-menu-close svg {
+	fill: #0f172a !important;
+	color: #0f172a !important;
+	stroke: #0f172a !important;
+}
+
+body.marketing-site .elementor-swiper-button,
+body.marketing-site .swiper-button-next,
+body.marketing-site .swiper-button-prev,
+body.marketing-site .elementor-swiper-button-next,
+body.marketing-site .elementor-swiper-button-prev {
+	color: #18479f !important;
+}
+
+body.marketing-site .elementor-swiper-button svg,
+body.marketing-site .swiper-button-next svg,
+body.marketing-site .swiper-button-prev svg {
+	fill: #18479f !important;
+	color: #18479f !important;
+}
+
+/* Magenta in gradients → brand blue */
+body.marketing-site .gradient-text,
+body.marketing-site .elementor-9 .elementor-element.elementor-element-b0b21cc .elementor-headline-dynamic-text {
+	background: linear-gradient(to right, #18479f, #2d74d9) !important;
+	-webkit-background-clip: text !important;
+	background-clip: text !important;
+	-webkit-text-fill-color: transparent !important;
+}
+
+/* data-color="pink" panels → white / brand blue accents */
+body.marketing-site [data-color='pink'],
+body.marketing-site .color-pink {
+	background-color: #ffffff !important;
+	color: #0f172a !important;
+}
+
+body.marketing-site .buttons5.color-pink a,
+body.marketing-site [data-color='pink'] a {
+	border-bottom-color: #18479f !important;
+	color: #18479f !important;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Hard overrides for Elementor theme pink tokens on marketing                */
+/* Covers bg / text / border / outline / fill / caret                         */
+/* -------------------------------------------------------------------------- */
+body.marketing-site .elementor a,
+body.marketing-site .elementor a:link,
+body.marketing-site .elementor a:visited {
+	/* Beat hello-elementor `a { color:#c36 }` */
+	color: inherit;
+}
+
+body.marketing-site .elementor a:hover,
+body.marketing-site .elementor a:focus,
+body.marketing-site .elementor a:active {
+	color: #18479f;
+}
+
+/* Footer is outside Elementor content — keep light text on navy */
+body.marketing-site .site-footer a,
+body.marketing-site .site-footer a:link,
+body.marketing-site .site-footer a:visited {
+	color: rgba(255, 255, 255, 0.82) !important;
+}
+
+body.marketing-site .site-footer a:hover,
+body.marketing-site .site-footer a:focus,
+body.marketing-site .site-footer a:active {
+	color: #ffffff !important;
+}
+
+body.marketing-site button:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not([class*='cc-booking']),
+body.marketing-site [type='button']:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not([class*='cc-booking']),
+body.marketing-site [type='submit']:not(.elementor-button):not(.ibridge-enquiry-form__submit):not([class*='cc-booking']),
+body.marketing-site [type='reset'] {
+	/* Beat hello-elementor pink border/text on native controls */
+	border-color: #000000 !important;
+}
+
+body.marketing-site button:hover:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not([class*='cc-booking']),
+body.marketing-site button:focus:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not([class*='cc-booking']),
+body.marketing-site [type='button']:hover:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not([class*='cc-booking']),
+body.marketing-site [type='button']:focus:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not([class*='cc-booking']),
+body.marketing-site [type='submit']:hover:not(.elementor-button):not(.ibridge-enquiry-form__submit):not([class*='cc-booking']),
+body.marketing-site [type='submit']:focus:not(.elementor-button):not(.ibridge-enquiry-form__submit):not([class*='cc-booking']) {
+	/* Beat hello-elementor pink fill hover */
+	background-color: transparent !important;
+	color: #0f172a !important;
+	border-color: #000000 !important;
+}
+
+/* Tab / accordion active states that theme paints pink */
+body.marketing-site .elementor-tab-title.elementor-active,
+body.marketing-site .elementor-tab-title.elementor-active a,
+body.marketing-site .elementor-toggle-title.elementor-active,
+body.marketing-site .e-n-tab-title[aria-selected='true'] {
+	color: #18479f !important;
+	border-color: #18479f !important;
+}
+
+body.marketing-site .elementor-widget-icon-box .elementor-icon,
+body.marketing-site .elementor-view-stacked .elementor-icon {
+	/* icon boxes sometimes use accent pink */
+	background-color: transparent;
+}
+
+body.marketing-site .elementor-view-stacked .elementor-icon {
+	background-color: #18479f !important;
+	color: #ffffff !important;
+	fill: #ffffff !important;
+}
+
+body.marketing-site .elementor-view-framed .elementor-icon,
+body.marketing-site .elementor-view-default .elementor-icon {
+	color: #18479f !important;
+	fill: #18479f !important;
+	border-color: #18479f !important;
+}
+
+/* Home hero CTAs — outline / light (no pink) */
+body.marketing-site .elementor-9 .elementor-element.elementor-element-0eba2a6 .elementor-button {
+	color: #18479f !important;
+	fill: #18479f !important;
+	background-color: transparent !important;
+	border-style: solid !important;
+	border-width: 1px !important;
+	border-color: #18479f !important;
+	border-radius: 12px !important;
+}
+
+body.marketing-site .elementor-9 .elementor-element.elementor-element-0eba2a6 .elementor-button:hover,
+body.marketing-site .elementor-9 .elementor-element.elementor-element-0eba2a6 .elementor-button:focus {
+	color: #ffffff !important;
+	fill: #ffffff !important;
+	background-color: #18479f !important;
+	border-color: #18479f !important;
+}
+
+body.marketing-site .elementor-9 .elementor-element.elementor-element-aa5eef2 .elementor-button {
+	color: #18479f !important;
+	fill: #18479f !important;
+	background-color: #f0f0f2 !important;
+	border: none !important;
+}
+
+body.marketing-site .elementor-9 .elementor-element.elementor-element-aa5eef2 .elementor-button:hover,
+body.marketing-site .elementor-9 .elementor-element.elementor-element-aa5eef2 .elementor-button:focus {
+	color: #ffffff !important;
+	fill: #ffffff !important;
+	background-color: #000000 !important;
+}
+
+body.marketing-site .elementor-9 .elementor-element.elementor-element-88659a0 .elementor-button,
+body.marketing-site .elementor-9 .elementor-element.elementor-element-13aa334 .elementor-button,
+body.marketing-site .elementor-9 .elementor-element.elementor-element-c36c4d5 .elementor-button {
+	color: #18479f !important;
+	fill: #18479f !important;
+	background-color: transparent !important;
+	border-style: solid !important;
+	border-width: 1px !important;
+	border-color: #18479f !important;
+}
+
+body.marketing-site .elementor-9 .elementor-element.elementor-element-88659a0 .elementor-button:hover,
+body.marketing-site .elementor-9 .elementor-element.elementor-element-88659a0 .elementor-button:focus,
+body.marketing-site .elementor-9 .elementor-element.elementor-element-13aa334 .elementor-button:hover,
+body.marketing-site .elementor-9 .elementor-element.elementor-element-13aa334 .elementor-button:focus,
+body.marketing-site .elementor-9 .elementor-element.elementor-element-c36c4d5 .elementor-button:hover,
+body.marketing-site .elementor-9 .elementor-element.elementor-element-c36c4d5 .elementor-button:focus {
+	color: #ffffff !important;
+	fill: #ffffff !important;
+	background-color: #18479f !important;
+	border-color: #18479f !important;
+}

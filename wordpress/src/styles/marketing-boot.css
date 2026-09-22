@@ -1,0 +1,100 @@
+/* Marketing boot splash + soft shell / route reveals (wordpress only) */
+
+.marketing-boot-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  font-family: "Open Sans", system-ui, sans-serif;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.marketing-boot-splash--hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.marketing-boot-splash__logo {
+  display: block;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 1.75rem;
+  object-fit: contain;
+}
+
+.marketing-boot-splash__spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #e8eef8;
+  border-top-color: #0e2d8e;
+  border-radius: 50%;
+  animation: marketing-boot-spin 0.85s linear infinite;
+}
+
+.marketing-boot-splash__tagline {
+  margin: 1.25rem 0 0;
+  font-size: 0.875rem;
+  color: #0e2d8e;
+  letter-spacing: 0.01em;
+  animation: marketing-boot-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes marketing-boot-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes marketing-boot-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Hide unstyled marketing HTML until critical Elementor CSS is ready.
+   Disabled for Astro: BaseLayout already ships Elementor CSS in <head>.
+   Keeping opacity:0 here blanks the page after React hydration. */
+.marketing-shell--pending {
+  /* opacity: 0; */
+  /* pointer-events: none; */
+}
+
+.marketing-shell--ready {
+  opacity: 1;
+}
+
+html.marketing-styles-pending .marketing-shell {
+  /* opacity: 0; */
+  opacity: 1;
+}
+
+.marketing-page-enter {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marketing-boot-splash {
+    transition: none;
+  }
+
+  .marketing-boot-splash__spinner,
+  .marketing-boot-splash__tagline {
+    animation: none !important;
+  }
+
+  .marketing-shell--ready,
+  .marketing-page-enter {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

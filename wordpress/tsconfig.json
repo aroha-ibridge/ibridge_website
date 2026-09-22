@@ -1,0 +1,16 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "react-router-dom": ["src/shims/react-router-dom.jsx"],
+      "react-helmet-async": ["src/shims/react-helmet-async.jsx"]
+    },
+    "allowJs": true,
+    "strict": false
+  },
+  "include": ["src/**/*", "astro.config.mjs"],
+  "exclude": ["dist", "node_modules", "public"]
+}

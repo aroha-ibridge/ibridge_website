@@ -1,0 +1,65 @@
+/* Programs page: 3-column card grid with compact cards */
+.elementor-497 .elementor-element.elementor-element-647c5c5c > .elementor-widget-wrap.elementor-element-populated {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.elementor-497 .elementor-element.elementor-element-647c5c5c .elementor-inner-section {
+  width: 100%;
+  margin: 0 !important;
+}
+
+/* Force every program card to same compact height + spacing */
+.elementor-497 .elementor-element.elementor-element-647c5c5c .elementor-inner-section .elementor-container {
+  min-height: 240px !important;
+}
+
+.elementor-497 .elementor-element.elementor-element-647c5c5c .elementor-inner-section .elementor-container.elementor-column-gap-default {
+  padding: 16px !important;
+}
+
+/* Compact card headings */
+.elementor-497 .elementor-element.elementor-element-647c5c5c .elementor-inner-section .elementor-widget-heading .elementor-heading-title {
+  font-size: 18px !important;
+  line-height: 1.3 !important;
+}
+
+/* Program Details button — smaller */
+.elementor-497 .elementor-element.elementor-element-647c5c5c .elementor-inner-section .elementor-button {
+  padding: 8px 14px !important;
+  font-size: 13px !important;
+}
+
+/* Icon list spacing */
+.elementor-497 .elementor-element.elementor-element-647c5c5c .elementor-inner-section .elementor-icon-list-items .elementor-icon-list-item {
+  padding-bottom: 0 !important;
+}
+
+.elementor-497 .elementor-element.elementor-element-647c5c5c .elementor-inner-section .elementor-icon-list-text {
+  font-size: 13px !important;
+}
+
+#eael-advance-tabs-527ea3d .eael-tabs-nav {
+  display: none;
+}
+
+#eael-advance-tabs-527ea3d .eael-tabs-content {
+  margin-top: 0;
+}
+
+.programs-card-meta-hidden {
+  display: none !important;
+}
+
+@media (max-width: 1024px) {
+  .elementor-497 .elementor-element.elementor-element-647c5c5c > .elementor-widget-wrap.elementor-element-populated {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .elementor-497 .elementor-element.elementor-element-647c5c5c > .elementor-widget-wrap.elementor-element-populated {
+    grid-template-columns: 1fr;
+  }
+}

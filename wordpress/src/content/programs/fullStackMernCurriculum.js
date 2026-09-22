@@ -1,0 +1,212 @@
+/**
+ * MERN Full Stack — course structure (modules + topics).
+ */
+
+const fullStackMernCurriculum = [
+  {
+    title: 'Frontend Development',
+    topicsLabel: 'Topics Covered',
+    description:
+      'Build modern, responsive user interfaces with HTML5, CSS3, and Bootstrap — from page structure and styling to layouts and production-ready frontend practices.',
+    groups: [
+      {
+        label: 'HTML5',
+        items: [
+          'Web Page Structure',
+          'Semantic HTML',
+          'Forms & Tables',
+          'Multimedia',
+          'Metadata & Accessibility',
+        ],
+      },
+      {
+        label: 'CSS3',
+        items: [
+          'CSS Fundamentals',
+          'Box Model',
+          'Flexbox & Grid',
+          'Responsive Design',
+          'Selectors & Pseudo-Elements',
+          'Animations & Transitions',
+        ],
+      },
+      {
+        label: 'Bootstrap',
+        items: [
+          'Grid System & Utilities',
+          'Components',
+          'Forms',
+          'Navigation',
+          'Responsive Layouts',
+        ],
+      },
+    ],
+  },
+  {
+    title: 'JavaScript Programming',
+    topicsLabel: 'Topics Covered',
+    description:
+      'Learn JavaScript for interactive UIs — language fundamentals, the DOM, events, asynchronous programming, and browser storage.',
+    topics: [
+      'JavaScript Fundamentals',
+      'Variables & Data Types',
+      'Operators & Expressions',
+      'Control Flow',
+      'Functions',
+      'Arrays & Objects',
+      'ES6+ Features',
+      'Scope & Closures',
+      'DOM Manipulation',
+      'Events',
+      'Error Handling',
+      'Asynchronous JavaScript',
+      'Promises',
+      'Async/Await',
+      'Browser APIs',
+      'Local Storage',
+    ],
+  },
+  {
+    title: 'React.js',
+    topicsLabel: 'Topics Covered',
+    description:
+      'Build component-based user interfaces with React — JSX, hooks, routing, forms, API integration, and performance optimization.',
+    topics: [
+      'React Fundamentals',
+      'Components & JSX',
+      'Props & State',
+      'React Hooks',
+      'React Router',
+      'Forms & Validation',
+      'API Integration',
+      'Context API',
+      'State Management Basics',
+      'Component Lifecycle',
+      'Reusable Components',
+      'Performance Optimization',
+      'Component Optimization',
+    ],
+  },
+  {
+    title: 'Database — MongoDB',
+    topicsLabel: 'Topics Covered',
+    description:
+      'Work with MongoDB as the MERN database — documents, CRUD, queries, data modeling, indexing, aggregation, and Atlas.',
+    topics: [
+      'NoSQL Database Fundamentals',
+      'MongoDB Architecture',
+      'Databases & Collections',
+      'Documents & BSON',
+      'CRUD Operations',
+      'Queries & Filters',
+      'Sorting & Pagination',
+      'Data Modeling',
+      'Embedded & Referenced Documents',
+      'Indexing',
+      'Aggregation Framework',
+      'MongoDB Atlas',
+      'Database Connectivity',
+    ],
+  },
+  {
+    title: 'Node.js Backend Development',
+    topicsLabel: 'Topics Covered',
+    description:
+      'Build JavaScript backends with Node.js — architecture, modules, files, streams, environment configuration, and application structure.',
+    topics: [
+      'Node.js Fundamentals',
+      'Node.js Architecture',
+      'NPM & Package Management',
+      'Modules',
+      'File System',
+      'Events & Event Emitters',
+      'Asynchronous Programming',
+      'Streams',
+      'Environment Variables',
+      'Error Handling',
+      'Node.js Application Structure',
+      'Backend Development',
+    ],
+  },
+  {
+    title: 'Express.js & REST API Development',
+    topicsLabel: 'Topics Covered',
+    description:
+      'Create REST APIs with Express.js — routing, middleware, CRUD, validation, authentication, and API testing.',
+    topics: [
+      'Express.js Fundamentals',
+      'Project Structure',
+      'Routing',
+      'Middleware',
+      'Controllers',
+      'Request & Response Handling',
+      'REST API Development',
+      'CRUD APIs',
+      'API Validation',
+      'Error Handling',
+      'Authentication',
+      'Authorization',
+      'API Security',
+      'API Testing',
+    ],
+  },
+  {
+    title: 'Advanced MERN Development',
+    topicsLabel: 'Topics Covered',
+    description:
+      'Add production-ready features — JWT auth, file uploads, payments, real-time communication, caching, and monitoring.',
+    topics: [
+      'JWT Authentication',
+      'Role-Based Access Control',
+      'Password Hashing',
+      'Secure API Development',
+      'File Uploads',
+      'Email Integration',
+      'Payment Gateway Integration',
+      'Real-Time Communication',
+      'WebSockets / Socket.IO',
+      'API Documentation',
+      'Caching Basics',
+      'Logging & Monitoring',
+      'Performance Optimization',
+    ],
+  },
+  {
+    title: 'Git, GitHub & Deployment',
+    topicsLabel: 'Topics Covered',
+    description:
+      'Version-control your work and ship MERN applications with Git, GitHub, environment configuration, and production deployment.',
+    topics: [
+      'Git Fundamentals',
+      'Repository Management',
+      'Branching & Merging',
+      'Pull Requests',
+      'GitHub Workflow',
+      'Environment Variables',
+      'Frontend Deployment',
+      'Backend Deployment',
+      'Database Deployment',
+      'Domain & SSL Basics',
+      'CI/CD Fundamentals',
+    ],
+  },
+  {
+    title: 'Industry Capstone',
+    topicsLabel: 'Topics Covered',
+    description:
+      'Apply the full MERN stack in a portfolio-ready application — React frontend, Node/Express backend, MongoDB, auth, APIs, and production deployment.',
+    topics: [
+      'Full Stack MERN Application Development',
+      'React Frontend Development',
+      'Node.js & Express Backend',
+      'MongoDB Database Integration',
+      'Authentication & Authorization',
+      'REST API Integration',
+      'Responsive UI Development',
+      'Production Deployment',
+      'GitHub Project Management',
+    ],
+  },
+];
+
+export default fullStackMernCurriculum;

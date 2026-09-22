@@ -1,0 +1,385 @@
+/**
+ * Neutralize hello-elementor pink (#c36) for marketing pages only.
+ * Scoped under `.marketing-site` so platform / admin / auth UIs stay untouched.
+ */
+
+/* -------------------------------------------------------------------------- */
+/* Marketing only: Hello Elementor pink (#c36) → black borders               */
+/* -------------------------------------------------------------------------- */
+html.marketing-site button:not([class*='cc-booking']),
+html.marketing-site [type='button']:not([class*='cc-booking']),
+html.marketing-site [type='submit']:not([class*='cc-booking']),
+html.marketing-site [type='reset']:not([class*='cc-booking']),
+body.marketing-site button:not([class*='cc-booking']),
+body.marketing-site [type='button']:not([class*='cc-booking']),
+body.marketing-site [type='submit']:not([class*='cc-booking']),
+body.marketing-site [type='reset']:not([class*='cc-booking']) {
+	border-color: #000000 !important;
+}
+
+html.marketing-site button:hover:not([class*='cc-booking']),
+html.marketing-site button:focus:not([class*='cc-booking']),
+html.marketing-site button:focus-visible:not([class*='cc-booking']),
+html.marketing-site [type='button']:hover:not([class*='cc-booking']),
+html.marketing-site [type='button']:focus:not([class*='cc-booking']),
+html.marketing-site [type='button']:focus-visible:not([class*='cc-booking']),
+html.marketing-site [type='submit']:hover:not([class*='cc-booking']),
+html.marketing-site [type='submit']:focus:not([class*='cc-booking']),
+html.marketing-site [type='submit']:focus-visible:not([class*='cc-booking']),
+html.marketing-site [type='reset']:hover:not([class*='cc-booking']),
+html.marketing-site [type='reset']:focus:not([class*='cc-booking']),
+html.marketing-site [type='reset']:focus-visible:not([class*='cc-booking']),
+body.marketing-site button:hover:not([class*='cc-booking']),
+body.marketing-site button:focus:not([class*='cc-booking']),
+body.marketing-site button:focus-visible:not([class*='cc-booking']),
+body.marketing-site [type='button']:hover:not([class*='cc-booking']),
+body.marketing-site [type='button']:focus:not([class*='cc-booking']),
+body.marketing-site [type='button']:focus-visible:not([class*='cc-booking']),
+body.marketing-site [type='submit']:hover:not([class*='cc-booking']),
+body.marketing-site [type='submit']:focus:not([class*='cc-booking']),
+body.marketing-site [type='submit']:focus-visible:not([class*='cc-booking']),
+body.marketing-site [type='reset']:hover:not([class*='cc-booking']),
+body.marketing-site [type='reset']:focus:not([class*='cc-booking']),
+body.marketing-site [type='reset']:focus-visible:not([class*='cc-booking']) {
+	border-color: #000000 !important;
+}
+
+/* Kill theme pink hover fill (#c36) — branded CTAs restore their own colors below */
+html.marketing-site button:hover:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not([class*='cc-booking']),
+html.marketing-site button:focus:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not([class*='cc-booking']),
+html.marketing-site button:focus-visible:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not([class*='cc-booking']),
+html.marketing-site [type='button']:hover:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not([class*='cc-booking']),
+html.marketing-site [type='button']:focus:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not([class*='cc-booking']),
+html.marketing-site [type='button']:focus-visible:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not([class*='cc-booking']),
+html.marketing-site [type='submit']:hover:not(.elementor-button):not(.ibridge-enquiry-form__submit):not([class*='cc-booking']),
+html.marketing-site [type='submit']:focus:not(.elementor-button):not(.ibridge-enquiry-form__submit):not([class*='cc-booking']),
+html.marketing-site [type='submit']:focus-visible:not(.elementor-button):not(.ibridge-enquiry-form__submit):not([class*='cc-booking']),
+body.marketing-site button:hover:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not([class*='cc-booking']),
+body.marketing-site button:focus:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not([class*='cc-booking']),
+body.marketing-site button:focus-visible:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not([class*='cc-booking']),
+body.marketing-site [type='button']:hover:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not([class*='cc-booking']),
+body.marketing-site [type='button']:focus:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not([class*='cc-booking']),
+body.marketing-site [type='button']:focus-visible:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not([class*='cc-booking']),
+body.marketing-site [type='submit']:hover:not(.elementor-button):not(.ibridge-enquiry-form__submit):not([class*='cc-booking']),
+body.marketing-site [type='submit']:focus:not(.elementor-button):not(.ibridge-enquiry-form__submit):not([class*='cc-booking']),
+body.marketing-site [type='submit']:focus-visible:not(.elementor-button):not(.ibridge-enquiry-form__submit):not([class*='cc-booking']) {
+	background-color: transparent;
+	color: inherit;
+	text-decoration: none;
+}
+
+/* Full border shorthand — Tailwind preflight is off, so border-color alone
+   leaves some controls without a visible edge (style/width missing). */
+html.marketing-site input[type='date'],
+html.marketing-site input[type='email'],
+html.marketing-site input[type='number'],
+html.marketing-site input[type='password'],
+html.marketing-site input[type='search'],
+html.marketing-site input[type='tel'],
+html.marketing-site input[type='text'],
+html.marketing-site input[type='time'],
+html.marketing-site input[type='url'],
+html.marketing-site input[type='file'],
+html.marketing-site select,
+html.marketing-site textarea,
+html.marketing-site .elementor-field-textual,
+html.marketing-site .elementor-select-wrapper select,
+html.marketing-site .ibridge-enquiry-form__input,
+html.marketing-site .ibridge-enquiry-form__select,
+body.marketing-site input[type='date'],
+body.marketing-site input[type='email'],
+body.marketing-site input[type='number'],
+body.marketing-site input[type='password'],
+body.marketing-site input[type='search'],
+body.marketing-site input[type='tel'],
+body.marketing-site input[type='text'],
+body.marketing-site input[type='time'],
+body.marketing-site input[type='url'],
+body.marketing-site input[type='file'],
+body.marketing-site select,
+body.marketing-site textarea,
+body.marketing-site .elementor-field-textual,
+body.marketing-site .elementor-select-wrapper select,
+body.marketing-site .ibridge-enquiry-form__input,
+body.marketing-site .ibridge-enquiry-form__select {
+	border: 1px solid #9ca3af !important;
+	border-style: solid !important;
+}
+
+html.marketing-site input[type='date']:hover,
+html.marketing-site input[type='email']:hover,
+html.marketing-site input[type='number']:hover,
+html.marketing-site input[type='password']:hover,
+html.marketing-site input[type='search']:hover,
+html.marketing-site input[type='tel']:hover,
+html.marketing-site input[type='text']:hover,
+html.marketing-site input[type='time']:hover,
+html.marketing-site input[type='url']:hover,
+html.marketing-site select:hover,
+html.marketing-site textarea:hover,
+html.marketing-site .elementor-field-textual:hover,
+html.marketing-site .elementor-select-wrapper select:hover,
+html.marketing-site .ibridge-enquiry-form__input:hover,
+html.marketing-site .ibridge-enquiry-form__select:hover,
+body.marketing-site input[type='date']:hover,
+body.marketing-site input[type='email']:hover,
+body.marketing-site input[type='number']:hover,
+body.marketing-site input[type='password']:hover,
+body.marketing-site input[type='search']:hover,
+body.marketing-site input[type='tel']:hover,
+body.marketing-site input[type='text']:hover,
+body.marketing-site input[type='time']:hover,
+body.marketing-site input[type='url']:hover,
+body.marketing-site select:hover,
+body.marketing-site textarea:hover,
+body.marketing-site .elementor-field-textual:hover,
+body.marketing-site .elementor-select-wrapper select:hover,
+body.marketing-site .ibridge-enquiry-form__input:hover,
+body.marketing-site .ibridge-enquiry-form__select:hover {
+	border: 1px solid #9ca3af !important;
+}
+
+html.marketing-site input[type='date']:focus,
+html.marketing-site input[type='email']:focus,
+html.marketing-site input[type='number']:focus,
+html.marketing-site input[type='password']:focus,
+html.marketing-site input[type='search']:focus,
+html.marketing-site input[type='tel']:focus,
+html.marketing-site input[type='text']:focus,
+html.marketing-site input[type='time']:focus,
+html.marketing-site input[type='url']:focus,
+html.marketing-site select:focus,
+html.marketing-site textarea:focus,
+html.marketing-site .elementor-field-textual:focus,
+html.marketing-site .elementor-select-wrapper select:focus,
+html.marketing-site .ibridge-enquiry-form__input:focus,
+html.marketing-site .ibridge-enquiry-form__select:focus,
+body.marketing-site input[type='date']:focus,
+body.marketing-site input[type='email']:focus,
+body.marketing-site input[type='number']:focus,
+body.marketing-site input[type='password']:focus,
+body.marketing-site input[type='search']:focus,
+body.marketing-site input[type='tel']:focus,
+body.marketing-site input[type='text']:focus,
+body.marketing-site input[type='time']:focus,
+body.marketing-site input[type='url']:focus,
+body.marketing-site select:focus,
+body.marketing-site textarea:focus,
+body.marketing-site .elementor-field-textual:focus,
+body.marketing-site .elementor-select-wrapper select:focus,
+body.marketing-site .ibridge-enquiry-form__input:focus,
+body.marketing-site .ibridge-enquiry-form__select:focus {
+	border: 1px solid #1d4ed8 !important;
+	outline-color: #1d4ed8;
+}
+
+/* Border lives on the wrapper — keep the inner control borderless */
+html.marketing-site .trending-skills__search-input,
+body.marketing-site .trending-skills__search-input,
+html.marketing-site .ibc-root .ibc-composer textarea,
+body.marketing-site .ibc-root .ibc-composer textarea {
+	border: 0 !important;
+	box-shadow: none !important;
+}
+
+/* Chatbot lead card keeps its own field chrome */
+html.marketing-site .ibc-root .ibc-lead input,
+html.marketing-site .ibc-root .ibc-lead select,
+html.marketing-site .ibc-root .ibc-lead textarea,
+body.marketing-site .ibc-root .ibc-lead input,
+body.marketing-site .ibc-root .ibc-lead select,
+body.marketing-site .ibc-root .ibc-lead textarea {
+	border: 1.5px solid var(--ibc-line, #d6e2f8) !important;
+}
+
+html.marketing-site .ibc-root .ibc-lead input:focus,
+html.marketing-site .ibc-root .ibc-lead select:focus,
+html.marketing-site .ibc-root .ibc-lead textarea:focus,
+body.marketing-site .ibc-root .ibc-lead input:focus,
+body.marketing-site .ibc-root .ibc-lead select:focus,
+body.marketing-site .ibc-root .ibc-lead textarea:focus {
+	border-color: var(--ibc-brand-2, #3f7ae0) !important;
+}
+
+/* Select chrome is on <select>, not the Elementor wrapper */
+html.marketing-site .elementor-select-wrapper,
+body.marketing-site .elementor-select-wrapper {
+	border: none !important;
+	box-shadow: none !important;
+}
+
+/* Solid CTAs: no pink border — do NOT restyle all .elementor-button (home uses outlines) */
+.ibridge-enquiry-form__submit,
+.ibridge-enquiry-form__submit:hover,
+.ibridge-enquiry-form__submit:focus,
+.ibridge-enquiry-form__submit:focus-visible,
+.ibridge-enquiry-form__submit:active,
+.program-cta-modal button.program-cta-modal__button,
+.program-cta-modal button.program-cta-modal__button:hover,
+.program-cta-modal button.program-cta-modal__button:focus,
+.program-cta-modal button.program-cta-modal__button:focus-visible,
+.program-cta-modal button.program-cta-modal__button:active {
+	border-color: transparent !important;
+	background: #18479f !important;
+	background-color: #18479f !important;
+	color: #ffffff !important;
+	-webkit-text-fill-color: #ffffff !important;
+	opacity: 1 !important;
+	visibility: visible !important;
+}
+
+.ibridge-enquiry-form__submit:hover:not(:disabled),
+.ibridge-enquiry-form__submit:focus:not(:disabled),
+.ibridge-enquiry-form__submit:focus-visible:not(:disabled) {
+	background: #123a85 !important;
+	background-color: #123a85 !important;
+	color: #ffffff !important;
+	-webkit-text-fill-color: #ffffff !important;
+}
+
+.tw-scope button {
+	-webkit-appearance: none;
+	appearance: none;
+	border: none !important;
+	background-color: transparent !important;
+	color: inherit !important;
+	font-size: inherit;
+	font-weight: inherit;
+	text-transform: none;
+	white-space: normal;
+}
+
+.tw-scope button:hover,
+.tw-scope button:focus,
+.tw-scope button:focus-visible {
+	background-color: transparent !important;
+	color: inherit !important;
+	text-decoration: none;
+}
+
+/* Kill Elementor red/pink link color inside Tailwind surfaces */
+.tw-scope a,
+.tw-scope a:link,
+.tw-scope a:visited,
+.tw-scope a:hover,
+.tw-scope a:active,
+.tw-scope a:focus {
+	color: inherit;
+}
+
+.tw-scope a.text-brand,
+.tw-scope a.text-brand:link,
+.tw-scope a.text-brand:visited,
+.tw-scope a.text-brand:hover,
+.tw-scope a.text-brand:active,
+.tw-scope a.text-brand:focus,
+.tw-scope .text-brand {
+	color: #123a85 !important; /* brand-700 / blue-700 */
+}
+
+/* Outline CTAs that fill on hover need white label — beat text-brand !important */
+.tw-scope a.border-brand.text-brand:hover,
+.tw-scope a.border-brand.text-brand:focus,
+.tw-scope a.border-brand.text-brand:focus-visible,
+.tw-scope a.border-brand:hover,
+.tw-scope a.border-brand:focus,
+.tw-scope a.border-brand:focus-visible,
+.tw-scope button.border-brand:hover,
+.tw-scope button.border-brand:focus,
+.tw-scope button.border-brand:focus-visible {
+	color: #ffffff !important;
+	-webkit-text-fill-color: #ffffff !important;
+}
+
+.tw-scope a.hover\:text-brand:hover,
+.tw-scope a.group:hover .group-hover\:text-brand,
+.tw-scope .hover\:text-brand:hover,
+.tw-scope .group:hover .group-hover\:text-brand {
+	color: #123a85 !important;
+}
+
+/* Outline / ghost CTAs — never inherit #c36 */
+.tw-scope a.border-brand,
+.tw-scope a.border-brand:link,
+.tw-scope a.border-brand:visited,
+.tw-scope a.border-brand:hover,
+.tw-scope a.border-brand:focus,
+.tw-scope button.border-brand {
+	border-color: #123a85 !important;
+	color: #123a85 !important;
+	background-color: transparent !important;
+}
+
+.tw-scope a.border-brand:hover,
+.tw-scope a.border-brand:focus,
+.tw-scope button.border-brand:hover,
+.tw-scope button.border-brand:focus {
+	background-color: #18479f !important;
+	border-color: #18479f !important;
+	color: #ffffff !important;
+}
+
+/* Restore solid brand CTA buttons (Button primitive) */
+.tw-scope button.bg-brand,
+.tw-scope a.bg-brand {
+	background-color: #18479f !important;
+	color: #fff !important;
+}
+
+.tw-scope button.bg-brand:hover,
+.tw-scope button.bg-brand:focus,
+.tw-scope button.bg-brand:focus-visible,
+.tw-scope a.bg-brand:hover,
+.tw-scope a.bg-brand:focus {
+	background-color: #123a85 !important;
+	color: #fff !important;
+}
+
+/* Soft gray / white surfaces used by program-page controls */
+.tw-scope button.bg-white,
+.tw-scope button.bg-white:hover,
+.tw-scope button.bg-white:focus,
+.tw-scope button.bg-white:focus-visible,
+.tw-scope a.bg-white,
+.tw-scope a.bg-white:link,
+.tw-scope a.bg-white:visited,
+.tw-scope a.bg-white:hover,
+.tw-scope a.bg-white:focus,
+.tw-scope a.bg-white:focus-visible {
+	background-color: #ffffff !important;
+}
+
+.tw-scope button.bg-surface-muted,
+.tw-scope button.bg-surface-muted:hover,
+.tw-scope button.bg-surface-muted:focus,
+.tw-scope button.bg-surface-muted:focus-visible {
+	background-color: #f1f5f9 !important;
+}
+
+/* Lightbox / overlay controls */
+.tw-scope button.bg-white\/10,
+.tw-scope button.bg-white\/10:hover,
+.tw-scope button.bg-white\/10:focus,
+.tw-scope button.bg-white\/10:focus-visible {
+	background-color: rgba(255, 255, 255, 0.1) !important;
+	color: #fff !important;
+}
+
+.tw-scope button:hover.bg-white\/20,
+.tw-scope button.hover\:bg-white\/20:hover {
+	background-color: rgba(255, 255, 255, 0.2) !important;
+	color: #fff !important;
+}
+
+/* FAQ question hover — soft blue wash */
+.elementor-508 #faq .program-faq-item__trigger:hover,
+.elementor-508 #faq .program-faq-item__trigger:focus-visible {
+	background-color: rgba(24, 71, 159, 0.06) !important;
+	color: #0f172a !important;
+}
+
+.elementor-508 #faq .program-faq-item__trigger:hover svg,
+.elementor-508 #faq .program-faq-item__trigger:focus-visible svg {
+	color: #18479f !important;
+	stroke: #18479f !important;
+}

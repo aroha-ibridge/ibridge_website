@@ -1,0 +1,401 @@
+/* Premium Enterprise SaaS Offerings mega menu */
+
+.offerings-saas {
+	font-family: 'Inter', sans-serif;
+	width: min(1200px, calc(100vw - 48px));
+	background: #ffffff;
+	border: 1px solid #e8edf3;
+	border-radius: 16px;
+	box-shadow:
+		0 24px 60px -20px rgba(15, 23, 42, 0.22),
+		0 8px 24px -12px rgba(24, 71, 159, 0.12);
+	overflow: hidden;
+}
+
+.offerings-saas__layout {
+	display: grid;
+	grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+	min-height: 480px;
+}
+
+.offerings-saas__main {
+	padding: 28px 28px 24px 32px;
+	background: #ffffff;
+}
+
+.offerings-saas__heading {
+	margin: 0 0 20px;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: #18479f;
+}
+
+.offerings-saas__columns {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 8px 36px;
+}
+
+.offerings-saas__category {
+	margin-bottom: 22px;
+}
+
+.offerings-saas__category:last-child {
+	margin-bottom: 0;
+}
+
+.offerings-saas__category-title {
+	margin: 0 0 10px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #eef2f6;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	color: #0f172a;
+}
+
+.offerings-saas__list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.offerings-saas__link {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 10px 8px 12px;
+	border-radius: 8px;
+	color: #334155 !important;
+	font-size: 13.5px;
+	font-weight: 500;
+	line-height: 1.35;
+	text-decoration: none !important;
+	transition:
+		background-color 0.18s ease,
+		color 0.18s ease,
+		transform 0.18s ease,
+		padding-left 0.18s ease;
+}
+
+.offerings-saas__link-accent {
+	position: absolute;
+	left: 0;
+	top: 6px;
+	bottom: 6px;
+	width: 4px;
+	border-radius: 999px;
+	background: #18479f;
+	opacity: 0;
+	transform: scaleY(0.6);
+	transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.offerings-saas__link-label {
+	flex: 1;
+	min-width: 0;
+}
+
+.offerings-saas__link-arrow {
+	flex-shrink: 0;
+	opacity: 0;
+	transform: translateX(-4px);
+	color: #18479f;
+	transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.offerings-saas__link:hover,
+.offerings-saas__link:focus {
+	background: rgba(24, 71, 159, 0.07);
+	color: #18479f !important;
+	padding-left: 14px;
+	outline: none;
+}
+
+.offerings-saas__link:hover .offerings-saas__link-accent,
+.offerings-saas__link:focus .offerings-saas__link-accent {
+	opacity: 1;
+	transform: scaleY(1);
+}
+
+.offerings-saas__link:hover .offerings-saas__link-arrow,
+.offerings-saas__link:focus .offerings-saas__link-arrow {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+/* Promo panel */
+.offerings-saas__promo {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	background: linear-gradient(160deg, #123a85 0%, #18479f 42%, #2d4a9c 72%, #312e81 100%);
+	color: #ffffff;
+	overflow: hidden;
+}
+
+.offerings-saas__promo-media {
+	position: relative;
+	height: 42%;
+	min-height: 180px;
+	max-height: 220px;
+	flex-shrink: 0;
+	overflow: hidden;
+}
+
+.offerings-saas__promo-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	opacity: 0.85;
+}
+
+.offerings-saas__promo-media-fade {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(18, 58, 133, 0.15) 0%, #123a85 100%);
+}
+
+.offerings-saas__promo-body {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	padding: 8px 24px 22px;
+}
+
+.offerings-saas__promo-label {
+	display: inline-flex;
+	align-self: flex-start;
+	margin-bottom: 10px;
+	padding: 4px 10px;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.14);
+	border: 1px solid rgba(255, 255, 255, 0.22);
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: #ffffff;
+}
+
+.offerings-saas__promo-title {
+	margin: 0 0 10px;
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 1.25;
+	letter-spacing: -0.02em;
+	color: #ffffff;
+}
+
+.offerings-saas__promo-desc {
+	margin: 0 0 14px;
+	font-size: 13.5px;
+	line-height: 1.55;
+	color: rgba(255, 255, 255, 0.88);
+}
+
+.offerings-saas__badges {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-bottom: 18px;
+}
+
+.offerings-saas__badge {
+	padding: 5px 10px;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.12);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	font-size: 11.5px;
+	font-weight: 600;
+	color: #ffffff;
+}
+
+.offerings-saas__promo-actions {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 10px;
+	margin-bottom: 20px;
+}
+
+.offerings-saas__promo-cta {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 11px 18px;
+	border-radius: 10px;
+	background: #ffffff !important;
+	color: #123a85 !important;
+	font-size: 14px;
+	font-weight: 700;
+	text-decoration: none !important;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+	transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.offerings-saas__promo-cta:hover,
+.offerings-saas__promo-cta:focus {
+	transform: translateY(-1px);
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+	color: #0f172a !important;
+}
+
+.offerings-saas__promo-secondary {
+	font-size: 13px;
+	font-weight: 600;
+	color: rgba(255, 255, 255, 0.92) !important;
+	text-decoration: underline !important;
+	text-underline-offset: 3px;
+}
+
+.offerings-saas__promo-secondary:hover,
+.offerings-saas__promo-secondary:focus {
+	color: #ffffff !important;
+}
+
+.offerings-saas__stats {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 8px;
+	margin-top: auto;
+	padding-top: 16px;
+	border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.offerings-saas__stat {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+	min-width: 0;
+}
+
+.offerings-saas__stat-value {
+	font-size: 15px;
+	font-weight: 700;
+	line-height: 1.2;
+	color: #ffffff;
+}
+
+.offerings-saas__stat-label {
+	font-size: 10px;
+	font-weight: 500;
+	line-height: 1.3;
+	color: rgba(255, 255, 255, 0.75);
+}
+
+/* Panel width + animation (desktop ElementsKit) */
+@media (min-width: 1025px) {
+	/* Hide shared white caret — promo panel has its own visual language */
+	.ekit-wid-con
+		.elementskit-menu-po-center
+		.offerings-megamenu-item.elementskit-megamenu-has.top_position.elementskit-dropdown-menu-default_width
+		> .elementskit-megamenu-panel.offerings-megamenu-panel::after {
+		display: none;
+	}
+
+	.ekit-wid-con
+		.elementskit-menu-po-center
+		.offerings-megamenu-item.elementskit-megamenu-has.top_position.elementskit-dropdown-menu-default_width
+		> .elementskit-megamenu-panel.offerings-megamenu-panel {
+		width: min(1200px, calc(100vw - 48px));
+		left: 50%;
+		padding-top: 12px;
+		transform: translateX(-38%) translateY(10px);
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition:
+			opacity 0.22s ease,
+			visibility 0.22s ease,
+			transform 0.22s ease;
+	}
+
+	.ekit-wid-con
+		.elementskit-menu-po-center
+		.offerings-megamenu-item.elementskit-megamenu-has.top_position.elementskit-dropdown-menu-default_width:hover
+		> .elementskit-megamenu-panel.offerings-megamenu-panel,
+	.ekit-wid-con
+		.elementskit-menu-po-center
+		.offerings-megamenu-item.elementskit-megamenu-has.top_position.elementskit-dropdown-menu-default_width:focus-within
+		> .elementskit-megamenu-panel.offerings-megamenu-panel {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+		transform: translateX(-38%) translateY(0);
+		transition-delay: 0s;
+	}
+
+	.ekit-wid-con
+		.elementskit-menu-po-center
+		.offerings-megamenu-item.is-closed:hover
+		> .elementskit-megamenu-panel.offerings-megamenu-panel,
+	.ekit-wid-con
+		.elementskit-menu-po-center
+		.offerings-megamenu-item.is-closed
+		> .elementskit-megamenu-panel.offerings-megamenu-panel {
+		opacity: 0 !important;
+		visibility: hidden !important;
+		pointer-events: none !important;
+		transform: translateX(-38%) translateY(6px) !important;
+	}
+
+	.ekit-wid-con
+		.elementskit-menu-po-center
+		.programs-megamenu-item:not(.offerings-megamenu-item):not(.products-megamenu-item):not(.programs-courses-megamenu-item).elementskit-megamenu-has.top_position.elementskit-dropdown-menu-default_width
+		> .elementskit-megamenu-panel {
+		width: min(380px, calc(100vw - 48px));
+	}
+}
+
+/* Mobile / tablet offcanvas */
+@media (max-width: 1024px) {
+	.offerings-saas {
+		width: 100%;
+		border-radius: 12px;
+		box-shadow: none;
+		border: 1px solid #e8edf3;
+	}
+
+	.offerings-saas__layout {
+		grid-template-columns: 1fr;
+		min-height: 0;
+	}
+
+	.offerings-saas__main {
+		padding: 16px;
+	}
+
+	.offerings-saas__columns {
+		grid-template-columns: 1fr;
+		gap: 4px;
+	}
+
+	.offerings-saas__promo-media {
+		height: 110px;
+	}
+
+	.offerings-saas__promo-body {
+		padding: 10px 16px 16px;
+	}
+
+	.offerings-saas__promo-title {
+		font-size: 18px;
+	}
+
+	.offerings-saas__stats {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 10px;
+	}
+
+	.ekit-wid-con .offerings-megamenu-panel {
+		padding: 0 12px 12px !important;
+	}
+}

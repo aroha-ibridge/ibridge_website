@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-label="Java">
+  <rect width="128" height="128" rx="24" fill="#FFFFFF"/>
+  <!-- Official-style Java colors: cup + steam -->
+  <g transform="translate(64 70)">
+    <!-- cup body -->
+    <path fill="#F89820" d="M-28-18h48c3.3 0 6 2.7 6 6v4c0 17.7-14.3 32-32 32s-32-14.3-32-32v-4c0-3.3 2.7-6 6-6h4z"/>
+    <path fill="#ED8B00" d="M-28-18h48v10h-48z"/>
+    <!-- handle -->
+    <path fill="none" stroke="#ED8B00" stroke-width="7" stroke-linecap="round" d="M26-10c12 0 18 10 12 20-3 5-9 7-14 6"/>
+    <!-- saucer -->
+    <ellipse cx="0" cy="28" rx="36" ry="7" fill="#5382A1"/>
+    <ellipse cx="0" cy="26" rx="30" ry="5" fill="#F89820"/>
+  </g>
+  <!-- steam -->
+  <path fill="none" stroke="#5382A1" stroke-width="4" stroke-linecap="round" d="M48 28c0 8 8 8 8 16s-8 8-8 16"/>
+  <path fill="none" stroke="#5382A1" stroke-width="4" stroke-linecap="round" d="M64 22c0 8 8 8 8 16s-8 8-8 16"/>
+  <path fill="none" stroke="#5382A1" stroke-width="4" stroke-linecap="round" d="M80 28c0 8 8 8 8 16s-8 8-8 16"/>
+</svg>
