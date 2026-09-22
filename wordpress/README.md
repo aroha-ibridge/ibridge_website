@@ -45,7 +45,7 @@ npm run preview
 | `PUBLIC_ENQUIRY_TO_EMAIL` | Optional | `support@ibridge360.com` | **Public** |
 | `PUBLIC_WEB3FORMS_KEY` | Optional | *(empty)* | **Public** |
 | `GROQ_API_KEY` | Required for chatbot | *(from Groq console)* | **Server-only** — never `PUBLIC_` / `VITE_` |
-| `GROQ_MODEL` | Optional | `groq/compound-mini` | **Server-only** |
+| `GROQ_MODEL` | Optional | `qwen/qwen3.8-27b` | **Server-only** |
 
 Copy from `.env.example`. Never commit `.env`. Never put Groq keys in `PUBLIC_*` or `VITE_*`.
 

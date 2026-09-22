@@ -62,7 +62,7 @@ Set for **Production** and **Preview** (and Development if you use `vercel dev`)
 | `PUBLIC_ENQUIRY_TO_EMAIL` | Production + Preview | e.g. `support@ibridge360.com` |
 | `PUBLIC_WEB3FORMS_KEY` | Optional | Only if using Web3Forms |
 | `GROQ_API_KEY` | Production + Preview | **Server-only** — chatbot |
-| `GROQ_MODEL` | Optional | e.g. `groq/compound-mini` |
+| `GROQ_MODEL` | Optional | e.g. `qwen/qwen3.8-27b` (must be allowed for your Groq key) |
 
 Never add Groq keys as `PUBLIC_*` or `VITE_*`.
 
@@ -137,5 +137,5 @@ Env (Production + Preview):
   PUBLIC_ENQUIRY_TO_EMAIL=support@ibridge360.com
   PUBLIC_WEB3FORMS_KEY=          # optional
   GROQ_API_KEY=                  # server-only, required for chatbot
-  GROQ_MODEL=groq/compound-mini  # optional
+  GROQ_MODEL=qwen/qwen3.8-27b  # optional; must be a model your Groq account can access
 ```
