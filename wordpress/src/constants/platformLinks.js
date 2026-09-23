@@ -1,5 +1,5 @@
 /** Platform links used across the marketing site. */
-export const PLATFORM_LOGIN_PATH = 'https://learner.ibridge360.com/sign-in';
+export const PLATFORM_LOGIN_PATH = 'https://ibridge360.com/sign-in';
 
 /** Find Your Job / Explore — learner platform (external). */
 export const PLATFORM_EXPLORE_PATH = 'https://learner.ibridge360.com/explore';
