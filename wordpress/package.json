@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "start": "node scripts/serve-preview.mjs",
     "preview": "node scripts/serve-preview.mjs",
     "preview:static": "astro preview",
     "astro": "astro",

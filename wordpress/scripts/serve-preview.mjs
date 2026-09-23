@@ -14,6 +14,18 @@ const root = path.join(__dirname, '..');
 const dist = path.join(root, 'dist');
 const port = Number(process.env.PORT || 4321);
 
+if (!fs.existsSync(dist) || !fs.existsSync(path.join(dist, 'index.html'))) {
+  console.error(
+    [
+      'Missing production build in dist/.',
+      'Run this first, then start again:',
+      '  npm run build',
+      '  npm start',
+    ].join('\n'),
+  );
+  process.exit(1);
+}
+
 const env = loadEnv(process.env.NODE_ENV || 'development', root, '');
 for (const [k, v] of Object.entries(env)) {
   if (process.env[k] === undefined) process.env[k] = v;

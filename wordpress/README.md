@@ -30,12 +30,21 @@ Open **http://localhost:4321/website/** (Astro default port; base path is `/webs
 
 ```bash
 npm run build
-npm run preview
+npm start          # same as: npm run preview
 ```
 
 - `build` → static HTML in `dist/`  
-- `preview` → serves `dist/` **and** `POST /api/marketing-chatbot` (uses server-only `GROQ_API_KEY` from `.env`)  
-- Preview home: **http://localhost:4321/website/**
+- `start` / `preview` → serves `dist/` **and** `POST /api/marketing-chatbot` (uses server-only `GROQ_API_KEY` from `.env`)  
+- Open: **http://localhost:4321/website/** (or `http://HOST:$PORT/website/`)
+
+There is no Express “app server” beyond this static + chatbot helper. On a VM:
+
+```bash
+npm install
+cp .env.example .env   # set GROQ_* etc.
+npm run build
+npm start              # PORT=4321 by default
+```
 
 ## Environment variables
 
