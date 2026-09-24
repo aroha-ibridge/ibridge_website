@@ -117,7 +117,10 @@ function ProgramsMegaMenu({ onNavigate }) {
               key={course.id}
               to={course.to}
               className="programs-megamenu__card"
-              onClick={onNavigate}
+              onClick={(event) => {
+                event.stopPropagation();
+                onNavigate?.();
+              }}
             >
               <span
                 className="programs-megamenu__card-icon"
