@@ -44,7 +44,7 @@ function ProgramsTabsSectionTwo() {
       				<div className="elementor-element elementor-element-068c13d elementor-align-justify elementor-tablet-align-justify elementor-mobile-align-justify elementor-widget elementor-widget-button" data-id="068c13d" data-element_type="widget" data-widget_type="button.default">
       				<div className="elementor-widget-container">
       					<div className="elementor-button-wrapper">
-      			<Link to="/courses/data-engineering" className="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" >
+      			<Link to="/programs" className="elementor-button elementor-button-link elementor-size-sm elementor-animation-float" >
       						<span className="elementor-button-content-wrapper">
       									<span className="elementor-button-text">Program Details</span>
       					</span>

@@ -6,7 +6,7 @@ import homeProgramCards from '../home/homeProgramCardsData';
 
 function ProgramCard({ program, index }) {
   return (
-    <div className="home-program-card-wrap">
+    <div className="home-program-card-wrap" id={program.id}>
       <article className="home-program-card">
         <div className="home-program-card__media-shell">
           <img

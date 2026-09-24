@@ -182,6 +182,7 @@
 
 .home-program-card-wrap {
 	height: 100%;
+	scroll-margin-top: 96px;
 }
 
 .home-program-card {

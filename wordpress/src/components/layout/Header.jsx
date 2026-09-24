@@ -287,24 +287,24 @@ function Header() {
       						<nav className="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-none">
       				<ul id="menu-1-1a56e9a" className="elementor-nav-menu"><li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-41"><Link to="/programs" className="elementor-item">Programs</Link>
       <ul className="sub-menu elementor-nav-menu--dropdown">
-      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/courses/data-engineering" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    Data Engineering</Link></li>
-      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/data-analytics-course" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    Data Analytics</Link></li>
-      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/pyspark-course" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    PySpark</Link></li>
-      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/databricks-data-engineering-course" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    Databricks Data Engineering</Link></li>
-      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/microsoft-fabric-data-engineering-course" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    Microsoft Fabric Data Engineering</Link></li>
-      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/tableau-course" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    Tableau</Link></li>
-      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/advanced-excel-course" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    Advanced Excel</Link></li>
-      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/sql-bootcamp" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    SQL Bootcamp</Link></li>
-      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/python-bootcamp" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    Python Bootcamp</Link></li>
+      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/programs#data-engineering" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    Data Engineering</Link></li>
+      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/programs#data-analytics" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    Data Analytics</Link></li>
+      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/programs#pyspark" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    PySpark</Link></li>
+      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/programs#databricks-data-engineering" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    Databricks Data Engineering</Link></li>
+      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/programs#microsoft-fabric-data-engineering" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    Microsoft Fabric Data Engineering</Link></li>
+      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/programs#tableau" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    Tableau</Link></li>
+      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/programs#advanced-excel" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    Advanced Excel</Link></li>
+      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/programs#sql-bootcamp" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    SQL Bootcamp</Link></li>
+      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/programs#python-bootcamp" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    Python Bootcamp</Link></li>
       	<li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
           <span className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    Full Stack</span>
           <ul className="sub-menu elementor-nav-menu--dropdown">
-            <li className="menu-item"><Link to="/java-full-stack-development-course" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    Java Full Stack</Link></li>
-            <li className="menu-item"><Link to="/python-full-stack-development-course" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    Python Full Stack</Link></li>
-            <li className="menu-item"><Link to="/mern-full-stack-development-course" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    MERN Full Stack</Link></li>
+            <li className="menu-item"><Link to="/programs#java-fullstack" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    Java Full Stack</Link></li>
+            <li className="menu-item"><Link to="/programs#python-fullstack" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    Python Full Stack</Link></li>
+            <li className="menu-item"><Link to="/programs#full-stack-mern" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    MERN Full Stack</Link></li>
           </ul>
         </li>
-      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/courses/data-science" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    Data Science</Link></li>
+      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/programs#data-science" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    Data Science</Link></li>
       	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/programs" className="elementor-sub-item"><i className="fa fa-caret-right" aria-hidden="true"></i>    View all programs</Link></li>
       </ul>
 </li>
@@ -357,24 +357,24 @@ function Header() {
       					<nav className="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
       				<ul id="menu-2-1a56e9a" className="elementor-nav-menu"><li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-41"><Link to="/programs" className="elementor-item" tabIndex="-1">Programs</Link>
       <ul className="sub-menu elementor-nav-menu--dropdown">
-      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/courses/data-engineering" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    Data Engineering</Link></li>
-      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/data-analytics-course" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    Data Analytics</Link></li>
-      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/pyspark-course" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    PySpark</Link></li>
-      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/databricks-data-engineering-course" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    Databricks Data Engineering</Link></li>
-      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/microsoft-fabric-data-engineering-course" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    Microsoft Fabric Data Engineering</Link></li>
-      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/tableau-course" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    Tableau</Link></li>
-      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/advanced-excel-course" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    Advanced Excel</Link></li>
-      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/sql-bootcamp" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    SQL Bootcamp</Link></li>
-      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/python-bootcamp" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    Python Bootcamp</Link></li>
+      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/programs#data-engineering" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    Data Engineering</Link></li>
+      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/programs#data-analytics" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    Data Analytics</Link></li>
+      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/programs#pyspark" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    PySpark</Link></li>
+      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/programs#databricks-data-engineering" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    Databricks Data Engineering</Link></li>
+      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/programs#microsoft-fabric-data-engineering" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    Microsoft Fabric Data Engineering</Link></li>
+      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/programs#tableau" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    Tableau</Link></li>
+      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/programs#advanced-excel" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    Advanced Excel</Link></li>
+      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/programs#sql-bootcamp" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    SQL Bootcamp</Link></li>
+      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/programs#python-bootcamp" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    Python Bootcamp</Link></li>
       	<li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children">
           <span className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    Full Stack</span>
           <ul className="sub-menu elementor-nav-menu--dropdown">
-            <li className="menu-item"><Link to="/java-full-stack-development-course" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    Java Full Stack</Link></li>
-            <li className="menu-item"><Link to="/python-full-stack-development-course" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    Python Full Stack</Link></li>
-            <li className="menu-item"><Link to="/mern-full-stack-development-course" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    MERN Full Stack</Link></li>
+            <li className="menu-item"><Link to="/programs#java-fullstack" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    Java Full Stack</Link></li>
+            <li className="menu-item"><Link to="/programs#python-fullstack" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    Python Full Stack</Link></li>
+            <li className="menu-item"><Link to="/programs#full-stack-mern" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    MERN Full Stack</Link></li>
           </ul>
         </li>
-      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/courses/data-science" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    Data Science</Link></li>
+      	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/programs#data-science" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    Data Science</Link></li>
       	<li className="menu-item menu-item-type-post_type menu-item-object-page"><Link to="/programs" className="elementor-sub-item" tabIndex="-1"><i className="fa fa-caret-right" aria-hidden="true"></i>    View all programs</Link></li>
       </ul>
 </li>

@@ -25,7 +25,7 @@ function SelfLearningCard({ program }) {
   return (
     <article className="trending-skills__card">
       <Link
-        to={program.href}
+        to="/self-learning"
         className="trending-skills__media-link"
         aria-label={`View course: ${program.title}`}
       >
@@ -48,7 +48,7 @@ function SelfLearningCard({ program }) {
       </Link>
 
       <div className="trending-skills__body">
-        <Link to={program.href} className="trending-skills__name-link">
+        <Link to="/self-learning" className="trending-skills__name-link">
           <h3 className="trending-skills__name" title={program.title}>
             {program.title}
           </h3>
@@ -81,7 +81,7 @@ function SelfLearningCard({ program }) {
               <p className="trending-skills__price trending-skills__price--enquire">Enquire for fee</p>
             )}
           </div>
-          <Link to={program.href} className="trending-skills__details-btn">
+          <Link to="/self-learning" className="trending-skills__details-btn">
             View Details
           </Link>
         </div>
