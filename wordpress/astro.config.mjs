@@ -58,7 +58,6 @@ function marketingChatbotDevPlugin() {
   return {
     name: 'marketing-chatbot-dev',
     configureServer(server) {
-      // Keep API at site root — never under /website
       server.middlewares.use('/api/marketing-chatbot', async (req, res, next) => {
         if (req.method === 'OPTIONS') {
           res.statusCode = 204;
@@ -88,7 +87,7 @@ function marketingChatbotDevPlugin() {
 
 export default defineConfig({
   site: SITE_ORIGIN,
-  base: SITE_BASE,
+  base: SITE_BASE || '/',
   output: 'static',
   trailingSlash: 'never',
   integrations: [
@@ -101,9 +100,9 @@ export default defineConfig({
         if (page.includes('/training/')) return false;
         if (page.includes('/404')) return false;
         const normalized = page.replace(/\/+$/, '');
-        const homeCanon = `${SITE_ORIGIN}${SITE_BASE}`;
+        const homeCanon = SITE_BASE ? `${SITE_ORIGIN}${SITE_BASE}` : SITE_ORIGIN;
         if (normalized === homeCanon || normalized === SITE_ORIGIN) {
-          return indexableUrls.has(homeCanon);
+          return indexableUrls.has(homeCanon) || indexableUrls.has(SITE_ORIGIN);
         }
         return indexableUrls.has(normalized) || indexableUrls.has(`${normalized}/`);
       },
@@ -111,7 +110,7 @@ export default defineConfig({
   ],
   redirects: redirectMap,
   vite: {
-    plugins: [prefixPublicAssetsPlugin(SITE_BASE), marketingChatbotDevPlugin()],
+    plugins: [prefixPublicAssetsPlugin(SITE_BASE || '/'), marketingChatbotDevPlugin()],
     resolve: {
       alias: {
         'react-router-dom': shimRouter,

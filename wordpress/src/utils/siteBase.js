@@ -1,31 +1,32 @@
 /**
- * Site URL prefix helpers for Astro `base: '/website'`.
- * Logical routes stay unprefixed (`/about-us`); public hrefs use withBase().
+ * Site URL helpers for Astro `base: '/'` (domain root).
+ * Logical routes and public hrefs share the same paths (`/about-us`).
  */
 
-export const SITE_BASE = '/website';
+/** Empty when the site is served from the domain root. */
+export const SITE_BASE = '';
 
 function readBaseUrl() {
   if (typeof import.meta !== 'undefined' && import.meta.env?.BASE_URL) {
     return import.meta.env.BASE_URL;
   }
-  return `${SITE_BASE}/`;
+  return SITE_BASE ? `${SITE_BASE}/` : '/';
 }
 
-/** Base without trailing slash, e.g. `/website`. */
+/** Base without trailing slash. Empty string at domain root. */
 export function getBasePath() {
-  return readBaseUrl().replace(/\/+$/, '') || SITE_BASE;
+  return readBaseUrl().replace(/\/+$/, '');
 }
 
 /**
- * Prefix an internal path with the site base.
- * - `/` → `/website/` (home must keep a trailing slash)
- * - `/about-us` → `/website/about-us`
+ * Prefix an internal path with the site base (no-op at domain root).
+ * - `/` → `/`
+ * - `/about-us` → `/about-us`
  * - External / mailto / hash / already-prefixed paths are left alone
  */
 export function withBase(path = '/') {
-  if (path == null || path === '') return `${getBasePath()}/`;
-  if (typeof path !== 'string') return `${getBasePath()}/`;
+  if (path == null || path === '') return '/';
+  if (typeof path !== 'string') return '/';
 
   if (
     /^https?:\/\//i.test(path) ||
@@ -39,6 +40,11 @@ export function withBase(path = '/') {
   }
 
   const base = getBasePath();
+  const clean = path === '/' ? '/' : (path.startsWith('/') ? path : `/${path}`).replace(/\/+$/, '') || '/';
+
+  if (!base) {
+    return clean;
+  }
 
   if (path === base || path === `${base}/`) {
     return `${base}/`;
@@ -48,27 +54,35 @@ export function withBase(path = '/') {
     return path === `${base}/` ? `${base}/` : path.replace(/\/+$/, '') || `${base}/`;
   }
 
-  if (path === '/') {
+  if (clean === '/') {
     return `${base}/`;
   }
 
-  const clean = path.startsWith('/') ? path : `/${path}`;
   return `${base}${clean}`.replace(/\/+$/, '') || `${base}/`;
 }
 
-/** Strip `/website` from a browser pathname so app logic sees `/about-us`. */
+/** Normalize a browser pathname for app logic (strips base when present). */
 export function stripBase(pathname = '/') {
   if (typeof pathname !== 'string' || !pathname) return '/';
 
-  const base = getBasePath();
   let path = pathname;
 
-  if (path === base || path === `${base}/`) {
+  // Legacy `/website` prefix (pre-root migration) — safe no-op when already at root
+  if (path === '/website' || path === '/website/') {
     return '/';
   }
+  if (path.startsWith('/website/')) {
+    path = path.slice('/website'.length) || '/';
+  }
 
-  if (path.startsWith(`${base}/`)) {
-    path = path.slice(base.length) || '/';
+  const base = getBasePath();
+  if (base) {
+    if (path === base || path === `${base}/`) {
+      return '/';
+    }
+    if (path.startsWith(`${base}/`)) {
+      path = path.slice(base.length) || '/';
+    }
   }
 
   return path.replace(/\/+$/, '') || '/';
@@ -80,11 +94,10 @@ export function absoluteSiteUrl(origin, path = '/') {
   if (/^https?:\/\//i.test(path)) return path;
 
   const prefixed = withBase(path);
-  // Home canonical: https://ibridge360.com/website (no trailing slash)
-  const normalized =
-    prefixed === `${getBasePath()}/` || prefixed === getBasePath()
-      ? getBasePath()
-      : prefixed.replace(/\/+$/, '');
+  // Home canonical: https://ibridge360.com (origin only, no trailing slash)
+  if (prefixed === '/' || prefixed === '' || (getBasePath() && (prefixed === getBasePath() || prefixed === `${getBasePath()}/`))) {
+    return getBasePath() ? `${origin}${getBasePath()}` : origin;
+  }
 
-  return `${origin}${normalized}`;
+  return `${origin}${prefixed.replace(/\/+$/, '')}`;
 }

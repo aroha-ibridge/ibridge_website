@@ -5,583 +5,169 @@
   "framework": null,
   "redirects": [
     {
-      "source": "/website/lms",
-      "destination": "/website/learnsmart-lms",
-      "permanent": true
-    },
-    {
-      "source": "/website/testimonials",
-      "destination": "/website",
-      "permanent": true
-    },
-    {
-      "source": "/website/data-engineering-course",
-      "destination": "/website/courses/data-engineering",
-      "permanent": true
-    },
-    {
-      "source": "/website/data-engineering-program",
-      "destination": "/website/courses/data-engineering",
-      "permanent": true
-    },
-    {
-      "source": "/website/data-science-program",
-      "destination": "/website/courses/data-science",
-      "permanent": true
-    },
-    {
-      "source": "/website/courses/mern-fullstack",
-      "destination": "/website/mern-full-stack-development-course",
-      "permanent": true
-    },
-    {
-      "source": "/website/courses/java-fullstack",
-      "destination": "/website/java-full-stack-development-course",
-      "permanent": true
-    },
-    {
-      "source": "/website/courses/python-fullstack",
-      "destination": "/website/python-full-stack-development-course",
-      "permanent": true
-    },
-    {
-      "source": "/website/mern-fullstack",
-      "destination": "/website/mern-full-stack-development-course",
-      "permanent": true
-    },
-    {
-      "source": "/website/java-fullstack",
-      "destination": "/website/java-full-stack-development-course",
-      "permanent": true
-    },
-    {
-      "source": "/website/python-fullstack",
-      "destination": "/website/python-full-stack-development-course",
-      "permanent": true
-    },
-    {
-      "source": "/website/full-stack-development-mern-program-2",
-      "destination": "/website/mern-full-stack-development-course",
-      "permanent": true
-    },
-    {
-      "source": "/website/full-stack-mern-program",
-      "destination": "/website/mern-full-stack-development-course",
-      "permanent": true
-    },
-    {
-      "source": "/website/corporate-corporate-training-programs",
-      "destination": "/website/corporate",
-      "permanent": true
-    },
-    {
-      "source": "/website/corporate-training",
-      "destination": "/website/corporate",
-      "permanent": true
-    },
-    {
-      "source": "/about-us",
-      "destination": "/website/about-us",
-      "permanent": true
-    },
-    {
-      "source": "/advanced-excel-course",
-      "destination": "/website/advanced-excel-course",
-      "permanent": true
-    },
-    {
-      "source": "/advantages-of-data-visualization-tools",
-      "destination": "/website/advantages-of-data-visualization-tools",
-      "permanent": true
-    },
-    {
-      "source": "/blogs",
-      "destination": "/website/blogs",
-      "permanent": true
-    },
-    {
-      "source": "/book-career-counselling",
-      "destination": "/website/book-career-counselling",
-      "permanent": true
-    },
-    {
-      "source": "/code-arena",
-      "destination": "/website/code-arena",
-      "permanent": true
-    },
-    {
-      "source": "/contact-us",
-      "destination": "/website/contact-us",
-      "permanent": true
-    },
-    {
-      "source": "/corporate",
-      "destination": "/website/corporate",
-      "permanent": true
-    },
-    {
-      "source": "/corporate-content-creation",
-      "destination": "/website/corporate-content-creation",
-      "permanent": true
-    },
-    {
-      "source": "/corporate-corporate-training-programs",
-      "destination": "/website/corporate",
-      "permanent": true
-    },
-    {
-      "source": "/corporate-elp",
-      "destination": "/website/corporate-elp",
-      "permanent": true
-    },
-    {
-      "source": "/corporate-training",
-      "destination": "/website/corporate",
-      "permanent": true
-    },
-    {
-      "source": "/courses/data-engineering",
-      "destination": "/website/courses/data-engineering",
-      "permanent": true
-    },
-    {
-      "source": "/courses/data-science",
-      "destination": "/website/courses/data-science",
-      "permanent": true
-    },
-    {
-      "source": "/courses/java-fullstack",
-      "destination": "/website/java-full-stack-development-course",
-      "permanent": true
-    },
-    {
-      "source": "/courses/mern-fullstack",
-      "destination": "/website/mern-full-stack-development-course",
-      "permanent": true
-    },
-    {
-      "source": "/courses/python-fullstack",
-      "destination": "/website/python-full-stack-development-course",
-      "permanent": true
-    },
-    {
-      "source": "/data-analytics-course",
-      "destination": "/website/data-analytics-course",
-      "permanent": true
-    },
-    {
-      "source": "/data-engineering-course",
-      "destination": "/website/courses/data-engineering",
-      "permanent": true
-    },
-    {
-      "source": "/data-engineering-program",
-      "destination": "/website/courses/data-engineering",
-      "permanent": true
-    },
-    {
-      "source": "/data-science-program",
-      "destination": "/website/courses/data-science",
-      "permanent": true
-    },
-    {
-      "source": "/databricks-data-engineering-course",
-      "destination": "/website/databricks-data-engineering-course",
-      "permanent": true
-    },
-    {
-      "source": "/from-concept-to-clarity-breaking-down-llms-for-everyone-by-s-n-raghavan",
-      "destination": "/website/from-concept-to-clarity-breaking-down-llms-for-everyone-by-s-n-raghavan",
-      "permanent": true
-    },
-    {
-      "source": "/full-stack-development-mern-program-2",
-      "destination": "/website/mern-full-stack-development-course",
-      "permanent": true
-    },
-    {
-      "source": "/full-stack-mern-program",
-      "destination": "/website/mern-full-stack-development-course",
-      "permanent": true
-    },
-    {
-      "source": "/implementation-of-analytics-in-stages",
-      "destination": "/website/implementation-of-analytics-in-stages",
-      "permanent": true
-    },
-    {
-      "source": "/individual-learner",
-      "destination": "/website/individual-learner",
-      "permanent": true
-    },
-    {
-      "source": "/institution",
-      "destination": "/website/institution",
-      "permanent": true
-    },
-    {
-      "source": "/institution-content-creation",
-      "destination": "/website/institution-content-creation",
-      "permanent": true
-    },
-    {
-      "source": "/institution-epbl",
-      "destination": "/website/institution-epbl",
-      "permanent": true
-    },
-    {
-      "source": "/institution-experiential-learning-platform",
-      "destination": "/website/institution-experiential-learning-platform",
-      "permanent": true
-    },
-    {
-      "source": "/institution-expert-talks",
-      "destination": "/website/institution-expert-talks",
-      "permanent": true
-    },
-    {
-      "source": "/institution-faculty-development-program",
-      "destination": "/website/institution-faculty-development-program",
-      "permanent": true
-    },
-    {
-      "source": "/institution-it-and-non-it-programs-for-institutions",
-      "destination": "/website/institution-it-and-non-it-programs-for-institutions",
-      "permanent": true
-    },
-    {
-      "source": "/institution-online-offline-programs",
-      "destination": "/website/institution-online-offline-programs",
-      "permanent": true
-    },
-    {
-      "source": "/institution-self-transformation-sessions-for-students-and-faculty",
-      "destination": "/website/institution-self-transformation-sessions-for-students-and-faculty",
-      "permanent": true
-    },
-    {
-      "source": "/institution-soft-skills-for-college-students",
-      "destination": "/website/institution-soft-skills-for-college-students",
-      "permanent": true
-    },
-    {
-      "source": "/institution-weekly-and-monthly-programs",
-      "destination": "/website/institution-weekly-and-monthly-programs",
-      "permanent": true
-    },
-    {
-      "source": "/java-full-stack-development-course",
-      "destination": "/website/java-full-stack-development-course",
-      "permanent": true
-    },
-    {
-      "source": "/java-fullstack",
-      "destination": "/website/java-full-stack-development-course",
-      "permanent": true
-    },
-    {
-      "source": "/learnsmart-lms",
-      "destination": "/website/learnsmart-lms",
-      "permanent": true
-    },
-    {
       "source": "/lms",
-      "destination": "/website/learnsmart-lms",
-      "permanent": true
-    },
-    {
-      "source": "/making-every-graduate-employable",
-      "destination": "/website/making-every-graduate-employable",
-      "permanent": true
-    },
-    {
-      "source": "/mern-full-stack-development-course",
-      "destination": "/website/mern-full-stack-development-course",
-      "permanent": true
-    },
-    {
-      "source": "/mern-fullstack",
-      "destination": "/website/mern-full-stack-development-course",
-      "permanent": true
-    },
-    {
-      "source": "/microsoft-fabric-data-engineering-course",
-      "destination": "/website/microsoft-fabric-data-engineering-course",
-      "permanent": true
-    },
-    {
-      "source": "/online-assessment-platform",
-      "destination": "/website/online-assessment-platform",
-      "permanent": true
-    },
-    {
-      "source": "/privacy-policy",
-      "destination": "/website/privacy-policy",
-      "permanent": true
-    },
-    {
-      "source": "/products",
-      "destination": "/website/products",
-      "permanent": true
-    },
-    {
-      "source": "/programs",
-      "destination": "/website/programs",
-      "permanent": true
-    },
-    {
-      "source": "/programs/course/[programId]",
-      "destination": "/website/programs/course/[programId]",
-      "permanent": true
-    },
-    {
-      "source": "/pyspark-course",
-      "destination": "/website/pyspark-course",
-      "permanent": true
-    },
-    {
-      "source": "/python-bootcamp",
-      "destination": "/website/python-bootcamp",
-      "permanent": true
-    },
-    {
-      "source": "/python-full-stack-development-course",
-      "destination": "/website/python-full-stack-development-course",
-      "permanent": true
-    },
-    {
-      "source": "/python-fullstack",
-      "destination": "/website/python-full-stack-development-course",
-      "permanent": true
-    },
-    {
-      "source": "/self-learning",
-      "destination": "/website/self-learning",
-      "permanent": true
-    },
-    {
-      "source": "/sql-bootcamp",
-      "destination": "/website/sql-bootcamp",
-      "permanent": true
-    },
-    {
-      "source": "/sql-queries-on-pandas-dataframe",
-      "destination": "/website/sql-queries-on-pandas-dataframe",
-      "permanent": true
-    },
-    {
-      "source": "/tableau-course",
-      "destination": "/website/tableau-course",
-      "permanent": true
-    },
-    {
-      "source": "/terms-conditions",
-      "destination": "/website/terms-conditions",
+      "destination": "/learnsmart-lms",
       "permanent": true
     },
     {
       "source": "/testimonials",
-      "destination": "/website",
+      "destination": "/",
       "permanent": true
     },
     {
-      "source": "/thank-you",
-      "destination": "/website/thank-you",
+      "source": "/data-engineering-course",
+      "destination": "/courses/data-engineering",
       "permanent": true
     },
     {
-      "source": "/the-power-of-communication-why-college-students-must-master-it",
-      "destination": "/website/the-power-of-communication-why-college-students-must-master-it",
+      "source": "/data-engineering-program",
+      "destination": "/courses/data-engineering",
       "permanent": true
     },
     {
-      "source": "/training-upskilling",
-      "destination": "/website/training-upskilling",
+      "source": "/data-science-program",
+      "destination": "/courses/data-science",
       "permanent": true
     },
     {
-      "source": "/training/[slug]",
-      "destination": "/website/training/[slug]",
+      "source": "/courses/mern-fullstack",
+      "destination": "/mern-full-stack-development-course",
       "permanent": true
     },
     {
-      "source": "/training/agile-scrum",
-      "destination": "/website/training/agile-scrum",
+      "source": "/courses/java-fullstack",
+      "destination": "/java-full-stack-development-course",
       "permanent": true
     },
     {
-      "source": "/training/ai-for-educators",
-      "destination": "/website/training/ai-for-educators",
+      "source": "/courses/python-fullstack",
+      "destination": "/python-full-stack-development-course",
       "permanent": true
     },
     {
-      "source": "/training/ai-machine-learning",
-      "destination": "/website/training/ai-machine-learning",
+      "source": "/mern-fullstack",
+      "destination": "/mern-full-stack-development-course",
       "permanent": true
     },
     {
-      "source": "/training/assessment-certification",
-      "destination": "/website/training/assessment-certification",
+      "source": "/java-fullstack",
+      "destination": "/java-full-stack-development-course",
       "permanent": true
     },
     {
-      "source": "/training/business-analytics",
-      "destination": "/website/training/business-analytics",
+      "source": "/python-fullstack",
+      "destination": "/python-full-stack-development-course",
       "permanent": true
     },
     {
-      "source": "/training/campus-hiring-support",
-      "destination": "/website/training/campus-hiring-support",
+      "source": "/full-stack-development-mern-program-2",
+      "destination": "/mern-full-stack-development-course",
       "permanent": true
     },
     {
-      "source": "/training/cloud-computing",
-      "destination": "/website/training/cloud-computing",
+      "source": "/full-stack-mern-program",
+      "destination": "/mern-full-stack-development-course",
       "permanent": true
     },
     {
-      "source": "/training/compliance-training",
-      "destination": "/website/training/compliance-training",
+      "source": "/corporate-corporate-training-programs",
+      "destination": "/corporate",
       "permanent": true
     },
     {
-      "source": "/training/curriculum-enhancement",
-      "destination": "/website/training/curriculum-enhancement",
+      "source": "/corporate-training",
+      "destination": "/corporate",
       "permanent": true
     },
     {
-      "source": "/training/custom-learning-programs",
-      "destination": "/website/training/custom-learning-programs",
+      "source": "/website/lms",
+      "destination": "/learnsmart-lms",
       "permanent": true
     },
     {
-      "source": "/training/cybersecurity",
-      "destination": "/website/training/cybersecurity",
+      "source": "/website/testimonials",
+      "destination": "/",
       "permanent": true
     },
     {
-      "source": "/training/devops",
-      "destination": "/website/training/devops",
+      "source": "/website/data-engineering-course",
+      "destination": "/courses/data-engineering",
       "permanent": true
     },
     {
-      "source": "/training/digital-transformation",
-      "destination": "/website/training/digital-transformation",
+      "source": "/website/data-engineering-program",
+      "destination": "/courses/data-engineering",
       "permanent": true
     },
     {
-      "source": "/training/executive-development",
-      "destination": "/website/training/executive-development",
+      "source": "/website/data-science-program",
+      "destination": "/courses/data-science",
       "permanent": true
     },
     {
-      "source": "/training/faculty-development",
-      "destination": "/website/training/faculty-development",
+      "source": "/website/courses/mern-fullstack",
+      "destination": "/mern-full-stack-development-course",
       "permanent": true
     },
     {
-      "source": "/training/finance-employability",
-      "destination": "/website/training/finance-employability",
+      "source": "/website/courses/java-fullstack",
+      "destination": "/java-full-stack-development-course",
       "permanent": true
     },
     {
-      "source": "/training/industry-bootcamps",
-      "destination": "/website/training/industry-bootcamps",
+      "source": "/website/courses/python-fullstack",
+      "destination": "/python-full-stack-development-course",
       "permanent": true
     },
     {
-      "source": "/training/internship-programs",
-      "destination": "/website/training/internship-programs",
+      "source": "/website/mern-fullstack",
+      "destination": "/mern-full-stack-development-course",
       "permanent": true
     },
     {
-      "source": "/training/leadership-development",
-      "destination": "/website/training/leadership-development",
+      "source": "/website/java-fullstack",
+      "destination": "/java-full-stack-development-course",
       "permanent": true
     },
     {
-      "source": "/training/leadership-training",
-      "destination": "/website/training/leadership-training",
+      "source": "/website/python-fullstack",
+      "destination": "/python-full-stack-development-course",
       "permanent": true
     },
     {
-      "source": "/training/management-employability",
-      "destination": "/website/training/management-employability",
+      "source": "/website/full-stack-development-mern-program-2",
+      "destination": "/mern-full-stack-development-course",
       "permanent": true
     },
     {
-      "source": "/training/placement-readiness",
-      "destination": "/website/training/placement-readiness",
+      "source": "/website/full-stack-mern-program",
+      "destination": "/mern-full-stack-development-course",
       "permanent": true
     },
     {
-      "source": "/training/project-management",
-      "destination": "/website/training/project-management",
+      "source": "/website/corporate-corporate-training-programs",
+      "destination": "/corporate",
       "permanent": true
     },
     {
-      "source": "/training/research-innovation",
-      "destination": "/website/training/research-innovation",
+      "source": "/website/corporate-training",
+      "destination": "/corporate",
       "permanent": true
     },
-    {
-      "source": "/training/soft-skills",
-      "destination": "/website/training/soft-skills",
-      "permanent": true
-    },
-    {
-      "source": "/training/technology-employability",
-      "destination": "/website/training/technology-employability",
-      "permanent": true
-    },
-    {
-      "source": "/training/train-the-trainer",
-      "destination": "/website/training/train-the-trainer",
-      "permanent": true
-    },
-    {
-      "source": "/training/workforce-upskilling",
-      "destination": "/website/training/workforce-upskilling",
-      "permanent": true
-    },
-    {
-      "source": "/turning-pharma-reports-into-real-time-insights",
-      "destination": "/website/turning-pharma-reports-into-real-time-insights",
-      "permanent": true
-    },
-    {
-      "source": "/ways-of-calculating-roi-from-bidw-implementations",
-      "destination": "/website/ways-of-calculating-roi-from-bidw-implementations",
-      "permanent": true
-    },
-    {
-      "source": "/when-you-offer-visualization-analysis",
-      "destination": "/website/when-you-offer-visualization-analysis",
-      "permanent": true
-    },
-    {
-      "source": "/why-is-data-engineering-a-promising-career-choice",
-      "destination": "/website/why-is-data-engineering-a-promising-career-choice",
-      "permanent": true
-    },
-    {
-      "source": "/",
-      "destination": "/website",
-      "permanent": true
-    }
-  ],
-  "rewrites": [
     {
       "source": "/website",
-      "destination": "/index.html"
+      "destination": "/",
+      "permanent": true
     },
     {
       "source": "/website/",
-      "destination": "/index.html"
+      "destination": "/",
+      "permanent": true
     },
     {
       "source": "/website/:path*",
-      "destination": "/:path*"
+      "destination": "/:path*",
+      "permanent": true
     }
   ]
 }

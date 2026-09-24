@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ibridge360.com/website/sitemap-index.xml
+Sitemap: https://ibridge360.com/sitemap-index.xml

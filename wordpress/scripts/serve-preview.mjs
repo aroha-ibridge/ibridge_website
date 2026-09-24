@@ -66,15 +66,7 @@ function safeJoin(base, reqPath) {
   return full;
 }
 
-/** Strip Astro `base: '/website'` so /website/about-us maps to dist/about-us. */
-function stripSiteBase(urlPath) {
-  if (urlPath === '/website' || urlPath === '/website/') return '/';
-  if (urlPath.startsWith('/website/')) return urlPath.slice('/website'.length) || '/';
-  return urlPath;
-}
-
-function resolveFile(rawUrlPath) {
-  const urlPath = stripSiteBase(rawUrlPath);
+function resolveFile(urlPath) {
   let filePath = safeJoin(dist, urlPath === '/' ? '/index.html' : urlPath);
   if (!filePath) return null;
 
@@ -128,16 +120,14 @@ const server = http.createServer(async (req, res) => {
   }
 
   const ext = path.extname(filePath).toLowerCase();
-  const logicalPath = stripSiteBase(pathname);
   const status =
-    filePath.endsWith(`${path.sep}404.html`) && logicalPath !== '/404' ? 404 : 200;
+    filePath.endsWith(`${path.sep}404.html`) && pathname !== '/404' ? 404 : 200;
   res.writeHead(status, { 'Content-Type': MIME[ext] || 'application/octet-stream' });
   fs.createReadStream(filePath).pipe(res);
 });
 
 server.listen(port, () => {
-  console.log(`Preview + chatbot API: http://localhost:${port}/website/`);
-  console.log(`(Also accepts unprefixed paths for convenience.)`);
+  console.log(`Preview + chatbot API: http://localhost:${port}/`);
   console.log(`GROQ_API_KEY: ${process.env.GROQ_API_KEY ? 'set' : 'MISSING'}`);
   console.log(`GROQ_MODEL: ${process.env.GROQ_MODEL || '(default)'}`);
 });
