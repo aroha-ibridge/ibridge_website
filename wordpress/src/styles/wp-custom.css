@@ -2190,11 +2190,20 @@ body.marketing-site .program-cta-modal button.program-cta-modal__close:focus-vis
 	}
 
 	.elementor-21071 .elementor-element.elementor-element-6102f0 {
-		width: 12% !important;
+		width: auto !important;
+		flex: 0 0 auto;
 	}
 
+	/* Empty Find Your Job slot — don't reserve space beside Login */
 	.elementor-21071 .elementor-element.elementor-element-4de639c6 {
-		width: 16% !important;
+		display: none !important;
+	}
+
+	.elementor-21071 a.site-header-login {
+		display: inline-flex !important;
+		align-items: center;
+		visibility: visible !important;
+		white-space: nowrap;
 	}
 
 	/* Keep every nav link on a single row */
