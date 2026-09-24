@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { PLATFORM_LOGIN_PATH } from '../../constants/platformLinks';
+// Login button temporarily hidden
+// import { PLATFORM_LOGIN_PATH } from '../../constants/platformLinks';
 import { getProductMegaById, PRODUCTS_MEGA } from '../../constants/productsMegaMenu';
 import ProductsMegaPanel from './ProductsMegaPanel';
 import ProgramsMegaMenu from './ProgramsMegaMenu';
@@ -239,6 +240,7 @@ function Header() {
       						<div className="elementor-element elementor-element-3d214b00 elementor-align-center elementor-tablet-align-left elementor-widget elementor-widget-button" data-id="3d214b00" data-element_type="widget" data-widget_type="button.default">
       				<div className="elementor-widget-container">
       					<div className="elementor-button-wrapper">
+      		{/* Login button temporarily hidden
       			<Link className="elementor-button elementor-button-link elementor-size-sm" to={PLATFORM_LOGIN_PATH}>
       						<span className="elementor-button-content-wrapper">
       						<span className="elementor-button-icon">
@@ -246,6 +248,7 @@ function Header() {
       									<span className="elementor-button-text">Login</span>
       					</span>
       					</Link>
+      		*/}
       		</div>
       				</div>
       				</div>
@@ -437,11 +440,13 @@ function Header() {
       						<div className="elementor-element elementor-element-fafc1cc elementor-align-center elementor-tablet-align-left elementor-mobile-align-right elementor-widget elementor-widget-button" data-id="fafc1cc" data-element_type="widget" data-widget_type="button.default">
       				<div className="elementor-widget-container">
       					<div className="elementor-button-wrapper">
+      		{/* Login button temporarily hidden
       			<Link className="elementor-button elementor-button-link elementor-size-sm" to={PLATFORM_LOGIN_PATH}>
       						<span className="elementor-button-content-wrapper">
       									<span className="elementor-button-text">Login</span>
       					</span>
       					</Link>
+      		*/}
       		</div>
       				</div>
       				</div>
