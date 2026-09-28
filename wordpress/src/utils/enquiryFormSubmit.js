@@ -70,6 +70,7 @@ export async function submitEnquiry(fields) {
     source = 'Enquiry form',
     messageContainer,
     notifyMode = 'inline',
+    beforeRedirect,
   } = fields;
 
   if (!name?.trim() || !phone?.trim() || !email?.trim()) {
@@ -102,6 +103,13 @@ export async function submitEnquiry(fields) {
     });
 
     if (result.success) {
+      if (typeof beforeRedirect === 'function') {
+        try {
+          await beforeRedirect();
+        } catch {
+          // The enquiry is already saved. A sheet failure should not block the applicant.
+        }
+      }
       redirectToThankYou();
       return { success: true, reset: true, submitted: true, redirected: true };
     }

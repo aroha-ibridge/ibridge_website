@@ -2232,6 +2232,23 @@ body.marketing-site .program-cta-modal button.program-cta-modal__close:focus-vis
 		font-size: 14px;
 	}
 
+	/* Elementor post CSS sets 10px padding after the rule above and wins.
+	   Careers made the row wider, so this tighter padding keeps Programs and
+	   Contact Us clear of the logo and Login. */
+	.elementor-21071 .elementor-element.elementor-element-2827ad8 .ekit-wid-con .elementskit-navbar-nav > li.nav-item > a.ekit-menu-nav-link {
+		padding-left: 0.2rem !important;
+		padding-right: 0.2rem !important;
+		font-size: 13px !important;
+	}
+
+	@media (min-width: 1280px) {
+		.elementor-21071 .elementor-element.elementor-element-2827ad8 .ekit-wid-con .elementskit-navbar-nav > li.nav-item > a.ekit-menu-nav-link {
+			padding-left: 0.4rem !important;
+			padding-right: 0.4rem !important;
+			font-size: 14px !important;
+		}
+	}
+
 	/* All megamenu items anchor their panels below the trigger (consistent shape) */
 	.ekit-wid-con .elementskit-menu-po-center .elementskit-megamenu-has.top_position {
 		position: relative;

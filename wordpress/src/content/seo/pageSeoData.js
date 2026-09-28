@@ -97,6 +97,13 @@ export const PAGE_SEO = {
     keywords:
       'iBridge360 blog, data engineering articles, analytics insights, career skills blog, learning tips',
   },
+  '/careers': {
+    title: 'Careers at iBridge360 | Open Roles in Bengaluru',
+    description:
+      'See open roles at iBridge360 in Bengaluru — engineering, data, learning design, training, and partnerships. Share your interest and the team will follow up by email.',
+    keywords:
+      'iBridge360 careers, edtech jobs Bengaluru, learning platform jobs, instructional designer jobs, corporate trainer jobs',
+  },
   '/contact-us': {
     title: 'Contact iBridge360 | Training, LMS & Partnership Enquiries',
     description:

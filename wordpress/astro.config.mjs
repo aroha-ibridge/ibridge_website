@@ -10,6 +10,7 @@ import {
   handleMarketingChatbot,
   readJsonBody,
 } from './src/server/marketingChatbotHandler.js';
+import { handleCareersSheet } from './src/server/careersSheetHandler.js';
 
 const shimRouter = fileURLToPath(new URL('./src/shims/react-router-dom.jsx', import.meta.url));
 const shimHelmet = fileURLToPath(new URL('./src/shims/react-helmet-async.jsx', import.meta.url));
@@ -54,6 +55,37 @@ function prefixPublicAssetsPlugin(basePath) {
     },
   };
 }
+function careersSheetDevPlugin() {
+  return {
+    name: 'careers-sheet-dev',
+    configureServer(server) {
+      server.middlewares.use('/api/careers-sheet', async (req, res, next) => {
+        if (req.method === 'OPTIONS') {
+          res.statusCode = 204;
+          res.end();
+          return;
+        }
+        if (req.method !== 'POST') {
+          next();
+          return;
+        }
+
+        try {
+          const body = await readJsonBody(req);
+          const result = await handleCareersSheet(body);
+          res.statusCode = result.status;
+          res.setHeader('Content-Type', 'application/json');
+          res.end(JSON.stringify(result.json));
+        } catch (err) {
+          res.statusCode = err.status || 500;
+          res.setHeader('Content-Type', 'application/json');
+          res.end(JSON.stringify({ ok: false, error: err.message || 'Careers sheet request failed' }));
+        }
+      });
+    },
+  };
+}
+
 function marketingChatbotDevPlugin() {
   return {
     name: 'marketing-chatbot-dev',
@@ -109,8 +141,12 @@ export default defineConfig({
     }),
   ],
   redirects: redirectMap,
-  vite: {
-    plugins: [prefixPublicAssetsPlugin(SITE_BASE || '/'), marketingChatbotDevPlugin()],
+    vite: {
+    plugins: [
+      prefixPublicAssetsPlugin(SITE_BASE || '/'),
+      marketingChatbotDevPlugin(),
+      careersSheetDevPlugin(),
+    ],
     resolve: {
       alias: {
         'react-router-dom': shimRouter,

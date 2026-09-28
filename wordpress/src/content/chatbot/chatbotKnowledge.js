@@ -11,7 +11,7 @@ export const ADVISOR = {
 };
 
 const CONTACT_BLURB = `
-Contact: support@ibridge360.com · +91 96112 60360 · /contact-us · counselling /book-career-counselling
+Contact: support@ibridge360.com · +91 96112 60360 · /contact-us · jobs /careers · counselling /book-career-counselling
 Sister products (one-line only if asked): iBridge360 LMS /learnsmart-lms · NexBridge Assessment /online-assessment-platform (https://ibcodex.ibridge360.com/) · iB Code Arena /code-arena
 `.trim();
 

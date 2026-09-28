@@ -19,6 +19,7 @@ import IndividualLearner from '../../views/IndividualLearner/IndividualLearner';
 import Institution from '../../views/Institution/Institution';
 import Blogs from '../../views/Blogs/Blogs';
 import ContactUs from '../../views/ContactUs/ContactUs';
+import Careers from '../../views/Careers/Careers';
 import BookCareerCounselling from '../../views/BookCareerCounselling/BookCareerCounselling';
 import ThankYou from '../../views/ThankYou/ThankYou';
 import TermsConditions from '../../views/TermsConditions/TermsConditions';
@@ -77,6 +78,7 @@ export const PAGE_COMPONENTS = {
   '/institution': Institution,
   '/blogs': Blogs,
   '/contact-us': ContactUs,
+  '/careers': Careers,
   '/book-career-counselling': BookCareerCounselling,
   '/thank-you': ThankYou,
   '/terms-conditions': TermsConditions,

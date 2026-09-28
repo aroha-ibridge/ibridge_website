@@ -16,6 +16,7 @@ const QUICK_LINKS = [
   { label: 'LearnSmart LMS', to: '/learnsmart-lms' },
   { label: 'Blogs', to: '/blogs' },
   { label: 'Book Career Counselling', to: '/book-career-counselling' },
+  { label: 'Careers', to: '/careers' },
   { label: 'Contact Us', to: '/contact-us' },
 ];
 

@@ -8,6 +8,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadEnv } from 'vite';
 import { handleMarketingChatbot, readJsonBody } from '../src/server/marketingChatbotHandler.js';
+import { handleCareersSheet } from '../src/server/careersSheetHandler.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
@@ -90,6 +91,27 @@ function resolveFile(urlPath) {
 
 const server = http.createServer(async (req, res) => {
   const url = req.url || '/';
+
+  if (url.startsWith('/api/careers-sheet')) {
+    if (req.method === 'OPTIONS') {
+      res.writeHead(204, {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type',
+      });
+      return res.end();
+    }
+    if (req.method !== 'POST') {
+      return sendJson(res, 405, { error: 'Method not allowed' });
+    }
+    try {
+      const body = await readJsonBody(req);
+      const result = await handleCareersSheet(body);
+      return sendJson(res, result.status, result.json);
+    } catch (err) {
+      return sendJson(res, err.status || 500, { ok: false, error: err.message || 'Careers sheet request failed' });
+    }
+  }
 
   if (url.startsWith('/api/marketing-chatbot')) {
     if (req.method === 'OPTIONS') {

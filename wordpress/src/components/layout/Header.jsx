@@ -227,6 +227,7 @@ function Header() {
 				</div>
 			</div>
 		</li>
+      <li id="menu-item-careers" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-careers nav-item elementskit-mobile-builder-content" data-vertical-menu="750px"><Link to="/careers" className="ekit-menu-nav-link">Careers</Link></li>
       <li id="menu-item-21075" className="menu-item menu-item-type-post_type menu-item-object-page menu-item-21075 nav-item elementskit-mobile-builder-content" data-vertical-menu="750px"><Link to="/contact-us"  className="ekit-menu-nav-link">Contact Us</Link></li>
       </ul><div className="elementskit-nav-identity-panel"><button className="elementskit-menu-close elementskit-menu-toggler" type="button">X</button></div></div>			
       			<div className="elementskit-menu-overlay elementskit-menu-offcanvas-elements elementskit-menu-toggler ekit-nav-menu--overlay"></div>        </nav>
@@ -346,6 +347,7 @@ function Header() {
       </ul>
       </li>
 
+      <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-careers"><Link to="/careers" className="elementor-item">Careers</Link></li>
       <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-37"><Link to="/contact-us"  className="elementor-item">Contact Us</Link></li>
       </ul>			</nav>
       					<div className="elementor-menu-toggle" role="button" tabIndex="0" aria-label="Menu Toggle" aria-expanded="false">
@@ -416,6 +418,7 @@ function Header() {
       </ul>
       </li>
 
+      <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-careers"><Link to="/careers" className="elementor-item" tabIndex="-1">Careers</Link></li>
       <li className="menu-item menu-item-type-post_type menu-item-object-page menu-item-37"><Link to="/contact-us"  className="elementor-item" tabIndex="-1">Contact Us</Link></li>
       </ul>			</nav>
       				</div>

@@ -9,6 +9,7 @@
  */
 import aboutUsData from '../company/aboutUsData';
 import contactUsData from '../company/contactUsData';
+import careersData from '../company/careersData';
 import corporateAudienceData from '../audience/corporateAudienceData';
 import individualLearnerAudienceData from '../audience/individualLearnerAudienceData';
 import institutionAudienceData from '../audience/institutionAudienceData';
@@ -37,6 +38,7 @@ export const SITE_PAGES = [
   ['/individual-learner', 'Individual Learners — career programs and job readiness'],
   ['/blogs', 'Blogs — articles on data, careers and learning'],
   ['/book-career-counselling', 'Book a free career counselling session'],
+  ['/careers', 'Careers — open roles in Bengaluru and an interest form'],
   ['/contact-us', 'Contact Us — email, phone, office address and enquiry form'],
   ['/privacy-policy', 'Privacy Policy'],
   ['/terms-conditions', 'Terms & Conditions'],
@@ -134,7 +136,8 @@ ${line('Partnerships', aboutUsData.partnerships?.subtitle)}
 - Response time: ${contactUsData.hero?.trust?.[0]?.label || 'Reply within 24 hrs'}
 - Office hours: ${contactUsData.map?.hours || 'Mon–Sat, 10am–6pm IST'}
 - Social: ${social}
-- Enquiry form: /contact-us · Free career counselling: /book-career-counselling
+- Enquiry form: /contact-us · Jobs: /careers · Free career counselling: /book-career-counselling
+- Open roles: ${(careersData.jobs || []).map((job) => job.title).join('; ')}
 
 ## Site map (point visitors to the right page)
 ${bulletList(SITE_PAGES, ([path, desc]) => `${path} — ${desc}`)}

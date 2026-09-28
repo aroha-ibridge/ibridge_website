@@ -24,6 +24,7 @@ const STATIC_PAGES = [
   { route: '/individual-learner', file: 'individual-learner.astro' },
   { route: '/institution', file: 'institution.astro' },
   { route: '/blogs', file: 'blogs.astro' },
+  { route: '/careers', file: 'careers.astro' },
   { route: '/contact-us', file: 'contact-us.astro' },
   { route: '/book-career-counselling', file: 'book-career-counselling.astro', hideChrome: true },
   { route: '/thank-you', file: 'thank-you.astro' },

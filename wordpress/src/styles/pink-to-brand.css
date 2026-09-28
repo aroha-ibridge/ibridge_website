@@ -81,28 +81,28 @@ body.marketing-site a.border-brand:focus {
 /* -------------------------------------------------------------------------- */
 /* Native buttons — pink border/text/bg → brand / black                       */
 /* -------------------------------------------------------------------------- */
-html.marketing-site button:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
-html.marketing-site [type='button']:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+html.marketing-site button:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.careers-dialog__close):not(.careers-role-card__cta):not(.careers-filter):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+html.marketing-site [type='button']:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.careers-dialog__close):not(.careers-role-card__cta):not(.careers-filter):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
 html.marketing-site [type='submit']:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.bg-brand):not([class*='cc-booking']),
 html.marketing-site [type='reset'],
-body.marketing-site button:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
-body.marketing-site [type='button']:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+body.marketing-site button:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.careers-dialog__close):not(.careers-role-card__cta):not(.careers-filter):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+body.marketing-site [type='button']:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.careers-dialog__close):not(.careers-role-card__cta):not(.careers-filter):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
 body.marketing-site [type='submit']:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.bg-brand):not([class*='cc-booking']),
 body.marketing-site [type='reset'] {
 	border-color: #000000 !important;
 	color: #0f172a !important;
 }
 
-html.marketing-site button:hover:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
-html.marketing-site button:focus:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
-html.marketing-site [type='button']:hover:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
-html.marketing-site [type='button']:focus:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+html.marketing-site button:hover:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.careers-dialog__close):not(.careers-role-card__cta):not(.careers-filter):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+html.marketing-site button:focus:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.careers-dialog__close):not(.careers-role-card__cta):not(.careers-filter):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+html.marketing-site [type='button']:hover:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.careers-dialog__close):not(.careers-role-card__cta):not(.careers-filter):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+html.marketing-site [type='button']:focus:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.careers-dialog__close):not(.careers-role-card__cta):not(.careers-filter):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
 html.marketing-site [type='submit']:hover:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.bg-brand):not([class*='cc-booking']),
 html.marketing-site [type='submit']:focus:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.bg-brand):not([class*='cc-booking']),
-body.marketing-site button:hover:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
-body.marketing-site button:focus:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
-body.marketing-site [type='button']:hover:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
-body.marketing-site [type='button']:focus:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+body.marketing-site button:hover:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.careers-dialog__close):not(.careers-role-card__cta):not(.careers-filter):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+body.marketing-site button:focus:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.careers-dialog__close):not(.careers-role-card__cta):not(.careers-filter):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+body.marketing-site [type='button']:hover:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.careers-dialog__close):not(.careers-role-card__cta):not(.careers-filter):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+body.marketing-site [type='button']:focus:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.careers-dialog__close):not(.careers-role-card__cta):not(.careers-filter):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
 body.marketing-site [type='submit']:hover:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.bg-brand):not([class*='cc-booking']),
 body.marketing-site [type='submit']:focus:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.bg-brand):not([class*='cc-booking']) {
 	border-color: #000000 !important;
@@ -382,21 +382,21 @@ body.marketing-site .site-footer a:active {
 	color: #ffffff !important;
 }
 
-body.marketing-site button:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not([class*='cc-booking']),
-body.marketing-site [type='button']:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not([class*='cc-booking']),
-body.marketing-site [type='submit']:not(.elementor-button):not(.ibridge-enquiry-form__submit):not([class*='cc-booking']),
+body.marketing-site button:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.careers-dialog__close):not(.careers-role-card__cta):not(.careers-filter):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+body.marketing-site [type='button']:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.careers-dialog__close):not(.careers-role-card__cta):not(.careers-filter):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+body.marketing-site [type='submit']:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.bg-brand):not([class*='cc-booking']),
 body.marketing-site [type='reset'] {
 	/* Beat hello-elementor pink border/text on native controls */
 	border-color: #000000 !important;
 }
 
-body.marketing-site button:hover:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not([class*='cc-booking']),
-body.marketing-site button:focus:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not([class*='cc-booking']),
-body.marketing-site [type='button']:hover:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not([class*='cc-booking']),
-body.marketing-site [type='button']:focus:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.pcd__btn):not([class*='cc-booking']),
-body.marketing-site [type='submit']:hover:not(.elementor-button):not(.ibridge-enquiry-form__submit):not([class*='cc-booking']),
-body.marketing-site [type='submit']:focus:not(.elementor-button):not(.ibridge-enquiry-form__submit):not([class*='cc-booking']) {
-	/* Beat hello-elementor pink fill hover */
+body.marketing-site button:hover:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.careers-dialog__close):not(.careers-role-card__cta):not(.careers-filter):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+body.marketing-site button:focus:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.careers-dialog__close):not(.careers-role-card__cta):not(.careers-filter):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+body.marketing-site [type='button']:hover:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.careers-dialog__close):not(.careers-role-card__cta):not(.careers-filter):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+body.marketing-site [type='button']:focus:not(.elementor-button):not(.program-cta-modal__button):not(.program-cta-modal__dismiss):not(.program-cta-modal__close):not(.careers-dialog__close):not(.careers-role-card__cta):not(.careers-filter):not(.pcd__btn):not(.bg-brand):not([class*='cc-booking']),
+body.marketing-site [type='submit']:hover:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.bg-brand):not([class*='cc-booking']),
+body.marketing-site [type='submit']:focus:not(.elementor-button):not(.ibridge-enquiry-form__submit):not(.bg-brand):not([class*='cc-booking']) {
+	/* Beat hello-elementor pink fill hover. Brand and careers controls keep their own hover. */
 	background-color: transparent !important;
 	color: #0f172a !important;
 	border-color: #000000 !important;
