@@ -494,6 +494,50 @@ html.marketing-site .tw-scope button.careers-dialog__close:focus-visible,
   padding-right: 3.25rem;
 }
 
+.company-page .careers-interest-form input[type='checkbox'],
+.careers-dialog .careers-interest-form input[type='checkbox'] {
+  width: 1rem !important;
+  height: 1rem !important;
+  margin: 0.15rem 0 0 !important;
+  padding: 0 !important;
+  border: 1px solid #94a3b8 !important;
+  border-radius: 4px !important;
+  background: #ffffff !important;
+  accent-color: #18479f;
+  -webkit-appearance: checkbox !important;
+  appearance: auto !important;
+  flex: 0 0 auto;
+}
+
+.company-page .careers-interest-form input[type='date'],
+.careers-dialog .careers-interest-form input[type='date'] {
+  -webkit-appearance: auto !important;
+  appearance: auto !important;
+}
+
+.careers-tech-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.55rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .careers-open-layout .careers-tech-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.careers-tech-list label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.35;
+  color: #0f172a;
+  cursor: pointer;
+}
+
 @media (min-width: 900px) {
   .careers-dialog .company-contact-form {
     border-radius: 0 24px 24px 0;

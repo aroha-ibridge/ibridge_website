@@ -22,6 +22,38 @@ export async function handleCareersSheet(body = {}) {
     return { status: 400, json: { ok: false, error: 'Name, email, and phone are required' } };
   }
 
+  const dateOfBirth = clean(body.dateOfBirth, 40);
+  const maritalStatus = clean(body.maritalStatus, 40);
+  const experience = clean(body.experience, 100);
+  const currentCtc = clean(body.currentCtc, 40);
+  const expectedCtc = clean(body.expectedCtc, 40);
+  const techStack = clean(body.techStack, 1500);
+  const relocate = clean(body.relocate, 10);
+  const currentLocation = clean(body.currentLocation, 200);
+  const travel = clean(body.travel, 10);
+  const noticePeriod = clean(body.noticePeriod, 80);
+  const joiningDate = clean(body.joiningDate, 40);
+  const profileUrl = clean(body.profileUrl, 500);
+  const roleNote = clean(body.note, 2000);
+  const note = [
+    dateOfBirth && `Date of birth: ${dateOfBirth}`,
+    maritalStatus && `Marital status: ${maritalStatus}`,
+    experience && `Total work experience: ${experience}`,
+    currentCtc && `Current CTC (₹ LPA): ${currentCtc}`,
+    expectedCtc && `Expected CTC (₹ LPA): ${expectedCtc}`,
+    techStack && `Tech stack: ${techStack}`,
+    relocate && `Relocate to Bangalore: ${relocate}`,
+    currentLocation && `Current location: ${currentLocation}`,
+    travel && `Comfortable travelling: ${travel}`,
+    noticePeriod && `Notice period: ${noticePeriod}`,
+    joiningDate && `Earliest joining date: ${joiningDate}`,
+    profileUrl && `Profile: ${profileUrl}`,
+    roleNote && `Why this role: ${roleNote}`,
+  ]
+    .filter(Boolean)
+    .join('\n')
+    .slice(0, 8000);
+
   const payload = {
     secret,
     spreadsheetId: process.env.CAREERS_SPREADSHEET_ID || '',
@@ -31,10 +63,21 @@ export async function handleCareersSheet(body = {}) {
     role: clean(body.role, 200),
     department: clean(body.department, 200),
     workMode: clean(body.workMode, 100),
-    experience: clean(body.experience, 100),
-    profileUrl: clean(body.profileUrl, 500),
-    note: clean(body.note, 4000),
+    experience,
+    profileUrl,
+    note,
+    roleNote,
     pageUrl: clean(body.pageUrl, 500),
+    dateOfBirth,
+    maritalStatus,
+    currentCtc,
+    expectedCtc,
+    techStack,
+    relocate,
+    currentLocation,
+    travel,
+    noticePeriod,
+    joiningDate,
   };
 
   try {
