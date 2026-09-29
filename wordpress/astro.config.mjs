@@ -131,6 +131,7 @@ export default defineConfig({
         if (page.includes('/privacy-policy')) return false;
         if (page.includes('/training/')) return false;
         if (page.includes('/404')) return false;
+        if (page.includes('/careers/apply/')) return true;
         const normalized = page.replace(/\/+$/, '');
         const homeCanon = SITE_BASE ? `${SITE_ORIGIN}${SITE_BASE}` : SITE_ORIGIN;
         if (normalized === homeCanon || normalized === SITE_ORIGIN) {
