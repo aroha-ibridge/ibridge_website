@@ -98,11 +98,11 @@ export const PAGE_SEO = {
       'iBridge360 blog, data engineering articles, analytics insights, career skills blog, learning tips',
   },
   '/careers': {
-    title: 'Careers at iBridge360 | Open Roles in Bengaluru',
+    title: 'Careers at iBridge360 | Mentor Roles & MBA Internship',
     description:
-      'See open roles at iBridge360 in Bengaluru — engineering, data, learning design, training, and partnerships. Share your interest and the team will follow up by email.',
+      'See open roles at iBridge360 — Data Engineering, Data Analytics, Java Full Stack, Cyber Security, and Accounts & Finance mentors, plus MBA internships. Apply online and the team will follow up by email.',
     keywords:
-      'iBridge360 careers, edtech jobs Bengaluru, learning platform jobs, instructional designer jobs, corporate trainer jobs',
+      'iBridge360 careers, edtech jobs Bengaluru, technical mentor jobs, data engineering mentor, java full stack mentor, MBA internship Bengaluru',
   },
   '/contact-us': {
     title: 'Contact iBridge360 | Training, LMS & Partnership Enquiries',

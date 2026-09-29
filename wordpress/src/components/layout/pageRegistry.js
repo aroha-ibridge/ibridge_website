@@ -20,6 +20,7 @@ import Institution from '../../views/Institution/Institution';
 import Blogs from '../../views/Blogs/Blogs';
 import ContactUs from '../../views/ContactUs/ContactUs';
 import Careers from '../../views/Careers/Careers';
+import CareerApply from '../../views/CareerApply/CareerApply';
 import BookCareerCounselling from '../../views/BookCareerCounselling/BookCareerCounselling';
 import ThankYou from '../../views/ThankYou/ThankYou';
 import TermsConditions from '../../views/TermsConditions/TermsConditions';
@@ -79,6 +80,7 @@ export const PAGE_COMPONENTS = {
   '/blogs': Blogs,
   '/contact-us': ContactUs,
   '/careers': Careers,
+  '/careers/apply': CareerApply,
   '/book-career-counselling': BookCareerCounselling,
   '/thank-you': ThankYou,
   '/terms-conditions': TermsConditions,
@@ -129,6 +131,7 @@ export function resolvePageComponent(pathname = '/') {
 
   if (PAGE_COMPONENTS[path]) return PAGE_COMPONENTS[path];
 
+  if (path.startsWith('/careers/apply/')) return PAGE_COMPONENTS['/careers/apply'];
   if (path.startsWith('/programs/course/')) return PAGE_COMPONENTS['/programs/course'];
   if (path.startsWith('/training/') && path !== '/training-upskilling') {
     return PAGE_COMPONENTS['/training'];

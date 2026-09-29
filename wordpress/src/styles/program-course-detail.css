@@ -1064,3 +1064,15 @@ a.pcd__related-card:hover {
     padding-bottom: 2rem;
   }
 }
+
+.pcd__faq-toggle > span:first-child {
+  min-width: 0;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+
+.pcd__module-toggle > span:first-child {
+  min-width: 0;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}

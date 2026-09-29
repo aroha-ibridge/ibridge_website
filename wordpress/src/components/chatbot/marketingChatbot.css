@@ -1478,14 +1478,14 @@
   }
 
   .ibc-fabs {
-    right: 10px;
-    top: 50%;
+    right: 8px;
+    top: auto;
     left: auto;
-    bottom: auto;
-    transform: translateY(-50%);
-    gap: 32px;
+    bottom: 96px;
+    transform: none;
+    gap: 10px;
     width: auto;
-    min-width: 44px;
+    min-width: 40px;
     padding: 0;
   }
 
@@ -1503,14 +1503,12 @@
   }
 
   .ibc-fab__caption {
-    display: block;
-    font-size: 8.5px;
-    max-width: 72px;
+    display: none;
   }
 
   .ibc-fab__orb {
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
   }
 
   .ibc-dock button.ibc-fab .ibc-fab__copy,
@@ -1525,7 +1523,7 @@
   .ibc-dock .ibc-teaser {
     right: 12px;
     top: auto;
-    bottom: calc(50% + 120px);
+    bottom: 260px;
     left: auto;
     transform: none;
     max-width: min(260px, calc(100vw - 24px));

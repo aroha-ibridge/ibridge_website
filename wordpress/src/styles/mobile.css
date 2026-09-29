@@ -475,3 +475,10 @@
 		z-index: 90;
 	}
 }
+
+/* Home hero rotating headline: keep "Coding, Debugging" inside narrow phones */
+@media (max-width: 480px) {
+  .elementor-9 .elementor-element.elementor-element-b0b21cc .elementor-headline {
+    font-size: min(40px, 8.2vw) !important;
+  }
+}

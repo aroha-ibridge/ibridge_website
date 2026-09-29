@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import SiteShell from '../../../components/layout/SiteShell';
+import careersData from '../../../content/company/careersData';
+
+export function getStaticPaths() {
+  return careersData.jobs.map((job) => ({
+    params: { jobId: job.id },
+    props: { title: job.title, summary: job.summary },
+  }));
+}
+
+const { jobId } = Astro.params;
+const { title, summary } = Astro.props;
+const pathname = `/careers/apply/${jobId}`;
+const seo = {
+  title: `Apply for ${title} | Careers at iBridge360`,
+  description: `${summary} Apply online to join iBridge360.`,
+  path: pathname,
+  canonical: pathname,
+  noIndex: false,
+};
+---
+
+<BaseLayout seo={seo}>
+  <SiteShell client:load pathname={pathname} params={{ jobId }} />
+</BaseLayout>
