@@ -81,17 +81,27 @@
   height: 48px;
   padding: 6px;
   color: var(--ibc-ink);
-  background: transparent;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
   border: 0;
   border-radius: 50%;
   box-shadow: none;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   transition: width 0.16s ease, max-width 0.16s ease, border-radius 0.16s ease,
-    background 0.16s ease, box-shadow 0.16s ease, height 0.16s ease,
+    box-shadow 0.16s ease, height 0.16s ease,
     min-height 0.16s ease, padding 0.16s ease, opacity 0.2s ease;
   text-align: left;
   overflow: visible;
+}
+
+/* Theme button rules can reapply a transparent background after hover starts. */
+html body .ibc-dock button.ibc-fab,
+html body .ibc-dock button.ibc-fab:hover,
+html body .ibc-dock button.ibc-fab:focus,
+html body .ibc-dock button.ibc-fab--on {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
 }
 
 .ibc-dock button.ibc-fab--lms {
@@ -118,13 +128,15 @@
 .ibc-dock button.ibc-fab:hover,
 .ibc-dock button.ibc-fab:focus {
   color: var(--ibc-ink);
-  background: transparent;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
   border: 0;
   box-shadow: none;
 }
 
 .ibc-dock button.ibc-fab--on {
-  background: transparent;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
   border: 0;
   box-shadow: none;
 }
@@ -375,8 +387,6 @@
 .ibc-dock .ibc-root--embedded.ibc-root--open {
   pointer-events: auto;
   z-index: 2;
-  background: #ffffff !important;
-  background-color: #ffffff !important;
 }
 
 .ibc-dock .ibc-root--embedded .ibc-panel {
@@ -1501,7 +1511,8 @@
     gap: 0;
     border-radius: 50%;
     overflow: visible;
-    background: transparent;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
     box-shadow: none;
   }
 

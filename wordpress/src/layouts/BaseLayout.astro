@@ -39,6 +39,7 @@ const canonicalUrl = absoluteUrl(origin, canonicalPath === '/' ? '/' : canonical
 const imageUrl = absoluteUrl(origin, image);
 const robots = noIndex ? 'noindex, follow' : 'index, follow, max-image-preview:large';
 const faviconHref = withBase('/wp-content/uploads/2024/04/cropped-icon-32x32.png');
+const faviconLargeHref = withBase('/wp-content/uploads/2024/04/cropped-icon-192x192.png');
 const stylesheetHrefs = ELEMENTOR_STYLESHEETS.map((href) => withBase(href));
 ---
 
@@ -47,7 +48,10 @@ const stylesheetHrefs = ELEMENTOR_STYLESHEETS.map((href) => withBase(href));
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href={faviconHref} />
+    <link rel="icon" type="image/png" sizes="32x32" href={faviconHref} />
+    <link rel="icon" type="image/png" sizes="192x192" href={faviconLargeHref} />
+    <link rel="apple-touch-icon" sizes="192x192" href={faviconLargeHref} />
+    <link rel="manifest" href={withBase('/manifest.json')} />
 
     {title ? <title>{title}</title> : null}
     {description ? <meta name="description" content={description} /> : null}
