@@ -411,6 +411,15 @@ html.marketing-site .tw-scope.company-careers-page .careers-search-bar input {
   grid-column: 1 / -1;
 }
 
+@media (min-width: 700px) {
+  /* Keep controls aligned when neighboring labels wrap to two lines. */
+  .careers-form-grid > .tw-scope:not(.careers-form-grid__full) > label {
+    min-height: 3.25rem;
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
 .careers-apply__role {
   min-width: 0;
 }

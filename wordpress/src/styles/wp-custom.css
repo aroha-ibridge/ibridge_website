@@ -2275,6 +2275,13 @@ body.marketing-site .program-cta-modal button.program-cta-modal__close:focus-vis
 		border-radius: 0.35rem !important;
 	}
 
+	.elementor-21071 a.site-header-login:hover,
+	.elementor-21071 a.site-header-login:focus-visible {
+		background: #fff !important;
+		background-color: #fff !important;
+		color: #18479f !important;
+	}
+
 	/* Keep the final navigation actions together and use a compact contact icon. */
 	.elementor-21071 .elementskit-navbar-nav > li.menu-item-careers,
 	.elementor-21071 .elementskit-navbar-nav > li.menu-item-21075 {
