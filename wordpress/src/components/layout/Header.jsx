@@ -119,6 +119,19 @@ function Header() {
         className="elementor elementor-21071 elementor-location-header"
         data-elementor-post-type="elementor_library"
       >
+        <div className="site-header-utility" aria-label="Contact and account links">
+          <div className="site-header-utility__inner">
+            <div className="site-header-utility__contact">
+              <span>For enquiries: <a href="mailto:support@ibridge360.com">support@ibridge360.com</a></span>
+              <span aria-hidden="true">|</span>
+              <a href="tel:+918792922796">+91 879 292 2796</a>
+            </div>
+            <Link className="site-header-utility__login" to={PLATFORM_LOGIN_PATH}>
+              <span aria-hidden="true">↪</span>
+              Login
+            </Link>
+          </div>
+        </div>
         <section
           data-particle_enable="false"
           data-particle-mobile-disabled="false"
@@ -487,6 +500,7 @@ function Header() {
                 <div
                   className="elementor-element elementor-element-3d214b00 elementor-align-center elementor-tablet-align-left elementor-widget elementor-widget-button"
                   data-id="3d214b00"
+                  data-header-main-login="true"
                   data-element_type="widget"
                   data-widget_type="button.default"
                 >

@@ -843,6 +843,10 @@ body.marketing-site .program-cta-modal button.program-cta-modal__close:focus-vis
 	transform: rotate(180deg);
 }
 
+ .site-header-utility {
+	display: none;
+}
+
 @media (min-width: 1025px) {
 	/* iBridge For (and other narrow program-style menus) */
 	.ekit-wid-con .elementskit-menu-po-center .programs-megamenu-item:not(.products-megamenu-item):not(.programs-courses-megamenu-item).elementskit-megamenu-has.top_position.elementskit-dropdown-menu-default_width > .elementskit-megamenu-panel {
@@ -2182,6 +2186,46 @@ body.marketing-site .program-cta-modal button.program-cta-modal__close:focus-vis
 }
 
 @media (min-width: 1025px) {
+	.site-header-utility {
+		display: block;
+		background: #18479f !important;
+		background-color: #18479f !important;
+		color: #fff;
+		font-size: 13px;
+	}
+
+	.site-header-utility__inner {
+		width: min(1170px, calc(100% - 48px));
+		min-height: 38px;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+
+	.site-header-utility__contact,
+	.site-header-utility__login {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.65rem;
+		white-space: nowrap;
+	}
+
+	.site-header-utility a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.site-header-utility__login {
+		padding: 0.35rem 0;
+		font-weight: 600;
+	}
+
+	.elementor-21071 [data-header-main-login="true"] {
+		display: none !important;
+	}
+
 	/* Header row: keep all columns vertically centered so items sit on one line */
 	.elementor-location-header .elementor-top-section > .elementor-container {
 		align-items: center;
