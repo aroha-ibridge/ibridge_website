@@ -34,6 +34,7 @@ export async function handleCareersSheet(body = {}) {
   const noticePeriod = clean(body.noticePeriod, 80);
   const joiningDate = clean(body.joiningDate, 40);
   const profileUrl = clean(body.profileUrl, 500);
+  const resumeUrl = clean(body.resumeUrl, 500);
   const roleNote = clean(body.note, 2000);
   const note = [
     dateOfBirth && `Date of birth: ${dateOfBirth}`,
@@ -48,6 +49,7 @@ export async function handleCareersSheet(body = {}) {
     noticePeriod && `Notice period: ${noticePeriod}`,
     joiningDate && `Earliest joining date: ${joiningDate}`,
     profileUrl && `Profile: ${profileUrl}`,
+    resumeUrl && `Resume: ${resumeUrl}`,
     roleNote && `Why this role: ${roleNote}`,
   ]
     .filter(Boolean)
@@ -65,6 +67,7 @@ export async function handleCareersSheet(body = {}) {
     workMode: clean(body.workMode, 100),
     experience,
     profileUrl,
+    resumeUrl,
     note,
     roleNote,
     pageUrl: clean(body.pageUrl, 500),

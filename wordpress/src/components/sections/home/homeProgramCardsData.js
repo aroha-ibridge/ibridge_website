@@ -2,7 +2,7 @@ const homeProgramCards = [
   {
     id: 'data-engineering',
     title: 'Master in Data Engineering',
-    href: '/courses/data-engineering',
+    href: '/courses/data-engineering-course-bangalore',
     image: '/wp-content/uploads/2026/07/corporate-benefits-laptop-team.jpg',
     duration: '3 Months',
     benefit: '100% Job Assistance',
@@ -11,7 +11,7 @@ const homeProgramCards = [
   {
     id: 'data-analytics',
     title: 'Master in Data Analytics',
-    href: '/data-analytics-course',
+    href: '/courses/data-analytics-course-bangalore',
     image: '/wp-content/uploads/2024/03/Data-Science1-1.png',
     duration: '3 Months',
     benefit: '100% Job Assistance',
@@ -20,7 +20,7 @@ const homeProgramCards = [
   {
     id: 'pyspark',
     title: 'Master in PySpark',
-    href: '/pyspark-course',
+    href: '/courses/pyspark-course-bangalore',
     image: '/wp-content/uploads/2024/03/Data-Engineering.png',
     duration: '3 Months',
     benefit: '100% Job Assistance',
@@ -29,7 +29,7 @@ const homeProgramCards = [
   {
     id: 'databricks-data-engineering',
     title: 'Master in Databricks Data Engineering',
-    href: '/databricks-data-engineering-course',
+    href: '/courses/databricks-data-engineering-course-bangalore',
     image: '/wp-content/uploads/2024/03/Data-Engineering.png',
     duration: '2 Months',
     benefit: '100% Job Assistance',
@@ -38,7 +38,7 @@ const homeProgramCards = [
   {
     id: 'microsoft-fabric-data-engineering',
     title: 'Master in Microsoft Fabric Data Engineering',
-    href: '/microsoft-fabric-data-engineering-course',
+    href: '/courses/microsoft-fabric-data-engineering-course-bangalore',
     image: '/wp-content/uploads/2024/03/Data-Engineering.png',
     duration: '2 Months',
     benefit: '100% Job Assistance',
@@ -47,7 +47,7 @@ const homeProgramCards = [
   {
     id: 'tableau',
     title: 'Master in Tableau',
-    href: '/tableau-course',
+    href: '/courses/tableau-course-bangalore',
     image: '/wp-content/uploads/2024/03/Data-Science1-1.png',
     duration: '2 Months',
     benefit: '100% Job Assistance',
@@ -56,7 +56,7 @@ const homeProgramCards = [
   {
     id: 'advanced-excel',
     title: 'Master in Advanced Excel',
-    href: '/advanced-excel-course',
+    href: '/courses/advanced-excel-course-bangalore',
     image: '/wp-content/uploads/2024/03/Data-Science1-1.png',
     duration: '2 Months',
     benefit: '100% Job Assistance',
@@ -65,7 +65,7 @@ const homeProgramCards = [
   {
     id: 'sql-bootcamp',
     title: 'Master in SQL Bootcamp',
-    href: '/sql-bootcamp',
+    href: '/courses/sql-bootcamp-bangalore',
     image: '/wp-content/uploads/2024/03/Data-Engineering.png',
     duration: 'Intensive Bootcamp',
     benefit: '100% Job Assistance',
@@ -74,7 +74,7 @@ const homeProgramCards = [
   {
     id: 'python-bootcamp',
     title: 'Master in Python Bootcamp',
-    href: '/python-bootcamp',
+    href: '/courses/python-bootcamp-bangalore',
     image: '/wp-content/uploads/2024/03/Data-Science1-1.png',
     duration: 'Intensive Bootcamp',
     benefit: '100% Job Assistance',
@@ -83,7 +83,7 @@ const homeProgramCards = [
   {
     id: 'full-stack-mern',
     title: 'Master in MERN Full Stack',
-    href: '/mern-full-stack-development-course',
+    href: '/courses/mern-full-stack-course-bangalore',
     image: '/wp-content/uploads/2024/03/Full-Stack-Development-1.png',
     duration: '3 Months',
     benefit: '100% Job Assistance',
@@ -92,7 +92,7 @@ const homeProgramCards = [
   {
     id: 'java-fullstack',
     title: 'Master in Java Full Stack',
-    href: '/java-full-stack-development-course',
+    href: '/courses/java-full-stack-course-bangalore',
     image: '/wp-content/uploads/2024/03/Full-Stack-Development-1.png',
     duration: '3 Months',
     benefit: '100% Job Assistance',
@@ -101,7 +101,7 @@ const homeProgramCards = [
   {
     id: 'python-fullstack',
     title: 'Master in Python Full Stack',
-    href: '/python-full-stack-development-course',
+    href: '/courses/python-full-stack-course-bangalore',
     image: '/wp-content/uploads/2024/03/Full-Stack-Development-1.png',
     duration: '3 Months',
     benefit: '100% Job Assistance',
@@ -110,7 +110,7 @@ const homeProgramCards = [
   {
     id: 'data-science',
     title: 'Master in Data Science',
-    href: '/courses/data-science',
+    href: '/courses/data-science-course-bangalore',
     image: '/wp-content/uploads/2024/03/Data-Science1-1.png',
     duration: '6 Months',
     benefit: '100% Job Assistance',

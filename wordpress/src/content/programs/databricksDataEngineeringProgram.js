@@ -13,7 +13,7 @@ const databricksDataEngineeringProgram = {
     description:
       'Learn Databricks Data Engineering with PySpark, SQL, Apache Spark, Delta Lake, Lakehouse Architecture, Unity Catalog, ETL pipelines and cloud integration.',
   },
-  path: '/databricks-data-engineering-course',
+  path: '/courses/databricks-data-engineering-course-bangalore',
   pageId: '508',
 
   hero: {

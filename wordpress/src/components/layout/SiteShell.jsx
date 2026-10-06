@@ -31,7 +31,9 @@ function SiteShell({
     [pathname],
   );
   const isBookingPage = normalizedPath === '/book-career-counselling';
+  const isCareersPage = normalizedPath === '/careers' || normalizedPath.startsWith('/careers/apply/');
   const showChrome = !hideChrome && !isBookingPage;
+  const showChatbot = showChrome && !isCareersPage;
   const Page = useMemo(() => resolvePageComponent(normalizedPath), [normalizedPath]);
 
   useMarketingSiteBodyClass();
@@ -46,7 +48,7 @@ function SiteShell({
   return (
     <RouterProvider pathname={normalizedPath} params={params}>
       <MarketingStyles />
-      <div className="marketing-shell marketing-shell--ready">
+      <div className={`marketing-shell marketing-shell--ready${showChrome ? ' marketing-shell--fixed-header' : ''}`}>
         {showChrome && <Header />}
         <main id="content" className="site-main">
           <div className="marketing-page-enter">
@@ -66,9 +68,9 @@ function SiteShell({
           <PopupModalShell popupId="19428">
             <InstitutionVideoPopup />
           </PopupModalShell>
-          <ChatbotDock />
         </>
       )}
+      {showChatbot && <ChatbotDock />}
     </RouterProvider>
   );
 }

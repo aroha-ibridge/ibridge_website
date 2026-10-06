@@ -13,7 +13,7 @@ const pysparkProgram = {
     description:
       'Learn PySpark with Apache Spark, Spark SQL, DataFrames, ETL, Big Data processing, AWS, data pipelines and real-world data engineering projects.',
   },
-  path: '/pyspark-course',
+  path: '/courses/pyspark-course-bangalore',
   pageId: '508',
 
   hero: {

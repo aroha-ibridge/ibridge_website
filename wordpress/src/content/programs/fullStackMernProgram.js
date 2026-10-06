@@ -13,7 +13,7 @@ const fullStackMernProgram = {
     description:
       'Learn MERN Full Stack Development with MongoDB, Express.js, React, Node.js, JavaScript, REST APIs, Git, deployment and real-world development skills.',
   },
-  path: '/mern-full-stack-development-course',
+  path: '/courses/mern-full-stack-course-bangalore',
   pageId: '508',
 
   hero: {

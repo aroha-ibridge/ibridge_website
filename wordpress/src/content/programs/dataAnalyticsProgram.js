@@ -13,7 +13,7 @@ const dataAnalyticsProgram = {
     description:
       'Learn Data Analytics with Excel, SQL, Python, Pandas, Power BI, statistics, data visualization and real-world analytics projects with career support.',
   },
-  path: '/data-analytics-course',
+  path: '/courses/data-analytics-course-bangalore',
   pageId: '508',
 
   hero: {

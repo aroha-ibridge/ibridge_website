@@ -13,7 +13,7 @@ const dataEngineeringProgram = {
     description:
       'Learn Data Engineering with SQL, Python, ETL, Data Warehousing, AWS Cloud, Power BI, Linux, and practical data engineering skills.',
   },
-  path: '/courses/data-engineering',
+  path: '/courses/data-engineering-course-bangalore',
   pageId: '508',
 
   hero: {

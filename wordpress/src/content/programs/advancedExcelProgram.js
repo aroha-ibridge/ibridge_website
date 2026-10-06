@@ -13,7 +13,7 @@ const advancedExcelProgram = {
     description:
       'Learn Advanced Excel with formulas, Pivot Tables, Power Query, dashboards, data analysis, XLOOKUP, INDEX MATCH, Power Pivot, VBA basics and real-world business projects.',
   },
-  path: '/advanced-excel-course',
+  path: '/courses/advanced-excel-course-bangalore',
   pageId: '508',
 
   hero: {

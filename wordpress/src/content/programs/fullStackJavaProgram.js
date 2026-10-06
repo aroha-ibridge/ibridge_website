@@ -13,7 +13,7 @@ const fullStackJavaProgram = {
     description:
       'Learn Java Full Stack Development with Java, Spring Boot, React, SQL, REST APIs, Git, deployment and real-world development skills.',
   },
-  path: '/java-full-stack-development-course',
+  path: '/courses/java-full-stack-course-bangalore',
   pageId: '508',
 
   hero: {

@@ -83,44 +83,129 @@ function AppRouter() {
         <Route path="thank-you" element={<ThankYou />} />
         <Route path="terms-conditions" element={<TermsConditions />} />
         <Route path="privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="courses/data-engineering" element={<DataEngineeringProgram />} />
+        {/* Program pages — only the Bangalore URLs are real pages */}
+        <Route
+          path="courses/data-engineering-course-bangalore"
+          element={<DataEngineeringProgram />}
+        />
+        <Route path="courses/data-analytics-course-bangalore" element={<DataAnalyticsProgram />} />
+        <Route path="courses/data-science-course-bangalore" element={<DataScienceProgram />} />
+        <Route path="courses/pyspark-course-bangalore" element={<PysparkProgram />} />
+        <Route
+          path="courses/databricks-data-engineering-course-bangalore"
+          element={<DatabricksDataEngineeringProgram />}
+        />
+        <Route
+          path="courses/microsoft-fabric-data-engineering-course-bangalore"
+          element={<MicrosoftFabricDataEngineeringProgram />}
+        />
+        <Route path="courses/tableau-course-bangalore" element={<TableauProgram />} />
+        <Route path="courses/advanced-excel-course-bangalore" element={<AdvancedExcelProgram />} />
+        <Route path="courses/sql-bootcamp-bangalore" element={<SqlBootcampProgram />} />
+        <Route path="courses/python-bootcamp-bangalore" element={<PythonBootcampProgram />} />
+        <Route path="courses/mern-full-stack-course-bangalore" element={<FullStackMernProgram />} />
+        <Route path="courses/java-full-stack-course-bangalore" element={<FullStackJavaProgram />} />
+        <Route
+          path="courses/python-full-stack-course-bangalore"
+          element={<FullStackPythonProgram />}
+        />
+
+        {/* Old program URLs — 301 to the Bangalore pages (sync with seoRedirects.js) */}
+        <Route
+          path="courses/data-engineering"
+          element={<Navigate to="/courses/data-engineering-course-bangalore" replace />}
+        />
+        <Route
+          path="courses/data-science"
+          element={<Navigate to="/courses/data-science-course-bangalore" replace />}
+        />
         <Route
           path="data-engineering-course"
-          element={<Navigate to="/courses/data-engineering" replace />}
+          element={<Navigate to="/courses/data-engineering-course-bangalore" replace />}
         />
         <Route
           path="data-engineering-program"
-          element={<Navigate to="/courses/data-engineering" replace />}
+          element={<Navigate to="/courses/data-engineering-course-bangalore" replace />}
         />
-        <Route path="mern-full-stack-development-course" element={<FullStackMernProgram />} />
-        <Route path="java-full-stack-development-course" element={<FullStackJavaProgram />} />
-        <Route path="python-full-stack-development-course" element={<FullStackPythonProgram />} />
-        <Route path="courses/mern-fullstack" element={<Navigate to="/mern-full-stack-development-course" replace />} />
-        <Route path="courses/java-fullstack" element={<Navigate to="/java-full-stack-development-course" replace />} />
-        <Route path="courses/python-fullstack" element={<Navigate to="/python-full-stack-development-course" replace />} />
-        <Route path="mern-fullstack" element={<Navigate to="/mern-full-stack-development-course" replace />} />
-        <Route path="java-fullstack" element={<Navigate to="/java-full-stack-development-course" replace />} />
-        <Route path="python-fullstack" element={<Navigate to="/python-full-stack-development-course" replace />} />
+        <Route
+          path="data-analytics-course"
+          element={<Navigate to="/courses/data-analytics-course-bangalore" replace />}
+        />
+        <Route
+          path="pyspark-course"
+          element={<Navigate to="/courses/pyspark-course-bangalore" replace />}
+        />
+        <Route
+          path="databricks-data-engineering-course"
+          element={<Navigate to="/courses/databricks-data-engineering-course-bangalore" replace />}
+        />
+        <Route
+          path="microsoft-fabric-data-engineering-course"
+          element={<Navigate to="/courses/microsoft-fabric-data-engineering-course-bangalore" replace />}
+        />
+        <Route
+          path="tableau-course"
+          element={<Navigate to="/courses/tableau-course-bangalore" replace />}
+        />
+        <Route
+          path="advanced-excel-course"
+          element={<Navigate to="/courses/advanced-excel-course-bangalore" replace />}
+        />
+        <Route
+          path="sql-bootcamp"
+          element={<Navigate to="/courses/sql-bootcamp-bangalore" replace />}
+        />
+        <Route
+          path="python-bootcamp"
+          element={<Navigate to="/courses/python-bootcamp-bangalore" replace />}
+        />
+        <Route
+          path="mern-full-stack-development-course"
+          element={<Navigate to="/courses/mern-full-stack-course-bangalore" replace />}
+        />
+        <Route
+          path="java-full-stack-development-course"
+          element={<Navigate to="/courses/java-full-stack-course-bangalore" replace />}
+        />
+        <Route
+          path="python-full-stack-development-course"
+          element={<Navigate to="/courses/python-full-stack-course-bangalore" replace />}
+        />
+        <Route
+          path="data-science-program"
+          element={<Navigate to="/courses/data-science-course-bangalore" replace />}
+        />
+        <Route
+          path="courses/mern-fullstack"
+          element={<Navigate to="/courses/mern-full-stack-course-bangalore" replace />}
+        />
+        <Route
+          path="courses/java-fullstack"
+          element={<Navigate to="/courses/java-full-stack-course-bangalore" replace />}
+        />
+        <Route
+          path="courses/python-fullstack"
+          element={<Navigate to="/courses/python-full-stack-course-bangalore" replace />}
+        />
+        <Route
+          path="mern-fullstack"
+          element={<Navigate to="/courses/mern-full-stack-course-bangalore" replace />}
+        />
+        <Route
+          path="java-fullstack"
+          element={<Navigate to="/courses/java-full-stack-course-bangalore" replace />}
+        />
+        <Route
+          path="python-fullstack"
+          element={<Navigate to="/courses/python-full-stack-course-bangalore" replace />}
+        />
         <Route
           path="full-stack-development-mern-program-2"
-          element={<Navigate to="/mern-full-stack-development-course" replace />}
+          element={<Navigate to="/courses/mern-full-stack-course-bangalore" replace />}
         />
         <Route
           path="full-stack-mern-program"
-          element={<Navigate to="/mern-full-stack-development-course" replace />}
-        />
-        <Route path="data-analytics-course" element={<DataAnalyticsProgram />} />
-        <Route path="pyspark-course" element={<PysparkProgram />} />
-        <Route path="databricks-data-engineering-course" element={<DatabricksDataEngineeringProgram />} />
-        <Route path="microsoft-fabric-data-engineering-course" element={<MicrosoftFabricDataEngineeringProgram />} />
-        <Route path="tableau-course" element={<TableauProgram />} />
-        <Route path="advanced-excel-course" element={<AdvancedExcelProgram />} />
-        <Route path="sql-bootcamp" element={<SqlBootcampProgram />} />
-        <Route path="python-bootcamp" element={<PythonBootcampProgram />} />
-        <Route path="courses/data-science" element={<DataScienceProgram />} />
-        <Route
-          path="data-science-program"
-          element={<Navigate to="/courses/data-science" replace />}
+          element={<Navigate to="/courses/mern-full-stack-course-bangalore" replace />}
         />
         <Route path="corporate-corporate-training-programs" element={<Navigate to="/corporate" replace />} />
         <Route path="corporate-training" element={<Navigate to="/corporate" replace />} />

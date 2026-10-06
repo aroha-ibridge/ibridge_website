@@ -16,7 +16,7 @@ const LINK_MAP = {
   'contact-us/index.html': '/contact-us',
   'terms-conditions/index.html': '/terms-conditions',
   'privacy-policy/index.html': '/privacy-policy',
-  'data-engineering-program/index.html': '/courses/data-engineering',
+  'data-engineering-program/index.html': '/courses/data-engineering-course-bangalore',
   'institution-expert-talks/index.html': '/institution-expert-talks',
   'institution-epbl/index.html': '/institution-epbl',
   'institution-faculty-development-program/index.html': '/institution-faculty-development-program',

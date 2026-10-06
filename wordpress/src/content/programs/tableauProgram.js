@@ -13,7 +13,7 @@ const tableauProgram = {
     description:
       'Learn Tableau with data visualization, Tableau Prep, calculated fields, LOD expressions, dashboards, data analytics, SQL and real-world BI projects.',
   },
-  path: '/tableau-course',
+  path: '/courses/tableau-course-bangalore',
   pageId: '508',
 
   hero: {

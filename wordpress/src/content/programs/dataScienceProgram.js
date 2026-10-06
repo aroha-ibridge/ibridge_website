@@ -13,7 +13,7 @@ const dataScienceProgram = {
     description:
       "Become a job-ready Data Scientist with iBridge360's 6-month hands-on program covering Python, statistics, ML, visualization, and real-world projects.",
   },
-  path: '/courses/data-science',
+  path: '/courses/data-science-course-bangalore',
   pageId: '508',
 
   hero: {

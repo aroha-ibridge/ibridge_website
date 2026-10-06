@@ -1,9 +1,5 @@
 import { Link } from 'react-router-dom';
 
-import {
-  PLATFORM_LOGIN_PATH,
-  PLATFORM_EXPLORE_PATH,
-} from '../../constants/platformLinks';
 import '../../styles/site-footer.css';
 
 const QUICK_LINKS = [
@@ -11,11 +7,7 @@ const QUICK_LINKS = [
   { label: 'About Us', to: '/about-us' },
   { label: 'Programs', to: '/programs' },
   { label: 'Products', to: '/products' },
-  { label: 'Code Arena', to: '/code-arena' },
-  { label: 'Training & Upskilling', to: '/training-upskilling' },
-  { label: 'LearnSmart LMS', to: '/learnsmart-lms' },
   { label: 'Blogs', to: '/blogs' },
-  { label: 'Book Career Counselling', to: '/book-career-counselling' },
   { label: 'Careers', to: '/careers' },
   { label: 'Contact Us', to: '/contact-us' },
 ];
@@ -24,24 +16,6 @@ const AUDIENCE_LINKS = [
   { label: 'Corporate L&D', to: '/corporate' },
   { label: 'Individual Learner', to: '/individual-learner' },
   { label: 'Institution', to: '/institution' },
-];
-
-const PROGRAM_LINKS = [
-  { label: 'Data Engineering', to: '/courses/data-engineering' },
-  { label: 'Data Analytics', to: '/data-analytics-course' },
-  { label: 'PySpark', to: '/pyspark-course' },
-  { label: 'Databricks Data Engineering', to: '/databricks-data-engineering-course' },
-  { label: 'Microsoft Fabric Data Engineering', to: '/microsoft-fabric-data-engineering-course' },
-  { label: 'Tableau', to: '/tableau-course' },
-  { label: 'Advanced Excel', to: '/advanced-excel-course' },
-  { label: 'SQL Bootcamp', to: '/sql-bootcamp' },
-  { label: 'Python Bootcamp', to: '/python-bootcamp' },
-  { label: 'Data Science', to: '/courses/data-science' },
-  { label: 'Java Full Stack', to: '/java-full-stack-development-course' },
-  { label: 'Python Full Stack', to: '/python-full-stack-development-course' },
-  { label: 'MERN Full Stack', to: '/mern-full-stack-development-course' },
-  { label: 'Cloud Computing', to: '/training/cloud-computing' },
-  { label: 'DevOps', to: '/training/devops' },
 ];
 
 const SOCIAL_LINKS = [
@@ -157,34 +131,6 @@ function Footer() {
                   <Link to={item.to}>{item.label}</Link>
                 </li>
               ))}
-            </ul>
-          </nav>
-
-          <nav className="site-footer__col" aria-label="Programs and platform">
-            <h3 className="site-footer__heading">Programs & Platform</h3>
-            <ul className="site-footer__list">
-              {PROGRAM_LINKS.map((item) => (
-                <li key={item.to}>
-                  <Link to={item.to}>{item.label}</Link>
-                </li>
-              ))}
-              <li>
-                <a
-                  href={PLATFORM_EXPLORE_PATH}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Find Your Job
-                </a>
-              </li>
-              <li>
-                <Link to={PLATFORM_LOGIN_PATH}>Explore Platform</Link>
-              </li>
-              {/* Login link temporarily hidden
-              <li>
-                <Link to={PLATFORM_LOGIN_PATH}>Login</Link>
-              </li>
-              */}
             </ul>
           </nav>
 

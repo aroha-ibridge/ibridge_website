@@ -13,7 +13,7 @@ const microsoftFabricDataEngineeringProgram = {
     description:
       'Learn Microsoft Fabric Data Engineering with OneLake, Lakehouse, PySpark, SQL, Data Factory, Pipelines, Dataflow Gen2, Delta Lake and Power BI.',
   },
-  path: '/microsoft-fabric-data-engineering-course',
+  path: '/courses/microsoft-fabric-data-engineering-course-bangalore',
   pageId: '508',
 
   hero: {

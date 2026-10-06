@@ -13,7 +13,7 @@ const fullStackPythonProgram = {
     description:
       'Learn Python Full Stack Development with Python, Django, React, SQL, REST APIs, Git, deployment and real-world development skills.',
   },
-  path: '/python-full-stack-development-course',
+  path: '/courses/python-full-stack-course-bangalore',
   pageId: '508',
 
   hero: {

@@ -30,24 +30,48 @@ const STATIC_PAGES = [
   { route: '/thank-you', file: 'thank-you.astro' },
   { route: '/terms-conditions', file: 'terms-conditions.astro' },
   { route: '/privacy-policy', file: 'privacy-policy.astro' },
-  { route: '/courses/data-engineering', file: 'courses/data-engineering.astro' },
-  { route: '/data-analytics-course', file: 'data-analytics-course.astro' },
-  { route: '/pyspark-course', file: 'pyspark-course.astro' },
-  { route: '/databricks-data-engineering-course', file: 'databricks-data-engineering-course.astro' },
   {
-    route: '/microsoft-fabric-data-engineering-course',
-    file: 'microsoft-fabric-data-engineering-course.astro',
+    route: '/courses/data-engineering-course-bangalore',
+    file: 'courses/data-engineering-course-bangalore.astro',
   },
-  { route: '/tableau-course', file: 'tableau-course.astro' },
-  { route: '/advanced-excel-course', file: 'advanced-excel-course.astro' },
-  { route: '/sql-bootcamp', file: 'sql-bootcamp.astro' },
-  { route: '/python-bootcamp', file: 'python-bootcamp.astro' },
-  { route: '/courses/data-science', file: 'courses/data-science.astro' },
-  { route: '/mern-full-stack-development-course', file: 'mern-full-stack-development-course.astro' },
-  { route: '/java-full-stack-development-course', file: 'java-full-stack-development-course.astro' },
   {
-    route: '/python-full-stack-development-course',
-    file: 'python-full-stack-development-course.astro',
+    route: '/courses/data-analytics-course-bangalore',
+    file: 'courses/data-analytics-course-bangalore.astro',
+  },
+  {
+    route: '/courses/data-science-course-bangalore',
+    file: 'courses/data-science-course-bangalore.astro',
+  },
+  { route: '/courses/pyspark-course-bangalore', file: 'courses/pyspark-course-bangalore.astro' },
+  {
+    route: '/courses/databricks-data-engineering-course-bangalore',
+    file: 'courses/databricks-data-engineering-course-bangalore.astro',
+  },
+  {
+    route: '/courses/microsoft-fabric-data-engineering-course-bangalore',
+    file: 'courses/microsoft-fabric-data-engineering-course-bangalore.astro',
+  },
+  { route: '/courses/tableau-course-bangalore', file: 'courses/tableau-course-bangalore.astro' },
+  {
+    route: '/courses/advanced-excel-course-bangalore',
+    file: 'courses/advanced-excel-course-bangalore.astro',
+  },
+  { route: '/courses/sql-bootcamp-bangalore', file: 'courses/sql-bootcamp-bangalore.astro' },
+  {
+    route: '/courses/python-bootcamp-bangalore',
+    file: 'courses/python-bootcamp-bangalore.astro',
+  },
+  {
+    route: '/courses/mern-full-stack-course-bangalore',
+    file: 'courses/mern-full-stack-course-bangalore.astro',
+  },
+  {
+    route: '/courses/java-full-stack-course-bangalore',
+    file: 'courses/java-full-stack-course-bangalore.astro',
+  },
+  {
+    route: '/courses/python-full-stack-course-bangalore',
+    file: 'courses/python-full-stack-course-bangalore.astro',
   },
   { route: '/corporate-elp', file: 'corporate-elp.astro' },
   { route: '/corporate-content-creation', file: 'corporate-content-creation.astro' },
@@ -261,7 +285,6 @@ const seo = {
   <SiteShell client:load pathname={pathname} params={{ programId }} />
 </BaseLayout>
 `,
-)
 );
 
 writeFile(

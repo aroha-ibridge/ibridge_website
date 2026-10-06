@@ -1861,9 +1861,9 @@ export const TRAINING_TITLE_TO_PATH = {
   'Industry Bootcamps': '/training/industry-bootcamps',
   'Assessment & Certification': '/training/assessment-certification',
   'Campus Hiring Support': '/training/campus-hiring-support',
-  'Data Engineering': '/courses/data-engineering',
-  'Data Science': '/courses/data-science',
-  'Full Stack Development': '/mern-full-stack-development-course',
+  'Data Engineering': '/courses/data-engineering-course-bangalore',
+  'Data Science': '/courses/data-science-course-bangalore',
+  'Full Stack Development': '/courses/mern-full-stack-course-bangalore',
 };
 
 /** Alternate display names → canonical paths (same destinations as TRAINING_TITLE_TO_PATH). */

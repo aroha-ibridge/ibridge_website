@@ -6,95 +6,110 @@ import { InterestForm } from './CareerInterestForm';
 import '../../../styles/company-pages.css';
 import '../../../styles/careers-page.css';
 
-function CareersPage({ data }) {
-  const { hero, whyJoin, hiring, roles, openApplication, equalOpportunity, contact, jobs } = data;
-  const departments = useMemo(() => {
-    const seen = [];
-    jobs.forEach((job) => {
-      if (!seen.includes(job.department)) seen.push(job.department);
-    });
-    return seen;
-  }, [jobs]);
+// "Full-time / Part-time / Contract" → "Full-time"; "Internship · 3–6 months" → "Internship".
+function simplifyType(type = '') {
+  return type.split(/[/·]/)[0].trim();
+}
 
-  const [department, setDepartment] = useState('All');
+// "Bengaluru / Hyderabad / Flexible" → "Bengaluru".
+function simplifyLocation(location = '') {
+  return location.split('/')[0].trim();
+}
+
+function PinIcon() {
+  return (
+    <svg viewBox="0 0 20 20" width="14" height="14" fill="none" aria-hidden="true">
+      <path
+        d="M10 18s6-5.1 6-9.8A6 6 0 0 0 4 8.2C4 12.9 10 18 10 18Z"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinejoin="round"
+      />
+      <circle cx="10" cy="8.2" r="2.1" stroke="currentColor" strokeWidth="1.4" />
+    </svg>
+  );
+}
+
+function SearchIcon() {
+  return (
+    <svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true">
+      <circle cx="8.8" cy="8.8" r="5.8" stroke="currentColor" strokeWidth="1.6" />
+      <path d="m17 17-3.5-3.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function CareersPage({ data }) {
+  const { hiring, roles, openApplication, equalOpportunity, contact, jobs } = data;
   const [query, setQuery] = useState('');
 
   const filteredJobs = useMemo(() => {
     const needle = query.trim().toLowerCase();
+    if (!needle) return jobs;
     return jobs.filter((job) => {
-      if (department !== 'All' && job.department !== department) return false;
-      if (!needle) return true;
       const haystack = `${job.title} ${job.summary} ${job.department} ${job.location} ${job.workMode} ${(job.skills || []).join(' ')}`.toLowerCase();
       return haystack.includes(needle);
     });
-  }, [jobs, department, query]);
-
-  const departmentCounts = useMemo(() => {
-    const counts = { All: jobs.length };
-    jobs.forEach((job) => {
-      counts[job.department] = (counts[job.department] || 0) + 1;
-    });
-    return counts;
-  }, [jobs]);
+  }, [jobs, query]);
 
   return (
     <div className="company-page company-about-page company-careers-page tw-scope">
-      <Section spacing="compact" className="company-hero company-about-hero relative overflow-hidden">
-        <div className="company-hero__glow" aria-hidden="true" />
-        <div className="company-about-hero__orb company-about-hero__orb--a" aria-hidden="true" />
-        <div className="company-about-hero__orb company-about-hero__orb--b" aria-hidden="true" />
-        <Container className="relative company-about-hero__grid">
-          <div className="company-about-hero__copy">
-            <div className="company-eyebrow">{hero.eyebrow}</div>
-            <h1 className="company-about-hero__title">
-              {hero.title} <span className="text-brand">{hero.titleAccent}</span>
-            </h1>
-            <p className="company-about-hero__subtitle">{hero.subtitle}</p>
-            <div className="company-about-hero__actions">
-              <Button href="#open-roles" size="lg" className="!rounded-xl">
-                View open roles
-              </Button>
-              <Button href="#how-we-hire" size="lg" variant="outline" className="!rounded-xl">
-                How hiring works
-              </Button>
-            </div>
-          </div>
-          <div className="company-about-hero__media">
-            <div className="company-about-hero__frame">
-              <img
-                src="/wp-content/uploads/2026/07/corporate-benefits-laptop-team.jpg"
-                alt="A team of mentors and trainers working together on laptops"
-                className="company-about-hero__image careers-hero-image"
-                width="960"
-                height="640"
-                loading="eager"
-              />
-            </div>
-          </div>
+      <Section
+        id="open-roles"
+        spacing="hero"
+        className="careers-roles-hero relative overflow-hidden"
+        style={{
+          backgroundImage:
+            "linear-gradient(180deg, rgba(9, 14, 28, 0.76), rgba(9, 14, 28, 0.72)), url('/wp-content/uploads/2026/07/corporate-benefits-laptop-team.jpg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <Container className="relative">
+          <h1 className="careers-roles-heading">
+            {roles.title} <span className="text-brand">{roles.titleAccent}</span>
+          </h1>
+
+          <label className="careers-search-bar">
+            <SearchIcon />
+            <span className="sr-only">Search roles</span>
+            <input
+              type="search"
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              placeholder="Search by role or skill"
+            />
+          </label>
         </Container>
       </Section>
 
-      <Section spacing="tight">
+      <Section tone="soft" spacing="tight" className="careers-grid-band">
         <Container>
-          <ProgramSectionHeader
-            eyebrow={whyJoin.eyebrow}
-            title={whyJoin.title}
-            titleAccent={whyJoin.titleAccent}
-            subtitle={whyJoin.subtitle}
-            className="company-about-section-header"
-          />
-          <div className="company-feature-grid">
-            {whyJoin.items.map((item, index) => (
-              <article key={item.title} className="company-feature-card" style={{ '--about-delay': `${index * 60}ms` }}>
-                <h3 className="company-feature-card__title">{item.title}</h3>
-                <p className="company-feature-card__subtitle">{item.text}</p>
-              </article>
-            ))}
-          </div>
+          {filteredJobs.length === 0 ? (
+            <p className="careers-empty">
+              No open role matches that search. Try a different word, or send an open application below.
+            </p>
+          ) : (
+            <div className="careers-grid">
+              {filteredJobs.map((job) => (
+                <a key={job.id} href={`/careers/apply/${job.id}`} className="careers-card">
+                  <h3 className="careers-card__title">{job.title}</h3>
+                  <div className="careers-card__meta">
+                    <span className="careers-card__location">
+                      <PinIcon />
+                      {simplifyLocation(job.location)}
+                    </span>
+                    <span className="careers-card__badge">Apply Now</span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          )}
+          <p className="careers-note">{equalOpportunity}</p>
         </Container>
       </Section>
 
-      <Section id="how-we-hire" tone="soft" spacing="tight">
+      <Section id="how-we-hire" spacing="tight">
         <Container>
           <ProgramSectionHeader
             eyebrow={hiring.eyebrow}
@@ -114,80 +129,6 @@ function CareersPage({ data }) {
         </Container>
       </Section>
 
-      <Section id="open-roles" spacing="tight">
-        <Container>
-          <ProgramSectionHeader
-            eyebrow={roles.eyebrow}
-            title={roles.title}
-            titleAccent={roles.titleAccent}
-            subtitle={roles.subtitle}
-            className="company-about-section-header"
-          />
-          <div className="careers-toolbar">
-            <div className="careers-filters" role="group" aria-label="Filter by team">
-              {['All', ...departments].map((item) => {
-                const selected = department === item;
-                return (
-                  <button
-                    key={item}
-                    type="button"
-                    aria-pressed={selected}
-                    className={`careers-filter${selected ? ' is-active' : ''}`}
-                    onClick={() => setDepartment(item)}
-                  >
-                    {item}
-                    <span className="careers-filter__count">{departmentCounts[item] || 0}</span>
-                  </button>
-                );
-              })}
-            </div>
-            <label className="careers-search">
-              <span className="sr-only">Search roles</span>
-              <input
-                type="search"
-                value={query}
-                onChange={(event) => setQuery(event.target.value)}
-                placeholder="Search by role or skill"
-              />
-            </label>
-          </div>
-
-          {filteredJobs.length === 0 ? (
-            <p className="careers-empty">
-              No open role matches that filter. Try another team, or send an open application below.
-            </p>
-          ) : (
-            <ul className="careers-role-list">
-              {filteredJobs.map((job) => (
-                <li key={job.id}>
-                  <article className="careers-role-card">
-                    <div className="careers-role-card__main">
-                      <p className="careers-role-card__dept">{job.department}</p>
-                      <h3 className="careers-role-card__title">
-                        <a className="careers-role-card__open" href={`/careers/apply/${job.id}`}>
-                          {job.title}
-                        </a>
-                      </h3>
-                      <p className="careers-role-card__summary">{job.summary}</p>
-                      <ul className="careers-role-card__meta">
-                        <li>{job.location}</li>
-                        <li>{job.workMode}</li>
-                        <li>{job.type}</li>
-                        <li>{job.experience}</li>
-                      </ul>
-                    </div>
-                    <Button href={`/careers/apply/${job.id}`} variant="outline" className="careers-role-card__cta !rounded-xl">
-                      I&apos;m interested
-                    </Button>
-                  </article>
-                </li>
-              ))}
-            </ul>
-          )}
-          <p className="careers-note">{equalOpportunity}</p>
-        </Container>
-      </Section>
-
       <Section id="open-application" tone="soft" spacing="tight">
         <Container>
           <div className="careers-open-layout">
@@ -202,13 +143,13 @@ function CareersPage({ data }) {
             <InterestForm
               roleTitle="Open application"
               source="Careers page"
-              showDepartment
-              departments={departments}
               eyebrow="General interest"
               title="Tell us what you do"
               subtitle="If a matching role opens, we will write to the email you share."
               submitLabel="Send open application"
+              noteLabel="Tell us about yourself"
               notePlaceholder="The work you do, the teams you have been on, and what you want to do next."
+              compact
             />
           </div>
         </Container>

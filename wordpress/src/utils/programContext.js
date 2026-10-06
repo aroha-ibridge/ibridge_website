@@ -9,19 +9,19 @@ import { stripBase } from './siteBase';
  * Add a new entry when you build a new program page.
  */
 export const PROGRAM_OPTIONS = [
-  { name: 'Data Engineering', path: '/courses/data-engineering' },
-  { name: 'Data Analytics', path: '/data-analytics-course' },
-  { name: 'PySpark', path: '/pyspark-course' },
-  { name: 'Databricks Data Engineering', path: '/databricks-data-engineering-course' },
-  { name: 'Microsoft Fabric Data Engineering', path: '/microsoft-fabric-data-engineering-course' },
-  { name: 'Tableau', path: '/tableau-course' },
-  { name: 'Advanced Excel', path: '/advanced-excel-course' },
-  { name: 'SQL Bootcamp', path: '/sql-bootcamp' },
-  { name: 'Python Bootcamp', path: '/python-bootcamp' },
-  { name: 'MERN Full Stack Development', path: '/mern-full-stack-development-course' },
-  { name: 'Java Full Stack Development', path: '/java-full-stack-development-course' },
-  { name: 'Python Full Stack Development', path: '/python-full-stack-development-course' },
-  { name: 'Data Science', path: '/courses/data-science' },
+  { name: 'Data Engineering', path: '/courses/data-engineering-course-bangalore' },
+  { name: 'Data Analytics', path: '/courses/data-analytics-course-bangalore' },
+  { name: 'PySpark', path: '/courses/pyspark-course-bangalore' },
+  { name: 'Databricks Data Engineering', path: '/courses/databricks-data-engineering-course-bangalore' },
+  { name: 'Microsoft Fabric Data Engineering', path: '/courses/microsoft-fabric-data-engineering-course-bangalore' },
+  { name: 'Tableau', path: '/courses/tableau-course-bangalore' },
+  { name: 'Advanced Excel', path: '/courses/advanced-excel-course-bangalore' },
+  { name: 'SQL Bootcamp', path: '/courses/sql-bootcamp-bangalore' },
+  { name: 'Python Bootcamp', path: '/courses/python-bootcamp-bangalore' },
+  { name: 'MERN Full Stack Development', path: '/courses/mern-full-stack-course-bangalore' },
+  { name: 'Java Full Stack Development', path: '/courses/java-full-stack-course-bangalore' },
+  { name: 'Python Full Stack Development', path: '/courses/python-full-stack-course-bangalore' },
+  { name: 'Data Science', path: '/courses/data-science-course-bangalore' },
 ];
 
 const PROGRAM_NAMES_BY_PATH = PROGRAM_OPTIONS.reduce((acc, program) => {
@@ -30,19 +30,6 @@ const PROGRAM_NAMES_BY_PATH = PROGRAM_OPTIONS.reduce((acc, program) => {
   }
   return acc;
 }, {});
-
-/** Legacy aliases — keep enquiry context working on old URLs before redirect. */
-PROGRAM_NAMES_BY_PATH['/full-stack-mern-program'] = 'MERN Full Stack Development';
-PROGRAM_NAMES_BY_PATH['/full-stack-development-mern-program-2'] = 'MERN Full Stack Development';
-PROGRAM_NAMES_BY_PATH['/mern-fullstack'] = 'MERN Full Stack Development';
-PROGRAM_NAMES_BY_PATH['/courses/mern-fullstack'] = 'MERN Full Stack Development';
-PROGRAM_NAMES_BY_PATH['/data-science-program'] = 'Data Science';
-PROGRAM_NAMES_BY_PATH['/data-engineering-course'] = 'Data Engineering';
-PROGRAM_NAMES_BY_PATH['/data-engineering-program'] = 'Data Engineering';
-PROGRAM_NAMES_BY_PATH['/python-fullstack'] = 'Python Full Stack Development';
-PROGRAM_NAMES_BY_PATH['/courses/python-fullstack'] = 'Python Full Stack Development';
-PROGRAM_NAMES_BY_PATH['/java-fullstack'] = 'Java Full Stack Development';
-PROGRAM_NAMES_BY_PATH['/courses/java-fullstack'] = 'Java Full Stack Development';
 
 /** Page-specific enquiry defaults (e.g. LMS demo — hide course dropdown). */
 const ENQUIRY_DEFAULTS_BY_PATH = {

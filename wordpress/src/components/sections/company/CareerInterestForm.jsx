@@ -46,6 +46,43 @@ const NOTICE_OPTIONS = [
   'Yes, 60days+',
 ];
 
+const CLOUDINARY_CLOUD_NAME = 'qv3xjljc';
+const CLOUDINARY_UPLOAD_PRESET = 'careers_resumes';
+const RESUME_MAX_BYTES = 10 * 1024 * 1024;
+const RESUME_EXTENSIONS = ['pdf', 'doc', 'docx'];
+
+function resumeFilename(name, role, file) {
+  const extension = file.name.split('.').pop()?.toLowerCase() || 'pdf';
+  const safePart = (value, fallback) =>
+    String(value || '')
+      .normalize('NFKD')
+      .replace(/[^\w\s-]/g, '')
+      .trim()
+      .replace(/[\s_-]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .slice(0, 80) || fallback;
+  return `${safePart(name, 'applicant')}-${safePart(role, 'open-role')}-resume.${extension}`;
+}
+
+async function uploadResume(file, applicantName, roleTitle) {
+  const renamedFile = new File([file], resumeFilename(applicantName, roleTitle, file), {
+    type: file.type,
+    lastModified: file.lastModified,
+  });
+  const formData = new FormData();
+  formData.append('file', renamedFile, renamedFile.name);
+  formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+  const response = await fetch(
+    `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/raw/upload`,
+    { method: 'POST', body: formData },
+  );
+  const data = await response.json().catch(() => null);
+  if (!response.ok || !data?.secure_url) {
+    throw new Error(data?.error?.message || 'Resume upload failed');
+  }
+  return data.secure_url;
+}
+
 const TECH_OPTIONS = [
   'SQL',
   'Python',
@@ -103,18 +140,19 @@ function buildInterestMessage(details) {
     `Role: ${roleTitle}`,
     department ? `Department: ${department}` : null,
     workMode ? `Work mode: ${workMode}` : null,
-    `Date of birth: ${dateOfBirth}`,
-    `Marital status: ${maritalStatus}`,
-    `Total work experience: ${experience}`,
-    `Current CTC (₹ LPA): ${currentCtc}`,
-    `Expected CTC (₹ LPA): ${expectedCtc}`,
-    `Skills / tools: ${techStack}`,
-    `Relocate to Bangalore: ${relocate}`,
-    `Current location: ${currentLocation}`,
-    `Comfortable travelling: ${travel}`,
-    `Notice period: ${noticePeriod}`,
+    dateOfBirth ? `Date of birth: ${dateOfBirth}` : null,
+    maritalStatus ? `Marital status: ${maritalStatus}` : null,
+    experience ? `Total work experience: ${experience}` : null,
+    currentCtc ? `Current CTC (₹ LPA): ${currentCtc}` : null,
+    expectedCtc ? `Expected CTC (₹ LPA): ${expectedCtc}` : null,
+    techStack ? `Skills / tools: ${techStack}` : null,
+    relocate ? `Relocate to Bangalore: ${relocate}` : null,
+    currentLocation ? `Current location: ${currentLocation}` : null,
+    travel ? `Comfortable travelling: ${travel}` : null,
+    noticePeriod ? `Notice period: ${noticePeriod}` : null,
     joiningDate ? `Earliest joining date: ${joiningDate}` : null,
     profileUrl ? `Profile: ${profileUrl}` : null,
+    details.resumeUrl ? `Resume: ${details.resumeUrl}` : null,
     '',
     `Note: ${note}`,
   ]
@@ -133,13 +171,18 @@ export function InterestForm({
   subtitle,
   submitLabel,
   notePlaceholder,
+  noteLabel = 'Why this role',
   showDepartment = false,
   departments = [],
+  compact = false,
 }) {
   const reactId = useId();
   const prefix = reactId.replace(/:/g, '');
   const field = (name) => `career-form-${name}-${prefix}`;
   const [submitting, setSubmitting] = useState(false);
+  const [resumeName, setResumeName] = useState('');
+  const [otherSkills, setOtherSkills] = useState([]);
+  const [otherSkillInput, setOtherSkillInput] = useState('');
   const [errors, setErrors] = useState({});
 
   const clearFieldError = (key) => {
@@ -170,6 +213,7 @@ export function InterestForm({
     const noticePeriod = data.get('noticePeriod')?.toString().trim() || '';
     const joiningDate = data.get('joiningDate')?.toString().trim() || '';
     const profileUrl = data.get('profileUrl')?.toString().trim() || '';
+    const resumeFile = data.get('resume');
     const note = data.get('note')?.toString().trim() || '';
     const chosenDepartment = showDepartment
       ? data.get('department')?.toString().trim() || 'General'
@@ -179,23 +223,34 @@ export function InterestForm({
       name: name ? '' : 'Please enter your full name.',
       phone: validatePhone(phone),
       email: validateEmail(email),
-      dateOfBirth: dateOfBirth ? '' : 'Please enter your date of birth.',
-      maritalStatus: maritalStatus ? '' : 'Please select your marital status.',
-      experience: experience ? '' : 'Please select your total work experience.',
-      currentCtc: currentCtc ? '' : 'Please enter your current CTC.',
-      expectedCtc: expectedCtc ? '' : 'Please enter your expected CTC.',
-      techStack:
+      note: note ? '' : 'Please add a short note.',
+    };
+    const extension = resumeFile?.name?.split('.').pop()?.toLowerCase() || '';
+    nextErrors.resume =
+      !resumeFile || typeof resumeFile === 'string' || !resumeFile.size
+        ? 'Please upload your resume.'
+        : !RESUME_EXTENSIONS.includes(extension)
+          ? 'Upload a PDF, DOC, or DOCX file.'
+          : resumeFile.size > RESUME_MAX_BYTES
+            ? 'Resume must be 10 MB or smaller.'
+            : '';
+    if (!compact) {
+      nextErrors.dateOfBirth = dateOfBirth ? '' : 'Please enter your date of birth.';
+      nextErrors.maritalStatus = maritalStatus ? '' : 'Please select your marital status.';
+      nextErrors.experience = experience ? '' : 'Please select your total work experience.';
+      nextErrors.currentCtc = currentCtc ? '' : 'Please enter your current CTC.';
+      nextErrors.expectedCtc = expectedCtc ? '' : 'Please enter your expected CTC.';
+      nextErrors.techStack =
         selectedTech.length === 0
           ? 'Please select at least one skill.'
           : selectedTech.includes('Other') && !otherTech
             ? 'Please name the other skill.'
-            : '',
-      relocate: relocate ? '' : 'Please choose Yes or No.',
-      currentLocation: currentLocation ? '' : 'Please enter your current location.',
-      travel: travel ? '' : 'Please choose Yes or No.',
-      noticePeriod: noticePeriod ? '' : 'Please select your notice period.',
-      note: note ? '' : 'Please add a short note.',
-    };
+            : '';
+      nextErrors.relocate = relocate ? '' : 'Please choose Yes or No.';
+      nextErrors.currentLocation = currentLocation ? '' : 'Please enter your current location.';
+      nextErrors.travel = travel ? '' : 'Please choose Yes or No.';
+      nextErrors.noticePeriod = noticePeriod ? '' : 'Please select your notice period.';
+    }
     setErrors(nextErrors);
     const firstInvalid = Object.keys(nextErrors).find((key) => nextErrors[key]);
     if (firstInvalid) {
@@ -231,6 +286,16 @@ export function InterestForm({
     };
 
     setSubmitting(true);
+    let resumeUrl = '';
+    try {
+      resumeUrl = await uploadResume(resumeFile, name, roleTitle);
+    } catch {
+      setErrors((prev) => ({ ...prev, resume: 'Could not upload the resume. Please try again.' }));
+      setSubmitting(false);
+      form.querySelector(`#${CSS.escape(field('resume'))}`)?.focus();
+      return;
+    }
+    application.resumeUrl = resumeUrl;
     await submitEnquiry({
       name,
       phone,
@@ -254,6 +319,7 @@ export function InterestForm({
         travel,
         noticePeriod,
         joiningDate,
+        resumeUrl,
       }),
       source,
       messageContainer: form,
@@ -270,7 +336,7 @@ export function InterestForm({
         <p className="company-contact-form__subtitle">{subtitle}</p>
       </div>
       <div className="company-contact-form__body">
-        <div className="grid gap-5 sm:grid-cols-2">
+        <div className="careers-form-grid">
           <Field error={errors.name}>
             <Label htmlFor={field('name')}>
               Full name
@@ -323,217 +389,279 @@ export function InterestForm({
               onChange={() => clearFieldError('phone')}
             />
           </Field>
-          <Field error={errors.dateOfBirth}>
-            <Label htmlFor={field('dateOfBirth')}>
-              Date of birth
+          <Field className="careers-form-grid__full" error={errors.resume}>
+            <Label htmlFor={field('resume')}>
+              Resume
               <RequiredMark />
             </Label>
-            <Input
-              id={field('dateOfBirth')}
-              name="dateOfBirth"
-              type="date"
+            <input
+              id={field('resume')}
+              name="resume"
+              type="file"
+              accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
               required
-              max={todayIso()}
-              aria-invalid={Boolean(errors.dateOfBirth)}
-              className={`${FIELD_CLASS}${errors.dateOfBirth ? ` ${INVALID_CLASS}` : ''}`}
-              onChange={() => clearFieldError('dateOfBirth')}
+              aria-invalid={Boolean(errors.resume)}
+              className={`careers-resume-input${errors.resume ? ' careers-resume-input--invalid' : ''}`}
+              onChange={(event) => {
+                setResumeName(event.target.files?.[0]?.name || '');
+                clearFieldError('resume');
+              }}
             />
+            <p className="careers-resume-hint">
+              {resumeName ? `Selected: ${resumeName}` : 'PDF, DOC, or DOCX. Maximum 10 MB.'}
+            </p>
           </Field>
-          <Field error={errors.maritalStatus}>
-            <Label htmlFor={field('maritalStatus')}>
-              Marital status
-              <RequiredMark />
-            </Label>
-            <Select
-              id={field('maritalStatus')}
-              name="maritalStatus"
-              defaultValue=""
-              required
-              aria-invalid={Boolean(errors.maritalStatus)}
-              className={`${FIELD_CLASS}${errors.maritalStatus ? ` ${INVALID_CLASS}` : ''}`}
-              onChange={() => clearFieldError('maritalStatus')}
-            >
-              <option value="">Select</option>
-              {MARITAL_OPTIONS.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </Select>
-          </Field>
-          <Field error={errors.experience}>
-            <Label htmlFor={field('experience')}>
-              Total work experience
-              <RequiredMark />
-            </Label>
-            <Select
-              id={field('experience')}
-              name="experience"
-              defaultValue=""
-              required
-              aria-invalid={Boolean(errors.experience)}
-              className={`${FIELD_CLASS}${errors.experience ? ` ${INVALID_CLASS}` : ''}`}
-              onChange={() => clearFieldError('experience')}
-            >
-              <option value="">Select a range</option>
-              {EXPERIENCE_OPTIONS.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </Select>
-          </Field>
-          <Field error={errors.currentCtc}>
-            <Label htmlFor={field('currentCtc')}>
-              Current CTC (₹ LPA)
-              <RequiredMark />
-            </Label>
-            <Input
-              id={field('currentCtc')}
-              name="currentCtc"
-              inputMode="decimal"
-              placeholder="e.g. 6"
-              required
-              aria-invalid={Boolean(errors.currentCtc)}
-              className={`${FIELD_CLASS}${errors.currentCtc ? ` ${INVALID_CLASS}` : ''}`}
-              onChange={() => clearFieldError('currentCtc')}
-            />
-          </Field>
-          <Field error={errors.expectedCtc}>
-            <Label htmlFor={field('expectedCtc')}>
-              Expected CTC (₹ LPA)
-              <RequiredMark />
-            </Label>
-            <Input
-              id={field('expectedCtc')}
-              name="expectedCtc"
-              inputMode="decimal"
-              placeholder="e.g. 8"
-              required
-              aria-invalid={Boolean(errors.expectedCtc)}
-              className={`${FIELD_CLASS}${errors.expectedCtc ? ` ${INVALID_CLASS}` : ''}`}
-              onChange={() => clearFieldError('expectedCtc')}
-            />
-          </Field>
-          <fieldset className="sm:col-span-2 m-0 border-0 p-0">
-            <legend className="tw-scope mb-2 block text-sm font-semibold text-ink">
-              Which skills / tools do you have hands-on experience in?
-              <RequiredMark />
-            </legend>
-            <div className="careers-tech-list">
-              {[...techOptions, 'Other'].map((option, index) => (
-                <label key={option}>
-                  <input
-                    type="checkbox"
-                    name="techStack"
-                    value={option}
-                    id={index === 0 ? field('techStack') : undefined}
-                    onChange={() => clearFieldError('techStack')}
-                  />
-                  <span>{option}</span>
-                </label>
-              ))}
-            </div>
-            {errors.techStack ? <p className="mt-1.5 text-xs text-red-600">{errors.techStack}</p> : null}
-            <div className="mt-3">
-              <Label htmlFor={field('otherTech')}>Other</Label>
-              <Input
-                id={field('otherTech')}
-                name="otherTech"
-                placeholder="Name the skill if you selected Other"
-                aria-invalid={Boolean(errors.techStack && errors.techStack.includes('other'))}
-                className={`${FIELD_CLASS}${errors.techStack?.includes('other') ? ` ${INVALID_CLASS}` : ''}`}
-                onChange={() => clearFieldError('techStack')}
-              />
-            </div>
-          </fieldset>
-          <Field error={errors.relocate}>
-            <Label htmlFor={field('relocate')}>
-              Are you comfortable relocating to Bangalore?
-              <RequiredMark />
-            </Label>
-            <Select
-              id={field('relocate')}
-              name="relocate"
-              defaultValue=""
-              required
-              aria-invalid={Boolean(errors.relocate)}
-              className={`${FIELD_CLASS}${errors.relocate ? ` ${INVALID_CLASS}` : ''}`}
-              onChange={() => clearFieldError('relocate')}
-            >
-              <option value="">Select</option>
-              <option value="Yes">Yes</option>
-              <option value="No">No</option>
-            </Select>
-          </Field>
-          <Field error={errors.currentLocation}>
-            <Label htmlFor={field('currentLocation')}>
-              Current location
-              <RequiredMark />
-            </Label>
-            <Input
-              id={field('currentLocation')}
-              name="currentLocation"
-              placeholder="City"
-              required
-              aria-invalid={Boolean(errors.currentLocation)}
-              className={`${FIELD_CLASS}${errors.currentLocation ? ` ${INVALID_CLASS}` : ''}`}
-              onChange={() => clearFieldError('currentLocation')}
-            />
-          </Field>
-          <Field className="sm:col-span-2" error={errors.travel}>
-            <Label htmlFor={field('travel')}>
-              Are you comfortable travelling to different client/college locations for training and work requirements?
-              <RequiredMark />
-            </Label>
-            <Select
-              id={field('travel')}
-              name="travel"
-              defaultValue=""
-              required
-              aria-invalid={Boolean(errors.travel)}
-              className={`${FIELD_CLASS}${errors.travel ? ` ${INVALID_CLASS}` : ''}`}
-              onChange={() => clearFieldError('travel')}
-            >
-              <option value="">Select</option>
-              <option value="Yes">Yes</option>
-              <option value="No">No</option>
-            </Select>
-          </Field>
-          <Field error={errors.noticePeriod}>
-            <Label htmlFor={field('noticePeriod')}>
-              Are you currently serving a notice period?
-              <RequiredMark />
-            </Label>
-            <Select
-              id={field('noticePeriod')}
-              name="noticePeriod"
-              defaultValue=""
-              required
-              aria-invalid={Boolean(errors.noticePeriod)}
-              className={`${FIELD_CLASS}${errors.noticePeriod ? ` ${INVALID_CLASS}` : ''}`}
-              onChange={() => clearFieldError('noticePeriod')}
-            >
-              <option value="">Select</option>
-              {NOTICE_OPTIONS.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </Select>
-          </Field>
-          <Field>
-            <Label htmlFor={field('joiningDate')}>Earliest joining date</Label>
-            <Input
-              id={field('joiningDate')}
-              name="joiningDate"
-              type="date"
-              min={todayIso()}
-              className={FIELD_CLASS}
-            />
-          </Field>
+          {!compact && (
+            <>
+              <Field error={errors.dateOfBirth}>
+                <Label htmlFor={field('dateOfBirth')}>
+                  Date of birth
+                  <RequiredMark />
+                </Label>
+                <Input
+                  id={field('dateOfBirth')}
+                  name="dateOfBirth"
+                  type="date"
+                  required
+                  max={todayIso()}
+                  aria-invalid={Boolean(errors.dateOfBirth)}
+                  className={`${FIELD_CLASS}${errors.dateOfBirth ? ` ${INVALID_CLASS}` : ''}`}
+                  onChange={() => clearFieldError('dateOfBirth')}
+                />
+              </Field>
+              <Field error={errors.maritalStatus}>
+                <Label htmlFor={field('maritalStatus')}>
+                  Marital status
+                  <RequiredMark />
+                </Label>
+                <Select
+                  id={field('maritalStatus')}
+                  name="maritalStatus"
+                  defaultValue=""
+                  required
+                  aria-invalid={Boolean(errors.maritalStatus)}
+                  className={`${FIELD_CLASS}${errors.maritalStatus ? ` ${INVALID_CLASS}` : ''}`}
+                  onChange={() => clearFieldError('maritalStatus')}
+                >
+                  <option value="">Select</option>
+                  {MARITAL_OPTIONS.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </Select>
+              </Field>
+              <Field error={errors.experience}>
+                <Label htmlFor={field('experience')}>
+                  Total work experience
+                  <RequiredMark />
+                </Label>
+                <Select
+                  id={field('experience')}
+                  name="experience"
+                  defaultValue=""
+                  required
+                  aria-invalid={Boolean(errors.experience)}
+                  className={`${FIELD_CLASS}${errors.experience ? ` ${INVALID_CLASS}` : ''}`}
+                  onChange={() => clearFieldError('experience')}
+                >
+                  <option value="">Select a range</option>
+                  {EXPERIENCE_OPTIONS.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </Select>
+              </Field>
+              <Field error={errors.currentCtc}>
+                <Label htmlFor={field('currentCtc')}>
+                  Current CTC (₹ LPA)
+                  <RequiredMark />
+                </Label>
+                <Input
+                  id={field('currentCtc')}
+                  name="currentCtc"
+                  inputMode="decimal"
+                  placeholder="e.g. 6"
+                  required
+                  aria-invalid={Boolean(errors.currentCtc)}
+                  className={`${FIELD_CLASS}${errors.currentCtc ? ` ${INVALID_CLASS}` : ''}`}
+                  onChange={() => clearFieldError('currentCtc')}
+                />
+              </Field>
+              <Field error={errors.expectedCtc}>
+                <Label htmlFor={field('expectedCtc')}>
+                  Expected CTC (₹ LPA)
+                  <RequiredMark />
+                </Label>
+                <Input
+                  id={field('expectedCtc')}
+                  name="expectedCtc"
+                  inputMode="decimal"
+                  placeholder="e.g. 8"
+                  required
+                  aria-invalid={Boolean(errors.expectedCtc)}
+                  className={`${FIELD_CLASS}${errors.expectedCtc ? ` ${INVALID_CLASS}` : ''}`}
+                  onChange={() => clearFieldError('expectedCtc')}
+                />
+              </Field>
+              <fieldset className="careers-form-grid__full m-0 border-0 p-0">
+                <legend className="tw-scope mb-2 block text-sm font-semibold text-ink">
+                  Which skills / tools do you have hands-on experience in?
+                  <RequiredMark />
+                </legend>
+                <div className="careers-tech-list">
+                  {[...techOptions, 'Other'].map((option, index) => (
+                    <label key={option}>
+                      <input
+                        type="checkbox"
+                        name="techStack"
+                        value={option}
+                        id={index === 0 ? field('techStack') : undefined}
+                        onChange={() => clearFieldError('techStack')}
+                      />
+                      <span>{option}</span>
+                    </label>
+                  ))}
+                </div>
+                {errors.techStack ? <p className="mt-1.5 text-xs text-red-600">{errors.techStack}</p> : null}
+                <div className="mt-3">
+                  <Label htmlFor={field('otherTechInput')}>Other</Label>
+                  <div
+                    className={`flex min-h-[52px] flex-wrap items-center gap-2 rounded-xl border bg-white px-3 py-2 focus-within:border-blue-700 focus-within:ring-2 focus-within:ring-blue-700/15${errors.techStack?.includes('other') ? ` ${INVALID_CLASS}` : ' border-gray-400'}`}
+                  >
+                    {otherSkills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="inline-flex items-center gap-1 rounded-full bg-blue-50 px-3 py-1 text-sm font-medium text-blue-900"
+                      >
+                        {skill}
+                        <button
+                          type="button"
+                          className="rounded-full p-0.5 text-blue-700 hover:bg-blue-100"
+                          aria-label={`Remove ${skill}`}
+                          onClick={() => {
+                            setOtherSkills((current) => current.filter((item) => item !== skill));
+                            clearFieldError('techStack');
+                          }}
+                        >
+                          ×
+                        </button>
+                      </span>
+                    ))}
+                    <input
+                      id={field('otherTechInput')}
+                      type="text"
+                      value={otherSkillInput}
+                      placeholder={otherSkills.length ? 'Add another skill' : 'Type a skill and press Enter'}
+                      className="min-w-[180px] flex-1 border-0 bg-transparent px-1 py-1 text-base text-ink outline-none placeholder:text-slate-400"
+                      onChange={(event) => {
+                        setOtherSkillInput(event.target.value);
+                        clearFieldError('techStack');
+                      }}
+                      onKeyDown={(event) => {
+                        if (event.key !== 'Enter') return;
+                        event.preventDefault();
+                        const skill = otherSkillInput.trim();
+                        if (!skill || otherSkills.includes(skill)) return;
+                        setOtherSkills((current) => [...current, skill]);
+                        setOtherSkillInput('');
+                        clearFieldError('techStack');
+                      }}
+                    />
+                    <input type="hidden" name="otherTech" value={otherSkills.join(', ')} readOnly />
+                  </div>
+                </div>
+              </fieldset>
+              <Field error={errors.relocate}>
+                <Label htmlFor={field('relocate')}>
+                  Are you comfortable relocating to Bangalore?
+                  <RequiredMark />
+                </Label>
+                <Select
+                  id={field('relocate')}
+                  name="relocate"
+                  defaultValue=""
+                  required
+                  aria-invalid={Boolean(errors.relocate)}
+                  className={`${FIELD_CLASS}${errors.relocate ? ` ${INVALID_CLASS}` : ''}`}
+                  onChange={() => clearFieldError('relocate')}
+                >
+                  <option value="">Select</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </Select>
+              </Field>
+              <Field error={errors.currentLocation}>
+                <Label htmlFor={field('currentLocation')}>
+                  Current location
+                  <RequiredMark />
+                </Label>
+                <Input
+                  id={field('currentLocation')}
+                  name="currentLocation"
+                  placeholder="City"
+                  required
+                  aria-invalid={Boolean(errors.currentLocation)}
+                  className={`${FIELD_CLASS}${errors.currentLocation ? ` ${INVALID_CLASS}` : ''}`}
+                  onChange={() => clearFieldError('currentLocation')}
+                />
+              </Field>
+              <Field className="careers-form-grid__full" error={errors.travel}>
+                <Label htmlFor={field('travel')}>
+                  Are you comfortable travelling to different client/college locations for training and work requirements?
+                  <RequiredMark />
+                </Label>
+                <Select
+                  id={field('travel')}
+                  name="travel"
+                  defaultValue=""
+                  required
+                  aria-invalid={Boolean(errors.travel)}
+                  className={`${FIELD_CLASS}${errors.travel ? ` ${INVALID_CLASS}` : ''}`}
+                  onChange={() => clearFieldError('travel')}
+                >
+                  <option value="">Select</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                </Select>
+              </Field>
+              <Field error={errors.noticePeriod}>
+                <Label htmlFor={field('noticePeriod')}>
+                  Are you currently serving a notice period?
+                  <RequiredMark />
+                </Label>
+                <Select
+                  id={field('noticePeriod')}
+                  name="noticePeriod"
+                  defaultValue=""
+                  required
+                  aria-invalid={Boolean(errors.noticePeriod)}
+                  className={`${FIELD_CLASS}${errors.noticePeriod ? ` ${INVALID_CLASS}` : ''}`}
+                  onChange={() => clearFieldError('noticePeriod')}
+                >
+                  <option value="">Select</option>
+                  {NOTICE_OPTIONS.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </Select>
+              </Field>
+              <Field>
+                <Label htmlFor={field('joiningDate')}>Earliest joining date</Label>
+                <Input
+                  id={field('joiningDate')}
+                  name="joiningDate"
+                  type="date"
+                  min={todayIso()}
+                  className={FIELD_CLASS}
+                />
+              </Field>
+            </>
+          )}
           {showDepartment && (
-            <Field className="sm:col-span-2">
+            <Field className="careers-form-grid__full">
               <Label htmlFor={field('department')}>Team you want to join</Label>
               <Select id={field('department')} name="department" defaultValue="General" className={FIELD_CLASS}>
                 <option value="General">Not sure yet</option>
@@ -545,7 +673,7 @@ export function InterestForm({
               </Select>
             </Field>
           )}
-          <Field className="sm:col-span-2">
+          <Field>
             <Label htmlFor={field('profileUrl')}>LinkedIn or portfolio</Label>
             <Input
               id={field('profileUrl')}
@@ -556,9 +684,9 @@ export function InterestForm({
               className={FIELD_CLASS}
             />
           </Field>
-          <Field className="sm:col-span-2" error={errors.note}>
+          <Field className="careers-form-grid__full" error={errors.note}>
             <Label htmlFor={field('note')}>
-              Why this role
+              {noteLabel}
               <RequiredMark />
             </Label>
             <Textarea
@@ -575,7 +703,7 @@ export function InterestForm({
         </div>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs text-ink-muted leading-relaxed max-w-sm">
-            This goes to the same iBridge360 enquiry desk as Contact Us. We reply to the email you enter. Add a résumé link above if you have one.
+            This goes to the same iBridge360 enquiry desk as Contact Us. We reply to the email you enter.
           </p>
           <Button type="submit" size="lg" disabled={submitting} className="!rounded-xl shrink-0 w-full sm:w-auto">
             {submitting ? 'Sending…' : submitLabel}

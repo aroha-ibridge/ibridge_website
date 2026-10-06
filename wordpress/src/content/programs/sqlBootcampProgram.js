@@ -13,7 +13,7 @@ const sqlBootcampProgram = {
     description:
       'Master SQL through hands-on training in queries, joins, subqueries, CTEs, window functions, database design, data analysis and real-world projects.',
   },
-  path: '/sql-bootcamp',
+  path: '/courses/sql-bootcamp-bangalore',
   pageId: '508',
 
   hero: {

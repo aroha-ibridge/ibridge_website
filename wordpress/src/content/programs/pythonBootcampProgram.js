@@ -13,7 +13,7 @@ const pythonBootcampProgram = {
     description:
       'Master Python through hands-on training in programming, OOP, data structures, automation, APIs, SQL, data analytics and real-world projects.',
   },
-  path: '/python-bootcamp',
+  path: '/courses/python-bootcamp-bangalore',
   pageId: '508',
 
   hero: {

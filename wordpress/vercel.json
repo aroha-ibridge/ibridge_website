@@ -15,58 +15,123 @@
       "permanent": true
     },
     {
+      "source": "/courses/data-engineering",
+      "destination": "/courses/data-engineering-course-bangalore",
+      "permanent": true
+    },
+    {
       "source": "/data-engineering-course",
-      "destination": "/courses/data-engineering",
+      "destination": "/courses/data-engineering-course-bangalore",
       "permanent": true
     },
     {
       "source": "/data-engineering-program",
-      "destination": "/courses/data-engineering",
+      "destination": "/courses/data-engineering-course-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/courses/data-science",
+      "destination": "/courses/data-science-course-bangalore",
       "permanent": true
     },
     {
       "source": "/data-science-program",
-      "destination": "/courses/data-science",
+      "destination": "/courses/data-science-course-bangalore",
       "permanent": true
     },
     {
-      "source": "/courses/mern-fullstack",
-      "destination": "/mern-full-stack-development-course",
+      "source": "/data-analytics-course",
+      "destination": "/courses/data-analytics-course-bangalore",
       "permanent": true
     },
     {
-      "source": "/courses/java-fullstack",
-      "destination": "/java-full-stack-development-course",
+      "source": "/pyspark-course",
+      "destination": "/courses/pyspark-course-bangalore",
       "permanent": true
     },
     {
-      "source": "/courses/python-fullstack",
-      "destination": "/python-full-stack-development-course",
+      "source": "/databricks-data-engineering-course",
+      "destination": "/courses/databricks-data-engineering-course-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/microsoft-fabric-data-engineering-course",
+      "destination": "/courses/microsoft-fabric-data-engineering-course-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/tableau-course",
+      "destination": "/courses/tableau-course-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/advanced-excel-course",
+      "destination": "/courses/advanced-excel-course-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/sql-bootcamp",
+      "destination": "/courses/sql-bootcamp-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/python-bootcamp",
+      "destination": "/courses/python-bootcamp-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/mern-full-stack-development-course",
+      "destination": "/courses/mern-full-stack-course-bangalore",
       "permanent": true
     },
     {
       "source": "/mern-fullstack",
-      "destination": "/mern-full-stack-development-course",
+      "destination": "/courses/mern-full-stack-course-bangalore",
       "permanent": true
     },
     {
-      "source": "/java-fullstack",
-      "destination": "/java-full-stack-development-course",
-      "permanent": true
-    },
-    {
-      "source": "/python-fullstack",
-      "destination": "/python-full-stack-development-course",
-      "permanent": true
-    },
-    {
-      "source": "/full-stack-development-mern-program-2",
-      "destination": "/mern-full-stack-development-course",
+      "source": "/courses/mern-fullstack",
+      "destination": "/courses/mern-full-stack-course-bangalore",
       "permanent": true
     },
     {
       "source": "/full-stack-mern-program",
-      "destination": "/mern-full-stack-development-course",
+      "destination": "/courses/mern-full-stack-course-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/full-stack-development-mern-program-2",
+      "destination": "/courses/mern-full-stack-course-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/java-full-stack-development-course",
+      "destination": "/courses/java-full-stack-course-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/java-fullstack",
+      "destination": "/courses/java-full-stack-course-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/courses/java-fullstack",
+      "destination": "/courses/java-full-stack-course-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/python-full-stack-development-course",
+      "destination": "/courses/python-full-stack-course-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/python-fullstack",
+      "destination": "/courses/python-full-stack-course-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/courses/python-fullstack",
+      "destination": "/courses/python-full-stack-course-bangalore",
       "permanent": true
     },
     {
@@ -90,58 +155,123 @@
       "permanent": true
     },
     {
+      "source": "/website/courses/data-engineering",
+      "destination": "/courses/data-engineering-course-bangalore",
+      "permanent": true
+    },
+    {
       "source": "/website/data-engineering-course",
-      "destination": "/courses/data-engineering",
+      "destination": "/courses/data-engineering-course-bangalore",
       "permanent": true
     },
     {
       "source": "/website/data-engineering-program",
-      "destination": "/courses/data-engineering",
+      "destination": "/courses/data-engineering-course-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/website/courses/data-science",
+      "destination": "/courses/data-science-course-bangalore",
       "permanent": true
     },
     {
       "source": "/website/data-science-program",
-      "destination": "/courses/data-science",
+      "destination": "/courses/data-science-course-bangalore",
       "permanent": true
     },
     {
-      "source": "/website/courses/mern-fullstack",
-      "destination": "/mern-full-stack-development-course",
+      "source": "/website/data-analytics-course",
+      "destination": "/courses/data-analytics-course-bangalore",
       "permanent": true
     },
     {
-      "source": "/website/courses/java-fullstack",
-      "destination": "/java-full-stack-development-course",
+      "source": "/website/pyspark-course",
+      "destination": "/courses/pyspark-course-bangalore",
       "permanent": true
     },
     {
-      "source": "/website/courses/python-fullstack",
-      "destination": "/python-full-stack-development-course",
+      "source": "/website/databricks-data-engineering-course",
+      "destination": "/courses/databricks-data-engineering-course-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/website/microsoft-fabric-data-engineering-course",
+      "destination": "/courses/microsoft-fabric-data-engineering-course-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/website/tableau-course",
+      "destination": "/courses/tableau-course-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/website/advanced-excel-course",
+      "destination": "/courses/advanced-excel-course-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/website/sql-bootcamp",
+      "destination": "/courses/sql-bootcamp-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/website/python-bootcamp",
+      "destination": "/courses/python-bootcamp-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/website/mern-full-stack-development-course",
+      "destination": "/courses/mern-full-stack-course-bangalore",
       "permanent": true
     },
     {
       "source": "/website/mern-fullstack",
-      "destination": "/mern-full-stack-development-course",
+      "destination": "/courses/mern-full-stack-course-bangalore",
       "permanent": true
     },
     {
-      "source": "/website/java-fullstack",
-      "destination": "/java-full-stack-development-course",
-      "permanent": true
-    },
-    {
-      "source": "/website/python-fullstack",
-      "destination": "/python-full-stack-development-course",
-      "permanent": true
-    },
-    {
-      "source": "/website/full-stack-development-mern-program-2",
-      "destination": "/mern-full-stack-development-course",
+      "source": "/website/courses/mern-fullstack",
+      "destination": "/courses/mern-full-stack-course-bangalore",
       "permanent": true
     },
     {
       "source": "/website/full-stack-mern-program",
-      "destination": "/mern-full-stack-development-course",
+      "destination": "/courses/mern-full-stack-course-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/website/full-stack-development-mern-program-2",
+      "destination": "/courses/mern-full-stack-course-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/website/java-full-stack-development-course",
+      "destination": "/courses/java-full-stack-course-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/website/java-fullstack",
+      "destination": "/courses/java-full-stack-course-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/website/courses/java-fullstack",
+      "destination": "/courses/java-full-stack-course-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/website/python-full-stack-development-course",
+      "destination": "/courses/python-full-stack-course-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/website/python-fullstack",
+      "destination": "/courses/python-full-stack-course-bangalore",
+      "permanent": true
+    },
+    {
+      "source": "/website/courses/python-fullstack",
+      "destination": "/courses/python-full-stack-course-bangalore",
       "permanent": true
     },
     {

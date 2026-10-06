@@ -1497,6 +1497,11 @@ body.marketing-site .program-cta-modal button.program-cta-modal__close:focus-vis
 	z-index: 1;
 }
 
+.programs-megamenu__main .products-megamenu__col--solutions {
+	padding: 0 !important;
+	background: transparent !important;
+}
+
 .products-megamenu__heading {
 	display: block;
 	margin: 0 0 0.7rem;
@@ -2161,8 +2166,19 @@ body.marketing-site .program-cta-modal button.program-cta-modal__close:focus-vis
 
 /* megamenu hover */
 .elementor-location-header {
-	position: relative;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
 	z-index: 1002;
+	background: #ffffff;
+	box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+}
+
+/* Fixed header is removed from flow — push page content down by its height. */
+.marketing-shell--fixed-header .site-main {
+	padding-top: 76px;
 }
 
 @media (min-width: 1025px) {
@@ -2185,13 +2201,17 @@ body.marketing-site .program-cta-modal button.program-cta-modal__close:focus-vis
 	}
 
 	.elementor-21071 .elementor-element.elementor-element-7271d35f {
-		width: 58% !important;
+		width: 48% !important;
 		max-width: none !important;
 	}
 
 	.elementor-21071 .elementor-element.elementor-element-6102f0 {
-		width: auto !important;
-		flex: 0 0 auto;
+		width: 30% !important;
+		flex: 0 0 30% !important;
+		/* The boxed header row (max-width: 1170px) has unused space to its
+		   right that the columns never claimed — use it to pin Login to the
+		   far right, with real breathing room after Careers / Contact Us. */
+		margin-left: auto !important;
 	}
 
 	/* Empty Find Your Job slot — don't reserve space beside Login */
@@ -2204,6 +2224,88 @@ body.marketing-site .program-cta-modal button.program-cta-modal__close:focus-vis
 		align-items: center;
 		visibility: visible !important;
 		white-space: nowrap;
+		min-height: 38px !important;
+		padding: 0.5rem 0.8rem !important;
+		font-size: 0.9rem !important;
+		line-height: 1 !important;
+		border-radius: 0.35rem !important;
+	}
+
+	/* Keep the final navigation actions together and use a compact contact icon. */
+	.elementor-21071 .elementskit-navbar-nav > li.menu-item-careers,
+	.elementor-21071 .elementskit-navbar-nav > li.menu-item-21075 {
+		margin-left: 0.15rem;
+	}
+
+	.elementor-21071 .elementskit-navbar-nav > li.menu-item-careers {
+		margin-left: auto !important;
+	}
+
+	.elementor-21071 #menu-demo-menu {
+		justify-content: flex-start !important;
+	}
+
+	.elementor-21071 #menu-demo-menu > #menu-item-careers {
+		margin-left: 0 !important;
+		transform: translateX(clamp(120px, 18vw, 380px));
+	}
+
+	.elementor-21071 #menu-demo-menu > #menu-item-21075 {
+		transform: translateX(clamp(120px, 18vw, 380px));
+	}
+
+	.elementor-21071 a.site-header-contact {
+		display: inline-flex !important;
+		align-items: center;
+		justify-content: center;
+		gap: 0.25rem;
+	}
+
+	.elementor-21071 a.site-header-contact .site-header-contact-label {
+		display: none;
+	}
+
+	.elementor-21071 a.site-header-contact .site-header-contact-icon {
+		display: block;
+	}
+
+	/* Careers and Contact live in the right-side action group beside Login. */
+	.elementor-21071 .desktop-primary-careers,
+	.elementor-21071 .desktop-primary-contact {
+		display: none !important;
+	}
+
+	.elementor-21071 .site-header-actions {
+		display: inline-flex !important;
+		align-items: center;
+		gap: 1rem;
+		margin-right: 0.85rem;
+		white-space: nowrap;
+		width: auto !important;
+		flex: 0 0 auto !important;
+	}
+
+	.elementor-21071 .elementor-element-6102f0 > .elementor-widget-wrap {
+		display: flex !important;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 0.75rem;
+		width: 100%;
+		flex-wrap: nowrap !important;
+		flex-direction: row !important;
+	}
+
+	.elementor-21071 .elementor-element-6102f0 .elementor-element-3d214b00 {
+		width: auto !important;
+		max-width: none !important;
+		flex: 0 0 auto !important;
+	}
+
+	.elementor-21071 .site-header-careers-link {
+		color: inherit;
+		font-size: 14px;
+		line-height: 1.2;
+		text-decoration: none;
 	}
 
 	/* Keep every nav link on a single row */
