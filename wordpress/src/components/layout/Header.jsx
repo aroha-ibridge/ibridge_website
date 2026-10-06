@@ -124,12 +124,15 @@ function Header() {
             <div className="site-header-utility__contact">
               <span>For enquiries: <a href="mailto:support@ibridge360.com">support@ibridge360.com</a></span>
               <span aria-hidden="true">|</span>
-              <a href="tel:+918792922796">+91 879 292 2796</a>
+              <a href="tel:+919611260360">+91 96112 60360</a>
             </div>
-            <Link className="site-header-utility__login" to={PLATFORM_LOGIN_PATH}>
-              <span aria-hidden="true">↪</span>
-              Login
-            </Link>
+            <div className="site-header-utility__actions">
+              <Link to="/blogs">Blogs</Link>
+              <Link className="site-header-utility__login" to={PLATFORM_LOGIN_PATH}>
+                <span aria-hidden="true">↪</span>
+                Login
+              </Link>
+            </div>
           </div>
         </div>
         <section
@@ -355,7 +358,7 @@ function Header() {
                           </li>
                           <li
                             id="menu-item-22459"
-                            className="menu-item menu-item-type-post_type menu-item-object-page menu-item-22459 nav-item elementskit-mobile-builder-content"
+                            className="menu-item menu-item-type-post_type menu-item-object-page menu-item-22459 nav-item elementskit-mobile-builder-content desktop-primary-blogs"
                             data-vertical-menu="750px"
                           >
                             <Link to="/blogs" className="ekit-menu-nav-link">

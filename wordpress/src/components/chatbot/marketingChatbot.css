@@ -375,6 +375,8 @@
 .ibc-dock .ibc-root--embedded.ibc-root--open {
   pointer-events: auto;
   z-index: 2;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
 }
 
 .ibc-dock .ibc-root--embedded .ibc-panel {
@@ -646,19 +648,20 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background: var(--ibc-surface);
+  /* Keep the open chatbot card opaque over page content. */
+  background: #ffffff !important;
+  background-color: #ffffff !important;
   border-radius: var(--ibc-radius);
   box-shadow: var(--ibc-shadow);
   transform-origin: 100% 100%;
-  opacity: 0;
+  /* Keep the panel opaque immediately; visibility controls the closed state. */
+  opacity: 1;
   visibility: hidden;
   transform: translateY(18px) scale(0.94);
-  transition: opacity 0.22s ease, transform 0.28s cubic-bezier(0.34, 1.25, 0.64, 1),
-    visibility 0.28s;
+  transition: transform 0.28s cubic-bezier(0.34, 1.25, 0.64, 1), visibility 0.28s;
 }
 
 .ibc-panel--open {
-  opacity: 1;
   visibility: visible;
   transform: translateY(0) scale(1);
   pointer-events: auto;
@@ -793,9 +796,8 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  background-color: var(--ibc-canvas);
-  background-image: radial-gradient(rgba(24, 71, 159, 0.07) 1px, transparent 1px);
-  background-size: 18px 18px;
+  background-color: #ffffff !important;
+  background-image: none;
   scrollbar-width: thin;
   scrollbar-color: #c9d3e6 transparent;
 }
@@ -1307,7 +1309,8 @@
 .ibc-composer {
   flex: none;
   padding: 10px 12px 8px;
-  background: var(--ibc-surface);
+  background: #ffffff !important;
+  background-color: #ffffff !important;
   border-top: 1px solid var(--ibc-line);
 }
 

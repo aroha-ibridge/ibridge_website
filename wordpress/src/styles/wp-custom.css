@@ -2205,16 +2205,38 @@ body.marketing-site .program-cta-modal button.program-cta-modal__close:focus-vis
 	}
 
 	.site-header-utility__contact,
-	.site-header-utility__login {
+	.site-header-utility__login,
+	.site-header-utility__actions {
 		display: inline-flex;
 		align-items: center;
 		gap: 0.65rem;
 		white-space: nowrap;
 	}
 
+	.site-header-utility__actions {
+		gap: 1.25rem;
+	}
+
 	.site-header-utility a {
-		color: inherit;
+		color: #fff !important;
+		-webkit-text-fill-color: #fff !important;
 		text-decoration: none;
+		transition: none;
+		transform: none;
+	}
+
+	.site-header-utility a:hover,
+	.site-header-utility a:focus-visible {
+		color: #fff !important;
+		-webkit-text-fill-color: #fff !important;
+		transform: none;
+		text-decoration: none !important;
+	}
+
+	.site-header-utility a:hover span,
+	.site-header-utility a:focus-visible span {
+		color: #fff !important;
+		-webkit-text-fill-color: #fff !important;
 	}
 
 	.site-header-utility__login {
@@ -2296,6 +2318,14 @@ body.marketing-site .program-cta-modal button.program-cta-modal__close:focus-vis
 		justify-content: flex-start !important;
 	}
 
+	/* Desktop navbar order: About Us, Self Learning, Programs, iBridge For, Blogs, Products. */
+	.elementor-21071 #menu-demo-menu > #menu-item-21074 { order: 1; }
+	.elementor-21071 #menu-demo-menu > #menu-item-self-learning { order: 2; }
+	.elementor-21071 #menu-demo-menu > #menu-item-21076 { order: 3; }
+	.elementor-21071 #menu-demo-menu > #menu-item-21077 { order: 4; }
+	.elementor-21071 #menu-demo-menu > #menu-item-22459 { order: 5; }
+	.elementor-21071 #menu-demo-menu > #menu-item-products { order: 6; }
+
 	.elementor-21071 #menu-demo-menu > #menu-item-careers {
 		margin-left: 0 !important;
 		transform: translateX(clamp(120px, 18vw, 380px));
@@ -2322,7 +2352,8 @@ body.marketing-site .program-cta-modal button.program-cta-modal__close:focus-vis
 
 	/* Careers and Contact live in the right-side action group beside Login. */
 	.elementor-21071 .desktop-primary-careers,
-	.elementor-21071 .desktop-primary-contact {
+	.elementor-21071 .desktop-primary-contact,
+	.elementor-21071 .desktop-primary-blogs {
 		display: none !important;
 	}
 
@@ -2353,6 +2384,13 @@ body.marketing-site .program-cta-modal button.program-cta-modal__close:focus-vis
 	}
 
 	.elementor-21071 .site-header-careers-link {
+		color: inherit;
+		font-size: 14px;
+		line-height: 1.2;
+		text-decoration: none;
+	}
+
+	.elementor-21071 .site-header-blogs-link {
 		color: inherit;
 		font-size: 14px;
 		line-height: 1.2;
