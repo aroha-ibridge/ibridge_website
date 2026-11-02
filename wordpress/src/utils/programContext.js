@@ -70,14 +70,23 @@ export function getEnquiryPageDefaults(pathname) {
 }
 
 /** Returns the program name for the current page, or empty string. */
-export function getCurrentProgramName() {
-  if (typeof window === 'undefined') return '';
-  const path = currentLogicalPath();
+export function getCurrentProgramName(pathname) {
+  const path = currentLogicalPath(pathname);
+  if (!path || path === '/') return '';
+
   if (ENQUIRY_DEFAULTS_BY_PATH[path]?.courseName) {
     return ENQUIRY_DEFAULTS_BY_PATH[path].courseName;
   }
   if (PROGRAM_NAMES_BY_PATH[path]) {
     return PROGRAM_NAMES_BY_PATH[path];
+  }
+
+  // Any /courses/:slug path
+  if (path.startsWith('/courses/')) {
+    const slug = path.replace(/^\/courses\//, '').replace(/\/+$/, '');
+    const found = PROGRAM_OPTIONS.find((p) => p.path === `/courses/${slug}` || p.path?.endsWith(`/${slug}`));
+    if (found) return found.name;
+    return slug.split('-').map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ');
   }
 
   // Training & Upskilling detail pages: /training/:slug
@@ -91,8 +100,10 @@ export function getCurrentProgramName() {
 }
 
 /** True if the current page is a dedicated program page (has a fixed course name). */
-export function isOnProgramPage() {
-  return Boolean(getCurrentProgramName());
+export function isOnProgramPage(pathname) {
+  const path = currentLogicalPath(pathname);
+  if (!path || path === '/') return false;
+  return Boolean(path.startsWith('/courses/') || getCurrentProgramName(pathname));
 }
 
 /**

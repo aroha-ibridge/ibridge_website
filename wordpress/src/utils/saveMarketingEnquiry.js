@@ -17,7 +17,7 @@ export async function saveMarketingEnquiry(fields) {
     name: fields.name?.trim() || '',
     phone: fields.phone?.trim() || '',
     email: fields.email?.trim() || '',
-    courseName: fields.courseName?.trim() || '',
+    courseName: fields.courseName?.trim() || fields.course?.trim() || '',
     coursePrice: fields.coursePrice?.trim() || '',
     learnerType: fields.learnerType?.trim() || '',
     message: fields.message?.trim() || '',
@@ -28,8 +28,8 @@ export async function saveMarketingEnquiry(fields) {
       (typeof window !== 'undefined' ? window.location.href : ''),
   };
 
-  const primaryUrl = learnerApiUrl('/api/marketing-enquiries');
-  const fallbackUrl = '/api/marketing-enquiries';
+  const primaryUrl = '/api/marketing-enquiries';
+  const fallbackUrl = learnerApiUrl('/api/marketing-enquiries');
 
   async function postJson(url) {
     const response = await fetch(url, {
@@ -61,7 +61,7 @@ export async function saveMarketingEnquiry(fields) {
       }
     }
 
-    if (result && result.ok) {
+    if (result && (result.ok || result.data?.success || result.data?.ok)) {
       return {
         success: true,
         data: result.data?.data,

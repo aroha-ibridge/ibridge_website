@@ -3,7 +3,7 @@ import { closeEnquirePopup } from '../constants/enquirePopupLink';
 import { saveMarketingEnquiry } from './saveMarketingEnquiry';
 import { validateEmail, validatePhone } from './formValidation';
 import { withBase } from './siteBase';
-import { getPendingBrochureDownload, triggerBrochureDownload } from './programContext';
+import { getCurrentProgramName, getPendingBrochureDownload, triggerBrochureDownload } from './programContext';
 
 const MSG_SAVE_FAIL =
   'Unable to save your enquiry. Please try again or email support@ibridge360.com.';
@@ -96,7 +96,7 @@ export async function submitEnquiry(fields) {
       name: name.trim(),
       phone: phone.trim(),
       email: email.trim(),
-      courseName: courseName.trim(),
+      courseName: courseName.trim() || getCurrentProgramName(),
       coursePrice: coursePrice.trim(),
       learnerType: learnerType.trim(),
       message: userMessage.trim(),

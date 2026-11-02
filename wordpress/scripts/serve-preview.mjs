@@ -10,6 +10,7 @@ import { loadEnv } from 'vite';
 import { handleMarketingChatbot, readJsonBody } from '../src/server/marketingChatbotHandler.js';
 import { handleCareersSheet } from '../src/server/careersSheetHandler.js';
 import { handleResumeUpload } from '../src/server/resumeUploadHandler.js';
+import { handleMarketingEnquiry } from '../src/server/marketingEnquiryHandler.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
@@ -170,23 +171,10 @@ const server = http.createServer(async (req, res) => {
     }
     try {
       const body = await readJsonBody(req);
-      const targetOrigin = (
-        process.env.PUBLIC_LEARNER_API_ORIGIN ||
-        process.env.PUBLIC_API_ORIGIN ||
-        'https://lms.ibridge360.com'
-      ).replace(/\/+$/, '');
-      const upstream = await fetch(`${targetOrigin}/api/marketing-enquiries`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(body || {}),
-      });
-      const data = await upstream.json().catch(() => ({}));
-      return sendJson(res, upstream.status, data);
+      const result = await handleMarketingEnquiry(body);
+      return sendJson(res, result.status, result.json);
     } catch (err) {
-      return sendJson(res, 500, { ok: false, error: err.message || 'Marketing enquiry proxy failed' });
+      return sendJson(res, err.status || 500, { ok: false, error: err.message || 'Marketing enquiry failed' });
     }
   }
 

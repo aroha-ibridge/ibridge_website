@@ -1,5 +1,9 @@
+import { handleMarketingEnquiry } from '../src/server/marketingEnquiryHandler.js';
+
 /**
- * Vercel serverless function proxying marketing enquiries to learner / LMS backend.
+ * Vercel serverless function handling marketing enquiries:
+ * 1. Sends email notification to support@ibridge360.com via DreamHost SMTP.
+ * 2. Saves enquiry to LMS MongoDB backend.
  */
 export default async function handler(req, res) {
   if (req.method === 'OPTIONS') {
@@ -22,24 +26,10 @@ export default async function handler(req, res) {
     }
   }
 
-  const targetOrigin = (
-    process.env.PUBLIC_LEARNER_API_ORIGIN ||
-    process.env.PUBLIC_API_ORIGIN ||
-    'https://lms.ibridge360.com'
-  ).replace(/\/+$/, '');
-
   try {
-    const upstream = await fetch(`${targetOrigin}/api/marketing-enquiries`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify(body || {}),
-    });
-    const data = await upstream.json().catch(() => ({}));
-    return res.status(upstream.status).json(data);
+    const result = await handleMarketingEnquiry(body || {});
+    return res.status(result.status).json(result.json);
   } catch (err) {
-    return res.status(500).json({ ok: false, error: err.message || 'Marketing enquiry proxy failed' });
+    return res.status(500).json({ ok: false, error: err.message || 'Marketing enquiry failed' });
   }
 }

@@ -12,6 +12,7 @@ import {
 } from './src/server/marketingChatbotHandler.js';
 import { handleCareersSheet } from './src/server/careersSheetHandler.js';
 import { handleResumeUpload } from './src/server/resumeUploadHandler.js';
+import { handleMarketingEnquiry } from './src/server/marketingEnquiryHandler.js';
 
 const shimRouter = fileURLToPath(new URL('./src/shims/react-router-dom.jsx', import.meta.url));
 const shimHelmet = fileURLToPath(new URL('./src/shims/react-helmet-async.jsx', import.meta.url));
@@ -149,6 +150,37 @@ function marketingChatbotDevPlugin() {
   };
 }
 
+function marketingEnquiriesDevPlugin() {
+  return {
+    name: 'marketing-enquiries-dev',
+    configureServer(server) {
+      server.middlewares.use('/api/marketing-enquiries', async (req, res, next) => {
+        if (req.method === 'OPTIONS') {
+          res.statusCode = 204;
+          res.end();
+          return;
+        }
+        if (req.method !== 'POST') {
+          next();
+          return;
+        }
+
+        try {
+          const body = await readJsonBody(req);
+          const result = await handleMarketingEnquiry(body);
+          res.statusCode = result.status;
+          res.setHeader('Content-Type', 'application/json');
+          res.end(JSON.stringify(result.json));
+        } catch (err) {
+          res.statusCode = err.status || 500;
+          res.setHeader('Content-Type', 'application/json');
+          res.end(JSON.stringify({ ok: false, error: err.message || 'Marketing enquiry request failed' }));
+        }
+      });
+    },
+  };
+}
+
 export default defineConfig({
   site: SITE_ORIGIN,
   base: SITE_BASE || '/',
@@ -180,6 +212,7 @@ export default defineConfig({
       marketingChatbotDevPlugin(),
       careersSheetDevPlugin(),
       resumeUploadDevPlugin(),
+      marketingEnquiriesDevPlugin(),
     ],
     resolve: {
       alias: {

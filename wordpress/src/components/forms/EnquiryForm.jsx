@@ -8,17 +8,18 @@ import {
   getEnquiryPageDefaults,
   getProgramNameFromQuery,
   getProgramPriceFromQuery,
+  isOnProgramPage,
 } from '../../utils/programContext';
 import { submitEnquiryFormElementor } from '../../utils/enquiryFormSubmit';
 import { validateEmail, validatePhone } from '../../utils/formValidation';
 
-function resolveDefaultCourse(override = '') {
+function resolveDefaultCourse(override = '', path = '') {
   return (
     override ||
     consumePendingProgramName() ||
     getProgramNameFromQuery() ||
-    getEnquiryPageDefaults()?.courseName ||
-    getCurrentProgramName() ||
+    getEnquiryPageDefaults(path)?.courseName ||
+    getCurrentProgramName(path) ||
     ''
   );
 }
@@ -34,7 +35,11 @@ function buildCourseOptions(selectedCourse) {
 
 /**
  * Reusable "Let's Get You Enrolled" form.
- * Same design everywhere: program heroes, Enquire popup, and any future placement.
+ *
+ * Rules:
+ * - On dedicated program pages (or when a course is pre-selected / brochure requested),
+ *   exclude the Course dropdown completely and submit the selected course in the background.
+ * - On general pages (e.g. homepage, about us) where no course is active, show the Course dropdown.
  */
 function EnquiryForm({
   title = "Let's Get You Enrolled",
@@ -48,28 +53,50 @@ function EnquiryForm({
   const prefix = (idPrefix || reactId).replace(/:/g, '');
   const formRef = useRef(null);
   const { pathname, search } = useLocation();
+
   const pageDefaults = getEnquiryPageDefaults(pathname);
-  const shouldHideCourse = hideCourse || Boolean(pageDefaults?.hideCourse);
-  const fixedCourse = defaultCourse || pageDefaults?.courseName || '';
-  const [course, setCourse] = useState(() => resolveDefaultCourse(fixedCourse));
+  const currentProgram = getCurrentProgramName(pathname);
+  const fixedCourse = defaultCourse || pageDefaults?.courseName || currentProgram || '';
+
+  const [course, setCourse] = useState(() => resolveDefaultCourse(fixedCourse, pathname));
   const [coursePrice, setCoursePrice] = useState(() => getProgramPriceFromQuery());
   const [submitSource, setSubmitSource] = useState(source);
+  const [isBrochure, setIsBrochure] = useState(false);
+  const [courseLocked, setCourseLocked] = useState(() =>
+    Boolean(fixedCourse || isOnProgramPage(pathname)),
+  );
+
   const courseOptions = useMemo(() => buildCourseOptions(course), [course]);
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState({ phone: '', email: '' });
 
+  // Update when pathname, search query, or fixed course prop changes
   useEffect(() => {
-    setCourse(resolveDefaultCourse(fixedCourse));
+    const nextFixed =
+      defaultCourse ||
+      getEnquiryPageDefaults(pathname)?.courseName ||
+      getCurrentProgramName(pathname) ||
+      '';
+    const resolved = resolveDefaultCourse(nextFixed, pathname);
+    if (resolved) {
+      setCourse(resolved);
+    }
     setCoursePrice(getProgramPriceFromQuery());
     setSubmitSource(source);
-  }, [fixedCourse, pathname, search, source]);
+    if (nextFixed || isOnProgramPage(pathname)) {
+      setCourseLocked(true);
+    }
+  }, [defaultCourse, pathname, search, source]);
 
-  const [isBrochure, setIsBrochure] = useState(false);
-
+  // Handle popup events (e.g. opening popup with a specific course or brochure)
   useEffect(() => {
     const onPopupOpen = (event) => {
-      const nextCourse = event.detail?.courseName || resolveDefaultCourse(fixedCourse);
-      if (nextCourse) setCourse(nextCourse);
+      const eventCourse = event.detail?.courseName;
+      const nextCourse = eventCourse || resolveDefaultCourse(fixedCourse, pathname);
+      if (nextCourse) {
+        setCourse(nextCourse);
+        setCourseLocked(true);
+      }
       if (event.detail?.coursePrice) setCoursePrice(event.detail.coursePrice);
       if (event.detail?.source) setSubmitSource(event.detail.source);
       setIsBrochure(
@@ -83,6 +110,16 @@ function EnquiryForm({
     window.addEventListener('enquire-popup-opened', onPopupOpen);
     return () => window.removeEventListener('enquire-popup-opened', onPopupOpen);
   }, [fixedCourse, pathname, source]);
+
+  // Determine whether to exclude/hide the course select dropdown.
+  // Excluded on dedicated program pages, or when course is locked / brochure / prop hideCourse.
+  const isDedicated = isOnProgramPage(pathname) || Boolean(fixedCourse) || Boolean(currentProgram);
+  const shouldHideCourse =
+    hideCourse ||
+    Boolean(pageDefaults?.hideCourse) ||
+    isDedicated ||
+    isBrochure ||
+    (Boolean(course) && courseLocked);
 
   const field = (name) => `ibridge-enquiry-${name}-${prefix}`;
 
@@ -116,7 +153,7 @@ function EnquiryForm({
     setSubmitting(true);
     const result = await submitEnquiryFormElementor(event, { source: submitSource });
     if (result?.reset) {
-      setCourse(resolveDefaultCourse(fixedCourse));
+      setCourse(resolveDefaultCourse(fixedCourse, pathname));
       setCoursePrice(getProgramPriceFromQuery());
       setSubmitSource(source);
       setErrors({ phone: '', email: '' });
@@ -124,17 +161,24 @@ function EnquiryForm({
     setSubmitting(false);
   };
 
+  const displayCourse = course || currentProgram || fixedCourse;
+
   return (
     <div className={`ibridge-enquiry-form ${className}`.trim()}>
       <div className="ibridge-enquiry-form__header">
         <h2 className="ibridge-enquiry-form__title">
           {isBrochure ? 'Download Course Brochure' : title}
         </h2>
-        {isBrochure && (
+        {isBrochure ? (
           <p className="ibridge-enquiry-form__subtitle text-xs text-white/80 mt-1 mb-0">
+            {displayCourse ? <strong className="text-white">{displayCourse} — </strong> : null}
             Enter your details below to download the complete curriculum brochure.
           </p>
-        )}
+        ) : shouldHideCourse && displayCourse && !displayCourse.startsWith('Request Demo') ? (
+          <p className="ibridge-enquiry-form__subtitle text-xs text-white/90 mt-1 mb-0 font-medium">
+            Program: <span className="font-semibold text-white">{displayCourse}</span>
+          </p>
+        ) : null}
       </div>
 
       <form
@@ -216,8 +260,8 @@ function EnquiryForm({
             <input
               type="hidden"
               name="form_fields[course]"
-              value={course || 'Request Demo for LMS'}
-              data-default-course={course || 'Request Demo for LMS'}
+              value={displayCourse || 'Master Data Engineering Program'}
+              data-default-course={displayCourse || 'Master Data Engineering Program'}
               readOnly
             />
           ) : (

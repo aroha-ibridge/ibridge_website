@@ -169,3 +169,154 @@ Page: ${pageUrl}
     return { ok: false, error: err.message };
   }
 }
+
+export async function sendEnquiryLeadNotificationEmail(enquiry = {}) {
+  const host = process.env.Email_Host || 'smtp.dreamhost.com';
+  const port = parseInt(process.env.Email_Port, 10) || 587;
+  const user = process.env.Email_ID || process.env.SMTP_FROM || 'system@ibridge360.com';
+  const pass = process.env.Email_Pwd || 'Aroha@2025';
+  const toEmail = process.env.LEAD_NOTIFICATION_EMAIL || process.env.PUBLIC_ENQUIRY_TO_EMAIL || 'support@ibridge360.com';
+  const fromEmail = process.env.SMTP_FROM || user;
+  const bccEmail = process.env.Email_Bcc || undefined;
+
+  const transporter = nodemailer.createTransport({
+    host,
+    port,
+    secure: port === 465,
+    auth: { user, pass },
+    tls: { rejectUnauthorized: false },
+  });
+
+  const {
+    name = '',
+    email = '',
+    phone = '',
+    courseName = '',
+    coursePrice = '',
+    learnerType = '',
+    message = '',
+    source = 'Website Enquiry',
+    pageUrl = '',
+  } = enquiry;
+
+  const isBrochure = /brochure/i.test(source);
+  const subject = isBrochure
+    ? `New Brochure Download Request: ${courseName || 'Course'} — ${name}`
+    : `New Program Enquiry: ${courseName || 'General'} — ${name}`;
+
+  const html = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>${subject}</title>
+</head>
+<body style="font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif; background-color: #f8fafc; margin: 0; padding: 24px; color: #0f172a; line-height: 1.5;">
+  <div style="max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 12px; border: 1px solid #e2e8f0; overflow: hidden; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);">
+    
+    <!-- Brand Header -->
+    <div style="background: linear-gradient(135deg, #123A85 0%, #18479F 100%); padding: 24px 28px; color: #ffffff;">
+      <h1 style="margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.01em;">
+        ${isBrochure ? 'New Brochure Download Request' : 'New Program Enquiry Received'}
+      </h1>
+      <p style="margin: 6px 0 0; font-size: 14px; opacity: 0.95;">
+        Program: <strong style="color: #ffffff;">${courseName || 'General Enquiry'}</strong>
+      </p>
+    </div>
+
+    <div style="padding: 24px 28px;">
+      
+      <!-- Primary Lead Details -->
+      <div style="background-color: #f0f5ff; border: 1px solid #c7d9fc; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px;">
+        <h2 style="margin: 0 0 12px; font-size: 16px; color: #18479F; font-weight: 700;">Prospect Details</h2>
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+          <tr>
+            <td style="padding: 6px 0; font-weight: 600; color: #475569; width: 140px;">Full Name:</td>
+            <td style="padding: 6px 0; font-weight: 700; color: #0f172a;">${name}</td>
+          </tr>
+          <tr>
+            <td style="padding: 6px 0; font-weight: 600; color: #475569;">Email Address:</td>
+            <td style="padding: 6px 0;"><a href="mailto:${email}" style="color: #18479F; text-decoration: none; font-weight: 600;">${email}</a></td>
+          </tr>
+          <tr>
+            <td style="padding: 6px 0; font-weight: 600; color: #475569;">Phone Number:</td>
+            <td style="padding: 6px 0;"><a href="tel:${phone}" style="color: #18479F; text-decoration: none; font-weight: 600;">${phone}</a></td>
+          </tr>
+          ${courseName ? `<tr>
+            <td style="padding: 6px 0; font-weight: 600; color: #475569;">Program:</td>
+            <td style="padding: 6px 0; font-weight: 700; color: #18479F;">${courseName}</td>
+          </tr>` : ''}
+          ${coursePrice ? `<tr>
+            <td style="padding: 6px 0; font-weight: 600; color: #475569;">Program Fee:</td>
+            <td style="padding: 6px 0; color: #0f172a;">₹${coursePrice}</td>
+          </tr>` : ''}
+          ${learnerType ? `<tr>
+            <td style="padding: 6px 0; font-weight: 600; color: #475569;">Learner Type:</td>
+            <td style="padding: 6px 0; color: #0f172a;">${learnerType}</td>
+          </tr>` : ''}
+          <tr>
+            <td style="padding: 6px 0; font-weight: 600; color: #475569;">Source:</td>
+            <td style="padding: 6px 0; color: #0f172a;">${source || 'Website form'}</td>
+          </tr>
+          ${pageUrl ? `<tr>
+            <td style="padding: 6px 0; font-weight: 600; color: #475569;">Page URL:</td>
+            <td style="padding: 6px 0; font-size: 13px;"><a href="${pageUrl}" style="color: #18479F;">${pageUrl}</a></td>
+          </tr>` : ''}
+        </table>
+      </div>
+
+      ${message ? `
+      <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px 20px; margin-bottom: 20px;">
+        <h3 style="margin: 0 0 8px; font-size: 14px; color: #334155; font-weight: 600;">Message / Note:</h3>
+        <p style="margin: 0; font-size: 14px; color: #0f172a; white-space: pre-wrap;">${message}</p>
+      </div>` : ''}
+
+      <!-- Quick Action Buttons -->
+      <div style="text-align: center; margin: 24px 0 10px;">
+        <a href="tel:${phone}" style="background-color: #18479F; color: #ffffff; padding: 10px 22px; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 8px; display: inline-block; margin-right: 10px;">
+          📞 Call Prospect
+        </a>
+        <a href="mailto:${email}?subject=Re:%20iBridge360%20${encodeURIComponent(courseName || 'Program')}%20Enquiry" style="background-color: #ffffff; color: #18479F; border: 1.5px solid #18479F; padding: 9px 20px; font-size: 14px; font-weight: 600; text-decoration: none; border-radius: 8px; display: inline-block;">
+          ✉️ Email Prospect
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div style="background-color: #f1f5f9; padding: 14px 28px; text-align: center; font-size: 12px; color: #64748b; border-top: 1px solid #e2e8f0;">
+      This lead was captured via iBridge360 (${source || 'Website Enquiry Form'}).
+    </div>
+  </div>
+</body>
+</html>`;
+
+  const text = `
+New Program Enquiry Received!
+----------------------------
+Program: ${courseName || 'General Enquiry'}
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Source: ${source}
+Page URL: ${pageUrl}
+Message: ${message}
+`;
+
+  try {
+    const info = await transporter.sendMail({
+      from: `"iBridge360 Enquiry Desk" <${fromEmail}>`,
+      to: toEmail,
+      bcc: bccEmail,
+      replyTo: email,
+      subject,
+      text,
+      html,
+    });
+    console.log('[enquiry-email] Enquiry notification sent successfully! MessageId:', info.messageId);
+    return { ok: true, messageId: info.messageId };
+  } catch (err) {
+    console.error('[enquiry-email] Failed to send enquiry email:', err);
+    return { ok: false, error: err.message };
+  }
+}
+
