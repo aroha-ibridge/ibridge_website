@@ -9,9 +9,9 @@ import { WHY_IBRIDGE } from './sharedDefaults';
  */
 const databricksDataEngineeringProgram = {
   seo: {
-    title: 'Databricks Data Engineering Course | Learn PySpark, Delta Lake & Lakehouse',
+    title: 'Databricks Training in Bangalore | iBridge360',
     description:
-      'Learn Databricks Data Engineering with PySpark, SQL, Apache Spark, Delta Lake, Lakehouse Architecture, Unity Catalog, ETL pipelines and cloud integration.',
+      'Learn Databricks in Bangalore: Spark, Delta Lake, data pipelines and lakehouse architecture with hands-on projects and job assistance. Book a free demo.',
   },
   path: '/courses/databricks-data-engineering-course-bangalore',
   pageId: '508',

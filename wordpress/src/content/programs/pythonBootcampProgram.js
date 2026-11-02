@@ -9,9 +9,9 @@ import { WHY_IBRIDGE } from './sharedDefaults';
  */
 const pythonBootcampProgram = {
   seo: {
-    title: 'Python Bootcamp | Learn Python Programming, Automation & Data Analytics',
+    title: 'Python Bootcamp in Bangalore with Projects | iBridge360',
     description:
-      'Master Python through hands-on training in programming, OOP, data structures, automation, APIs, SQL, data analytics and real-world projects.',
+      'Learn Python in Bangalore: programming basics, functions, OOP and data handling with hands-on projects and interview prep. Enroll today.',
   },
   path: '/courses/python-bootcamp-bangalore',
   pageId: '508',

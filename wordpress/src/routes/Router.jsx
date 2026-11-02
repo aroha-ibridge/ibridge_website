@@ -19,6 +19,7 @@ import ThankYou from '../pages/ThankYou/ThankYou';
 import TermsConditions from '../pages/TermsConditions/TermsConditions';
 import PrivacyPolicy from '../pages/PrivacyPolicy/PrivacyPolicy';
 import DataEngineeringProgram from '../pages/DataEngineeringProgram/DataEngineeringProgram';
+import MasterDataEngineeringProgram from '../pages/MasterDataEngineeringProgram/MasterDataEngineeringProgram';
 import FullStackMernProgram from '../pages/FullStackMernProgram/FullStackMernProgram';
 import FullStackJavaProgram from '../pages/FullStackJavaProgram/FullStackJavaProgram';
 import FullStackPythonProgram from '../pages/FullStackPythonProgram/FullStackPythonProgram';
@@ -84,6 +85,10 @@ function AppRouter() {
         <Route path="terms-conditions" element={<TermsConditions />} />
         <Route path="privacy-policy" element={<PrivacyPolicy />} />
         {/* Program pages — only the Bangalore URLs are real pages */}
+        <Route
+          path="courses/master-data-engineering-program-bangalore"
+          element={<MasterDataEngineeringProgram />}
+        />
         <Route
           path="courses/data-engineering-course-bangalore"
           element={<DataEngineeringProgram />}

@@ -13,10 +13,34 @@ function DataEngineeringHeroSection({
   formIdPrefix = 'de',
   duration = '3 Months',
   showStats = true,
+  statBoxes = null,
+  brochureUrl = null,
+  brochureLabel = 'Download Brochure',
   showEnquiryForm = true,
   showAlumniInHero = false,
   useGradientTitle = true,
 } = {}) {
+  const heroBtnBaseStyle = {
+    minWidth: "210px",
+    height: "48px",
+    padding: "0 24px",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: "8px",
+    border: "1.5px solid #18479F",
+    backgroundColor: "transparent",
+    color: "#18479F",
+    fontSize: "16px",
+    fontWeight: "600",
+    fontFamily: '"Inter", Sans-serif',
+    boxSizing: "border-box",
+    cursor: "pointer",
+    textDecoration: "none",
+    lineHeight: 1,
+    transition: "all 0.2s ease-in-out",
+  };
+
   return (
     <>
       <section data-particle_enable="false" data-particle-mobile-disabled="false" className={`elementor-section elementor-top-section elementor-element elementor-element-a2db022 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle${!showEnquiryForm ? ' program-hero--centered' : ''}`} data-id="a2db022" data-element_type="section">
@@ -51,12 +75,37 @@ function DataEngineeringHeroSection({
       			<div className="elementor-widget-wrap elementor-element-populated">
       						<div className="elementor-element elementor-element-cb8a092 elementor-align-center elementor-tablet-align-center elementor-mobile-align-center elementor-widget elementor-widget-button" data-id="cb8a092" data-element_type="widget" data-widget_type="button.default">
       				<div className="elementor-widget-container">
-      					<div className="elementor-button-wrapper">
-      			<button type="button" className="elementor-button elementor-button-link elementor-size-sm" data-open-popup="17162">
+      					<div className="elementor-button-wrapper hero-action-buttons-wrapper" style={{ display: "flex", gap: "12px", flexWrap: "wrap", alignItems: "center" }}>
+      			<button
+      				type="button"
+      				className="elementor-button elementor-button-link hero-action-btn"
+      				data-open-popup="17162"
+      				style={heroBtnBaseStyle}
+      			>
       						<span className="elementor-button-content-wrapper">
       									<span className="elementor-button-text">Enquire Now</span>
       					</span>
       					</button>
+      			{brochureUrl ? (
+      				<a
+      					href={brochureUrl}
+      					download="master-data-engineering-brochure.pdf"
+      					target="_blank"
+      					rel="noopener noreferrer"
+      					className="elementor-button elementor-button-link hero-action-btn"
+      					style={{
+      						...heroBtnBaseStyle,
+      						gap: "8px",
+      					}}
+      				>
+      					<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      						<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      						<polyline points="7 10 12 15 17 10" />
+      						<line x1="12" y1="15" x2="12" y2="3" />
+      					</svg>
+      					<span>{brochureLabel}</span>
+      				</a>
+      			) : null}
       		</div>
       				</div>
       				</div>
@@ -68,6 +117,20 @@ function DataEngineeringHeroSection({
       				{showStats ? (
       				<section data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-section elementor-inner-section elementor-element elementor-element-89a8d8e elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="89a8d8e" data-element_type="section">
       						<div className="elementor-container elementor-column-gap-default">
+      					{statBoxes && statBoxes.length > 0 ? (
+      						statBoxes.map((box, idx) => (
+      							<div key={idx} className="elementor-column elementor-inner-column elementor-element" style={{ flex: "1 1 0", minWidth: "120px" }} data-element_type="column">
+      								<div className="elementor-widget-wrap elementor-element-populated">
+      									<div className="elementor-element elementor-position-left elementor-vertical-align-middle elementor-position-top elementor-widget elementor-widget-image-box" data-element_type="widget" data-widget_type="image-box.default">
+      										<div className="elementor-widget-container">
+      											<div className="elementor-image-box-wrapper"><figure className="elementor-image-box-img"><img decoding="async" width="100" height="100" src={box.icon || "/wp-content/uploads/2024/04/Group-165.png"} className="attachment-full size-full" alt="" /></figure><div className="elementor-image-box-content"><h3 className="elementor-image-box-title">{box.title}</h3><p className="elementor-image-box-description">{box.description}</p></div></div>
+      										</div>
+      									</div>
+      								</div>
+      							</div>
+      						))
+      					) : (
+      						<>
       					<div className="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-5dcfcc7" data-id="5dcfcc7" data-element_type="column">
       			<div className="elementor-widget-wrap elementor-element-populated">
       						<div className="elementor-element elementor-element-84869ae elementor-position-left elementor-vertical-align-middle elementor-position-top elementor-widget elementor-widget-image-box" data-id="84869ae" data-element_type="widget" data-widget_type="image-box.default">
@@ -92,6 +155,8 @@ function DataEngineeringHeroSection({
       				</div>
       					</div>
       		</div>
+      						</>
+      					)}
       					</div>
       		</section>
       				) : null}

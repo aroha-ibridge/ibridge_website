@@ -9,9 +9,9 @@ import { WHY_IBRIDGE } from './sharedDefaults';
  */
 const microsoftFabricDataEngineeringProgram = {
   seo: {
-    title: 'Microsoft Fabric Data Engineering Course | Learn OneLake, Lakehouse & PySpark',
+    title: 'Microsoft Fabric Training in Bangalore | iBridge360',
     description:
-      'Learn Microsoft Fabric Data Engineering with OneLake, Lakehouse, PySpark, SQL, Data Factory, Pipelines, Dataflow Gen2, Delta Lake and Power BI.',
+      'Join Microsoft Fabric training in Bangalore. Learn data pipelines, lakehouse and analytics with industry projects and job assistance. Book a free demo.',
   },
   path: '/courses/microsoft-fabric-data-engineering-course-bangalore',
   pageId: '508',

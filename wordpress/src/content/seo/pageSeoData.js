@@ -139,104 +139,112 @@ export const PAGE_SEO = {
     keywords: 'iBridge360 privacy policy, data protection',
     noIndex: true,
   },
-  '/courses/data-engineering-course-bangalore': {
-    title: 'Data Engineering Course in Bangalore | iBridge360',
+  '/courses/master-data-engineering-program-bangalore': {
+    title: 'Master Data Engineering Program in Bangalore | iBridge360',
     description:
-      'Learn Data Engineering in Bangalore: SQL, Python, ETL, data warehousing and AWS with hands-on projects and job assistance. Book a free demo.',
+      '6-month Master Data Engineering Program in Bangalore with weekend batches. Learn SQL, Python, PySpark, Databricks and cloud with real projects. Enquire now.',
     keywords:
-      'data engineering course in bangalore, data engineering training bangalore, ETL data warehousing AWS',
+      'master data engineering program Bangalore, data engineering course in Bangalore, data engineering training Bangalore, data engineering with Databricks and Snowflake, data engineering with AI',
+    canonical: '/courses/master-data-engineering-program-bangalore',
+  },
+  '/courses/data-engineering-course-bangalore': {
+    title: 'Data Engineering Training in Bangalore | iBridge360',
+    description:
+      'Join data engineering training in Bangalore. Learn SQL, Python, ETL, data warehousing and AWS with live projects and job assistance. Book a free demo.',
+    keywords:
+      'data engineering training in bangalore, foundational data engineering, ETL data warehousing AWS',
     canonical: '/courses/data-engineering-course-bangalore',
   },
   '/courses/data-analytics-course-bangalore': {
-    title: 'Data Analytics Course in Bangalore | iBridge360',
+    title: 'Data Analytics Training in Bangalore | iBridge360',
     description:
-      'Data Analytics course in Bangalore: SQL, Python, Excel, Power BI and visualization with hands-on projects and job assistance. Book a free demo.',
+      'Build job-ready skills in data analytics in Bangalore. Learn SQL, Python, Excel and Power BI with real datasets and job assistance. Book a free demo.',
     keywords:
-      'data analytics course in bangalore, data analyst training bangalore, SQL Python Power BI',
+      'data analytics training in bangalore, data analytics course in bangalore, data analyst training bangalore, SQL Python Power BI',
     canonical: '/courses/data-analytics-course-bangalore',
   },
   '/courses/data-science-course-bangalore': {
-    title: 'Data Science Course in Bangalore | iBridge360',
+    title: 'Data Science Training in Bangalore | iBridge360',
     description:
-      'Learn Data Science in Bangalore: Python, SQL, machine learning and statistics with real-world projects and job assistance. Book a free demo.',
+      'Start your data science career in Bangalore. Learn Python, SQL, machine learning and statistics with live projects and job assistance. Book a free demo.',
     keywords:
-      'data science course in bangalore, data science training bangalore, machine learning python SQL',
+      'data science training in bangalore, data science course in bangalore, machine learning python SQL',
     canonical: '/courses/data-science-course-bangalore',
   },
   '/courses/pyspark-course-bangalore': {
-    title: 'PySpark Course in Bangalore | iBridge360',
+    title: 'PySpark Training in Bangalore | iBridge360',
     description:
-      'Learn PySpark in Bangalore: Spark, big data processing and Python with real-world data engineering projects and job assistance. Book a free demo.',
-    keywords: 'pyspark course in bangalore, apache spark training bangalore, big data python',
+      'Get PySpark training in Bangalore: Spark architecture, DataFrames, big data processing and pipelines with live projects and job assistance. Free demo.',
+    keywords: 'pyspark training in bangalore, pyspark course in bangalore, apache spark training bangalore, big data python',
     canonical: '/courses/pyspark-course-bangalore',
   },
   '/courses/databricks-data-engineering-course-bangalore': {
-    title: 'Databricks Data Engineering Course Bangalore | iBridge360',
+    title: 'Databricks Training in Bangalore | iBridge360',
     description:
-      'Master Databricks in Bangalore: Spark, PySpark, data pipelines and lakehouse concepts with hands-on projects and job assistance. Book a free demo.',
+      'Learn Databricks in Bangalore: Spark, Delta Lake, data pipelines and lakehouse architecture with hands-on projects and job assistance. Book a free demo.',
     keywords:
-      'databricks course in bangalore, databricks data engineering training, lakehouse pyspark',
+      'databricks training in bangalore, databricks data engineering training, lakehouse pyspark',
     canonical: '/courses/databricks-data-engineering-course-bangalore',
   },
   '/courses/microsoft-fabric-data-engineering-course-bangalore': {
-    title: 'Microsoft Fabric Course in Bangalore | iBridge360',
+    title: 'Microsoft Fabric Training in Bangalore | iBridge360',
     description:
-      'Learn Microsoft Fabric Data Engineering in Bangalore: pipelines, lakehouse and analytics with industry projects and job assistance. Book a free demo.',
+      'Join Microsoft Fabric training in Bangalore. Learn data pipelines, lakehouse and analytics with industry projects and job assistance. Book a free demo.',
     keywords:
-      'microsoft fabric course in bangalore, fabric data engineering training, lakehouse pipelines',
+      'microsoft fabric training in bangalore, microsoft fabric course in bangalore, fabric data engineering training, lakehouse pipelines',
     canonical: '/courses/microsoft-fabric-data-engineering-course-bangalore',
   },
   '/courses/tableau-course-bangalore': {
-    title: 'Tableau Course in Bangalore | iBridge360',
+    title: 'Tableau Training in Bangalore | iBridge360',
     description:
-      'Learn Tableau in Bangalore: build dashboards, reports and data stories with hands-on projects and job assistance. Book a free demo.',
-    keywords: 'tableau course in bangalore, tableau training bangalore, data visualization dashboards',
+      'Learn Tableau in Bangalore: build interactive dashboards, reports and data stories with real business projects and job assistance. Book a free demo.',
+    keywords: 'tableau training in bangalore, tableau course in bangalore, data visualization dashboards',
     canonical: '/courses/tableau-course-bangalore',
   },
   '/courses/advanced-excel-course-bangalore': {
-    title: 'Advanced Excel Course in Bangalore | iBridge360',
+    title: 'Advanced Excel Training in Bangalore | iBridge360',
     description:
-      'Master Advanced Excel in Bangalore: formulas, XLOOKUP, PivotTables, Power Query and dashboards with practical business use cases. Enquire now.',
+      'Advanced Excel training in Bangalore: XLOOKUP, PivotTables, Power Query and dashboards with practical business use cases. Enquire now.',
     keywords:
-      'advanced excel course in bangalore, excel training bangalore, xlookup power query pivottables',
+      'advanced excel training in bangalore, advanced excel course in bangalore, xlookup power query pivottables',
     canonical: '/courses/advanced-excel-course-bangalore',
   },
   '/courses/sql-bootcamp-bangalore': {
-    title: 'SQL Bootcamp in Bangalore | iBridge360',
+    title: 'SQL Bootcamp in Bangalore with Interview Prep | iBridge360',
     description:
-      'Join our SQL Bootcamp in Bangalore: queries, joins, subqueries and functions with hands-on practice and interview prep. Enroll today.',
+      'Learn SQL in Bangalore: queries, joins, subqueries, window functions and real interview questions with hands-on practice. Enroll in our SQL bootcamp today.',
     keywords: 'sql bootcamp in bangalore, sql training bangalore, sql queries joins interview prep',
     canonical: '/courses/sql-bootcamp-bangalore',
   },
   '/courses/python-bootcamp-bangalore': {
-    title: 'Python Bootcamp in Bangalore | iBridge360',
+    title: 'Python Bootcamp in Bangalore with Projects | iBridge360',
     description:
-      'Join our Python Bootcamp in Bangalore: programming, functions, OOP and data handling with hands-on projects and interview prep. Enroll today.',
+      'Learn Python in Bangalore: programming basics, functions, OOP and data handling with hands-on projects and interview prep. Enroll today.',
     keywords: 'python bootcamp in bangalore, python training bangalore, python oop interview prep',
     canonical: '/courses/python-bootcamp-bangalore',
   },
   '/courses/mern-full-stack-course-bangalore': {
-    title: 'MERN Full Stack Course in Bangalore | iBridge360',
+    title: 'MERN Stack Training in Bangalore | iBridge360',
     description:
-      'Learn MERN Full Stack in Bangalore: MongoDB, Express.js, React and Node.js with hands-on app projects and job assistance. Book a free demo.',
+      'Learn MERN stack in Bangalore: MongoDB, Express.js, React and Node.js by building real web apps, with job assistance. Book a free demo.',
     keywords:
-      'mern full stack course in bangalore, mern training bangalore, mongodb react nodejs',
+      'mern stack training in bangalore, mern full stack course in bangalore, mongodb react nodejs',
     canonical: '/courses/mern-full-stack-course-bangalore',
   },
   '/courses/java-full-stack-course-bangalore': {
-    title: 'Java Full Stack Course in Bangalore | iBridge360',
+    title: 'Java Full Stack Training in Bangalore | iBridge360',
     description:
-      'Learn Java Full Stack in Bangalore: Java, Spring Boot, frontend, databases and real-world projects with job assistance. Book a free demo.',
+      'Java Full Stack training in Bangalore: Core Java, Spring Boot, frontend and databases with live projects and job assistance. Book a free demo.',
     keywords:
-      'java full stack course in bangalore, java training bangalore, spring boot frontend',
+      'java full stack training in bangalore, java training bangalore, spring boot frontend',
     canonical: '/courses/java-full-stack-course-bangalore',
   },
   '/courses/python-full-stack-course-bangalore': {
-    title: 'Python Full Stack Course in Bangalore | iBridge360',
+    title: 'Python Full Stack Training in Bangalore | iBridge360',
     description:
-      'Learn Python Full Stack in Bangalore: Python, Django, frontend, databases and hands-on projects with job assistance. Book a free demo.',
+      'Python Full Stack training in Bangalore: Python, Django, frontend and databases through live projects and job assistance. Book a free demo.',
     keywords:
-      'python full stack course in bangalore, python training bangalore, django frontend',
+      'python full stack training in bangalore, python training bangalore, django frontend',
     canonical: '/courses/python-full-stack-course-bangalore',
   },
   '/corporate-elp': {

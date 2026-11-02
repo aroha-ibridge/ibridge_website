@@ -85,6 +85,8 @@ function ProgramPage({ config }) {
           titleAccent={curriculum.titleAccent}
           description={curriculum.description}
           modules={curriculum.modules}
+          syllabusUrl={curriculum.syllabusUrl}
+          syllabusLabel={curriculum.syllabusLabel}
           tone="transparent"
           spacing="flow"
           className="program-page-flow__section"

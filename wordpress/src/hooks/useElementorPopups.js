@@ -130,15 +130,20 @@ function useElementorPopups() {
     const modals = Array.from(document.querySelectorAll('.elementor-popup-modal'));
 
     const closePopup = async (popupId) => {
-      if (isAnimatingRef.current) return;
+      const targetId = popupId || activePopupRef.current;
+      if (!targetId) return;
 
-      const modal = document.getElementById(`elementor-popup-modal-${popupId}`);
-      if (!modal || modal.style.display === 'none') return;
+      const modal =
+        document.getElementById(`elementor-popup-modal-${targetId}`) ||
+        (activePopupRef.current
+          ? document.getElementById(`elementor-popup-modal-${activePopupRef.current}`)
+          : null);
+      if (!modal) return;
 
-      isAnimatingRef.current = true;
+      isAnimatingRef.current = false;
       const settings = parsePopupSettings(modal);
       const message = modal.querySelector('.dialog-message');
-      const duration = getDurationMs(settings);
+      const duration = Math.min(getDurationMs(settings), 300);
 
       modal.classList.remove('elementor-popup-modal--open');
       modal.style.transition = `opacity ${duration}ms ease`;
@@ -157,11 +162,9 @@ function useElementorPopups() {
       modal.style.transition = '';
       document.body.classList.remove('elementor-popup-modal-open');
 
-      if (activePopupRef.current === popupId) {
+      if (activePopupRef.current === targetId || !popupId) {
         activePopupRef.current = null;
       }
-
-      isAnimatingRef.current = false;
     };
 
     const openPopup = async (popupId) => {
@@ -253,6 +256,36 @@ function useElementorPopups() {
     });
 
     const onDocumentClick = (event) => {
+      // 1. Close button click (intercept any close button or icon inside it)
+      const closeBtn = event.target.closest(
+        '.dialog-close-button, .dialog-lightbox-close-button, [data-close-popup]'
+      );
+      if (closeBtn) {
+        event.preventDefault();
+        event.stopPropagation();
+        const modal = closeBtn.closest('.elementor-popup-modal');
+        const popupId = modal?.id
+          ? modal.id.replace('elementor-popup-modal-', '')
+          : activePopupRef.current;
+        closePopup(popupId || activePopupRef.current || ENQUIRE_POPUP_ID);
+        return;
+      }
+
+      // 2. Backdrop click (clicking outside the modal box)
+      if (
+        event.target.classList.contains('elementor-popup-modal') ||
+        event.target.classList.contains('dialog-lightbox-widget')
+      ) {
+        event.preventDefault();
+        event.stopPropagation();
+        const popupId = event.target.id
+          ? event.target.id.replace('elementor-popup-modal-', '')
+          : activePopupRef.current;
+        closePopup(popupId || activePopupRef.current || ENQUIRE_POPUP_ID);
+        return;
+      }
+
+      // 3. Open triggers
       const trigger = event.target.closest(
         'a[href*="elementor-action"], a[href="#enquire"], a[href="#enquire-now"], [data-open-popup]',
       );
@@ -274,20 +307,24 @@ function useElementorPopups() {
     };
 
     const onKeyDown = (event) => {
-      if (event.key === 'Escape' && activePopupRef.current) {
-        closePopup(activePopupRef.current);
+      if (event.key === 'Escape') {
+        closePopup(activePopupRef.current || ENQUIRE_POPUP_ID);
       }
     };
 
     const onCloseEnquireRequest = () => {
-      if (activePopupRef.current === ENQUIRE_POPUP_ID) {
-        closePopup(ENQUIRE_POPUP_ID);
-      }
+      closePopup(activePopupRef.current || ENQUIRE_POPUP_ID);
+    };
+
+    const onCustomClose = (event) => {
+      const popupId = event.detail?.popupId || activePopupRef.current || ENQUIRE_POPUP_ID;
+      closePopup(popupId);
     };
 
     document.addEventListener('click', onDocumentClick);
     document.addEventListener('keydown', onKeyDown);
     window.addEventListener(ENQUIRE_POPUP_CLOSE_EVENT, onCloseEnquireRequest);
+    window.addEventListener('close-elementor-popup', onCustomClose);
 
     modals.forEach((modal) => {
       const settings = parsePopupSettings(modal);
@@ -310,6 +347,7 @@ function useElementorPopups() {
       document.removeEventListener('click', onDocumentClick);
       document.removeEventListener('keydown', onKeyDown);
       window.removeEventListener(ENQUIRE_POPUP_CLOSE_EVENT, onCloseEnquireRequest);
+      window.removeEventListener('close-elementor-popup', onCustomClose);
       document.body.classList.remove('elementor-popup-modal-open');
     };
   }, []);

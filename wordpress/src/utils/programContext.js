@@ -9,7 +9,8 @@ import { stripBase } from './siteBase';
  * Add a new entry when you build a new program page.
  */
 export const PROGRAM_OPTIONS = [
-  { name: 'Data Engineering', path: '/courses/data-engineering-course-bangalore' },
+  { name: 'Master Data Engineering Program', path: '/courses/master-data-engineering-program-bangalore' },
+  { name: 'Foundational Data Engineering', path: '/courses/data-engineering-course-bangalore' },
   { name: 'Data Analytics', path: '/courses/data-analytics-course-bangalore' },
   { name: 'PySpark', path: '/courses/pyspark-course-bangalore' },
   { name: 'Databricks Data Engineering', path: '/courses/databricks-data-engineering-course-bangalore' },

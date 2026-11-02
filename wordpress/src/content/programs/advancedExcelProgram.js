@@ -9,9 +9,9 @@ import { WHY_IBRIDGE } from './sharedDefaults';
  */
 const advancedExcelProgram = {
   seo: {
-    title: 'Advanced Excel Course | Learn Excel, Data Analysis, Dashboards & Automation',
+    title: 'Advanced Excel Training in Bangalore | iBridge360',
     description:
-      'Learn Advanced Excel with formulas, Pivot Tables, Power Query, dashboards, data analysis, XLOOKUP, INDEX MATCH, Power Pivot, VBA basics and real-world business projects.',
+      'Advanced Excel training in Bangalore: XLOOKUP, PivotTables, Power Query and dashboards with practical business use cases. Enquire now.',
   },
   path: '/courses/advanced-excel-course-bangalore',
   pageId: '508',

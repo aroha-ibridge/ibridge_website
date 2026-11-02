@@ -9,9 +9,9 @@ import { WHY_IBRIDGE } from './sharedDefaults';
  */
 const sqlBootcampProgram = {
   seo: {
-    title: 'SQL Bootcamp | Learn SQL, Database Management & Data Analytics',
+    title: 'SQL Bootcamp in Bangalore with Interview Prep | iBridge360',
     description:
-      'Master SQL through hands-on training in queries, joins, subqueries, CTEs, window functions, database design, data analysis and real-world projects.',
+      'Learn SQL in Bangalore: queries, joins, subqueries, window functions and real interview questions with hands-on practice. Enroll in our SQL bootcamp today.',
   },
   path: '/courses/sql-bootcamp-bangalore',
   pageId: '508',

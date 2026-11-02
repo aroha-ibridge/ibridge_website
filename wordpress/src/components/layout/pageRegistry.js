@@ -26,6 +26,7 @@ import ThankYou from '../../views/ThankYou/ThankYou';
 import TermsConditions from '../../views/TermsConditions/TermsConditions';
 import PrivacyPolicy from '../../views/PrivacyPolicy/PrivacyPolicy';
 import DataEngineeringProgram from '../../views/DataEngineeringProgram/DataEngineeringProgram';
+import MasterDataEngineeringProgram from '../../views/MasterDataEngineeringProgram/MasterDataEngineeringProgram';
 import FullStackMernProgram from '../../views/FullStackMernProgram/FullStackMernProgram';
 import FullStackJavaProgram from '../../views/FullStackJavaProgram/FullStackJavaProgram';
 import FullStackPythonProgram from '../../views/FullStackPythonProgram/FullStackPythonProgram';
@@ -85,6 +86,7 @@ export const PAGE_COMPONENTS = {
   '/thank-you': ThankYou,
   '/terms-conditions': TermsConditions,
   '/privacy-policy': PrivacyPolicy,
+  '/courses/master-data-engineering-program-bangalore': MasterDataEngineeringProgram,
   '/courses/data-engineering-course-bangalore': DataEngineeringProgram,
   '/courses/data-analytics-course-bangalore': DataAnalyticsProgram,
   '/courses/data-science-course-bangalore': DataScienceProgram,

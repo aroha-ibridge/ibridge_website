@@ -9,9 +9,9 @@ import { WHY_IBRIDGE } from './sharedDefaults';
  */
 const tableauProgram = {
   seo: {
-    title: 'Tableau Course | Learn Tableau, Data Visualization & Business Intelligence',
+    title: 'Tableau Training in Bangalore | iBridge360',
     description:
-      'Learn Tableau with data visualization, Tableau Prep, calculated fields, LOD expressions, dashboards, data analytics, SQL and real-world BI projects.',
+      'Learn Tableau in Bangalore: build interactive dashboards, reports and data stories with real business projects and job assistance. Book a free demo.',
   },
   path: '/courses/tableau-course-bangalore',
   pageId: '508',

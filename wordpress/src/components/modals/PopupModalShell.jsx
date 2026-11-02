@@ -14,6 +14,22 @@ function PopupModalShell({ popupId, children }) {
     setMounted(true);
   }, []);
 
+  const handleClose = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    window.dispatchEvent(
+      new CustomEvent('close-elementor-popup', { detail: { popupId } })
+    );
+  };
+
+  const handleBackdropClick = (e) => {
+    if (e.target.id === `elementor-popup-modal-${popupId}`) {
+      handleClose(e);
+    }
+  };
+
   if (!mounted || typeof document === 'undefined') {
     return null;
   }
@@ -23,6 +39,7 @@ function PopupModalShell({ popupId, children }) {
       id={`elementor-popup-modal-${popupId}`}
       className="dialog-widget dialog-lightbox-widget dialog-type-lightbox elementor-popup-modal"
       aria-hidden="true"
+      onClick={handleBackdropClick}
     >
       <div className="dialog-widget-content dialog-lightbox-widget-content">
         <a
@@ -30,6 +47,7 @@ function PopupModalShell({ popupId, children }) {
           className="dialog-close-button dialog-lightbox-close-button"
           role="button"
           aria-label="Close"
+          onClick={handleClose}
         >
           {CLOSE_ICON}
           <span className="elementor-screen-only">Close</span>

@@ -9,9 +9,9 @@ import { WHY_IBRIDGE } from './sharedDefaults';
  */
 const pysparkProgram = {
   seo: {
-    title: 'PySpark Course | Learn Apache Spark, Spark SQL & Big Data Processing',
+    title: 'PySpark Training in Bangalore | iBridge360',
     description:
-      'Learn PySpark with Apache Spark, Spark SQL, DataFrames, ETL, Big Data processing, AWS, data pipelines and real-world data engineering projects.',
+      'Get PySpark training in Bangalore: Spark architecture, DataFrames, big data processing and pipelines with live projects and job assistance. Free demo.',
   },
   path: '/courses/pyspark-course-bangalore',
   pageId: '508',

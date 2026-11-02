@@ -9,9 +9,9 @@ import dataScienceCurriculum from './dataScienceCurriculum';
  */
 const dataScienceProgram = {
   seo: {
-    title: 'Data Science Program - iBridge360',
+    title: 'Data Science Training in Bangalore | iBridge360',
     description:
-      "Become a job-ready Data Scientist with iBridge360's 6-month hands-on program covering Python, statistics, ML, visualization, and real-world projects.",
+      'Start your data science career in Bangalore. Learn Python, SQL, machine learning and statistics with live projects and job assistance. Book a free demo.',
   },
   path: '/courses/data-science-course-bangalore',
   pageId: '508',

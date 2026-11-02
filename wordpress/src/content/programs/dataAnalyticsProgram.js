@@ -9,9 +9,9 @@ import { WHY_IBRIDGE } from './sharedDefaults';
  */
 const dataAnalyticsProgram = {
   seo: {
-    title: 'Data Analytics Course | Learn Excel, SQL, Python & Power BI',
+    title: 'Data Analytics Training in Bangalore | iBridge360',
     description:
-      'Learn Data Analytics with Excel, SQL, Python, Pandas, Power BI, statistics, data visualization and real-world analytics projects with career support.',
+      'Build job-ready skills in data analytics in Bangalore. Learn SQL, Python, Excel and Power BI with real datasets and job assistance. Book a free demo.',
   },
   path: '/courses/data-analytics-course-bangalore',
   pageId: '508',

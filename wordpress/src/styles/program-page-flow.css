@@ -188,17 +188,47 @@
 	text-align: left !important;
 }
 
-/* Dual hero CTAs — same outline style as Enquire Now */
+/* Dual hero CTAs — exact matching dimensions and outline style */
+.elementor-508.program-page-flow .elementor-element-cb8a092 .hero-action-buttons-wrapper,
 .elementor-508.program-page-flow .elementor-element-cb8a092 .program-hero-cta-row {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 12px;
-	justify-content: center;
+	justify-content: flex-start;
+	align-items: center;
 }
 
-.elementor-508.program-page-flow .elementor-element-cb8a092 .program-hero-cta-row .elementor-button {
-	padding-left: 28px !important;
-	padding-right: 28px !important;
+.elementor-508.program-page-flow .elementor-element-cb8a092 .hero-action-btn,
+.elementor-508.program-page-flow .elementor-element-cb8a092 .elementor-button.hero-action-btn {
+	min-width: 210px !important;
+	height: 48px !important;
+	padding: 0 24px !important;
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	border-radius: 8px !important;
+	border: 1.5px solid #18479F !important;
+	font-size: 16px !important;
+	font-weight: 600 !important;
+	font-family: "Inter", Sans-serif !important;
+	box-sizing: border-box !important;
+	color: #18479F !important;
+	background-color: transparent !important;
+	text-decoration: none !important;
+	line-height: 1 !important;
+	cursor: pointer !important;
+	transition: all 0.2s ease-in-out !important;
+}
+
+.elementor-508.program-page-flow .elementor-element-cb8a092 .hero-action-btn:hover,
+.elementor-508.program-page-flow .elementor-element-cb8a092 .elementor-button.hero-action-btn:hover {
+	background-color: #18479F !important;
+	color: #FFFFFF !important;
+}
+
+.elementor-508.program-page-flow .elementor-element-cb8a092 .hero-action-btn:hover svg,
+.elementor-508.program-page-flow .elementor-element-cb8a092 .elementor-button.hero-action-btn:hover svg {
+	stroke: #FFFFFF !important;
 }
 
 .elementor-508.program-page-flow .elementor-element-89a8d8e > .elementor-container {

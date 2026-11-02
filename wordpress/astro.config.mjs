@@ -11,6 +11,7 @@ import {
   readJsonBody,
 } from './src/server/marketingChatbotHandler.js';
 import { handleCareersSheet } from './src/server/careersSheetHandler.js';
+import { handleResumeUpload } from './src/server/resumeUploadHandler.js';
 
 const shimRouter = fileURLToPath(new URL('./src/shims/react-router-dom.jsx', import.meta.url));
 const shimHelmet = fileURLToPath(new URL('./src/shims/react-helmet-async.jsx', import.meta.url));
@@ -86,6 +87,37 @@ function careersSheetDevPlugin() {
   };
 }
 
+function resumeUploadDevPlugin() {
+  return {
+    name: 'resume-upload-dev',
+    configureServer(server) {
+      server.middlewares.use('/api/upload-resume', async (req, res, next) => {
+        if (req.method === 'OPTIONS') {
+          res.statusCode = 204;
+          res.end();
+          return;
+        }
+        if (req.method !== 'POST') {
+          next();
+          return;
+        }
+
+        try {
+          const body = await readJsonBody(req);
+          const result = await handleResumeUpload(body);
+          res.statusCode = result.status;
+          res.setHeader('Content-Type', 'application/json');
+          res.end(JSON.stringify(result.json));
+        } catch (err) {
+          res.statusCode = err.status || 500;
+          res.setHeader('Content-Type', 'application/json');
+          res.end(JSON.stringify({ ok: false, error: err.message || 'Resume upload request failed' }));
+        }
+      });
+    },
+  };
+}
+
 function marketingChatbotDevPlugin() {
   return {
     name: 'marketing-chatbot-dev',
@@ -147,6 +179,7 @@ export default defineConfig({
       prefixPublicAssetsPlugin(SITE_BASE || '/'),
       marketingChatbotDevPlugin(),
       careersSheetDevPlugin(),
+      resumeUploadDevPlugin(),
     ],
     resolve: {
       alias: {

@@ -1,7 +1,16 @@
 const homeProgramCards = [
   {
-    id: 'data-engineering',
+    id: 'master-data-engineering',
     title: 'Master in Data Engineering',
+    href: '/courses/master-data-engineering-program-bangalore',
+    image: '/wp-content/uploads/2026/07/corporate-benefits-laptop-team.jpg',
+    duration: '24 Weeks',
+    benefit: '100% Job Assistance',
+    summary: 'Master SQL, Python, Spark, Databricks, Snowflake, Airflow, and AWS Cloud with a capstone project.',
+  },
+  {
+    id: 'data-engineering',
+    title: 'Foundational Data Engineering',
     href: '/courses/data-engineering-course-bangalore',
     image: '/wp-content/uploads/2026/07/corporate-benefits-laptop-team.jpg',
     duration: '3 Months',

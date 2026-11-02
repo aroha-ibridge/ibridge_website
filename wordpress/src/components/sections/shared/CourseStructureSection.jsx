@@ -74,13 +74,7 @@ function getDisplayGroups(module) {
   if (!module) return [];
   if (module.groups?.length) return module.groups;
   if (!module.topics?.length) return [];
-  const half = Math.ceil(module.topics.length / 2);
-  const left = module.topics.slice(0, half);
-  const right = module.topics.slice(half);
-  return [
-    { label: null, items: left },
-    right.length ? { label: null, items: right } : null,
-  ].filter(Boolean);
+  return [{ label: null, items: module.topics }];
 }
 
 function ModuleDetailPane({ module, topicsLabel, id }) {
@@ -143,7 +137,13 @@ function ModuleDetailPane({ module, topicsLabel, id }) {
             <span className="flex-1 h-px bg-gradient-to-r from-brand/25 to-transparent" />
           </div>
 
-          <div className="grid gap-x-10 gap-y-6 md:grid-cols-2">
+          <div
+            className={cn(
+              displayGroups.length > 1
+                ? 'grid gap-x-10 gap-y-6 md:grid-cols-2'
+                : 'flex flex-col gap-3',
+            )}
+          >
             {displayGroups.map((group, groupIdx) => {
               const isOddLast =
                 Boolean(group.label) &&
@@ -354,19 +354,72 @@ function CourseStructureSection({
         </div>
 
         {syllabusUrl && (
-          <div className="mt-10 flex justify-center">
-            <a
-              href={syllabusUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="tw-scope group inline-flex items-center gap-2.5 h-12 px-7 rounded-full bg-ink text-white text-sm font-semibold transition-all duration-200 hover:bg-brand hover:-translate-y-0.5 tw-focus-ring"
+          <div className="mt-8 md:mt-10 max-w-3xl mx-auto">
+            <div
+              className="relative overflow-hidden rounded-2xl p-5 md:p-6 flex flex-col sm:flex-row items-center justify-between gap-5 text-center sm:text-left"
               style={{
-                boxShadow: '0 12px 28px -10px rgba(15, 23, 42, 0.35)',
+                background: 'linear-gradient(135deg, #f0f5ff 0%, #ffffff 50%, #f6f9fe 100%)',
+                border: '1.5px solid rgba(24, 71, 159, 0.16)',
+                boxShadow: '0 12px 32px -12px rgba(24, 71, 159, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9)',
               }}
             >
-              {syllabusLabel}
-              <DownloadIcon className="transition-transform duration-200 group-hover:translate-y-0.5" />
-            </a>
+              <div className="flex items-center gap-4">
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+                  style={{
+                    backgroundColor: 'rgba(24, 71, 159, 0.08)',
+                    color: '#18479F',
+                  }}
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#18479F" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="12" y1="18" x2="12" y2="12" />
+                    <line x1="9" y1="15" x2="15" y2="15" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="text-base md:text-lg font-bold text-slate-900 m-0 leading-snug" style={{ color: '#0f172a' }}>
+                    Download Complete Curriculum &amp; Brochure
+                  </h4>
+                  <p className="text-xs md:text-sm text-slate-600 m-0 mt-1 leading-relaxed" style={{ color: '#475569' }}>
+                    Get the detailed syllabus breakdown, capstone project details, and tools in PDF.
+                  </p>
+                </div>
+              </div>
+
+              <a
+                href={syllabusUrl}
+                download="master-data-engineering-brochure.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full text-white font-semibold text-sm transition-all duration-200 shrink-0 hover:-translate-y-0.5"
+                style={{
+                  backgroundColor: '#18479F',
+                  color: '#ffffff',
+                  textDecoration: 'none',
+                  boxShadow: '0 8px 20px -4px rgba(24, 71, 159, 0.38)',
+                }}
+              >
+                <span style={{ color: '#ffffff', fontWeight: '600' }}>{syllabusLabel || 'Download Brochure'}</span>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#ffffff"
+                  strokeWidth="2.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="transition-transform duration-200 group-hover:translate-y-0.5"
+                  aria-hidden="true"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+              </a>
+            </div>
           </div>
         )}
       </Container>

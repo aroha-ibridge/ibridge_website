@@ -9,9 +9,9 @@ import { WHY_IBRIDGE } from './sharedDefaults';
  */
 const fullStackJavaProgram = {
   seo: {
-    title: 'Java Full Stack Development Course | Learn Java, Spring Boot & React',
+    title: 'Java Full Stack Training in Bangalore | iBridge360',
     description:
-      'Learn Java Full Stack Development with Java, Spring Boot, React, SQL, REST APIs, Git, deployment and real-world development skills.',
+      'Java Full Stack training in Bangalore: Core Java, Spring Boot, frontend and databases with live projects and job assistance. Book a free demo.',
   },
   path: '/courses/java-full-stack-course-bangalore',
   pageId: '508',

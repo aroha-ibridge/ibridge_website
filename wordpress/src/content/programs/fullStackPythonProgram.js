@@ -9,9 +9,9 @@ import { WHY_IBRIDGE } from './sharedDefaults';
  */
 const fullStackPythonProgram = {
   seo: {
-    title: 'Python Full Stack Development Course | Learn Python, Django & React',
+    title: 'Python Full Stack Training in Bangalore | iBridge360',
     description:
-      'Learn Python Full Stack Development with Python, Django, React, SQL, REST APIs, Git, deployment and real-world development skills.',
+      'Python Full Stack training in Bangalore: Python, Django, frontend and databases through live projects and job assistance. Book a free demo.',
   },
   path: '/courses/python-full-stack-course-bangalore',
   pageId: '508',

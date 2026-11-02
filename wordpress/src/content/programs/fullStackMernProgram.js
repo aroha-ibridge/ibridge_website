@@ -9,9 +9,9 @@ import { WHY_IBRIDGE } from './sharedDefaults';
  */
 const fullStackMernProgram = {
   seo: {
-    title: 'MERN Full Stack Development Course | Learn MongoDB, Express, React & Node.js',
+    title: 'MERN Stack Training in Bangalore | iBridge360',
     description:
-      'Learn MERN Full Stack Development with MongoDB, Express.js, React, Node.js, JavaScript, REST APIs, Git, deployment and real-world development skills.',
+      'Learn MERN stack in Bangalore: MongoDB, Express.js, React and Node.js by building real web apps, with job assistance. Book a free demo.',
   },
   path: '/courses/mern-full-stack-course-bangalore',
   pageId: '508',

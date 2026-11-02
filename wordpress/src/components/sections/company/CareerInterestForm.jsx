@@ -46,41 +46,33 @@ const NOTICE_OPTIONS = [
   'Yes, 60days+',
 ];
 
-const CLOUDINARY_CLOUD_NAME = 'qv3xjljc';
-const CLOUDINARY_UPLOAD_PRESET = 'careers_resumes';
 const RESUME_MAX_BYTES = 10 * 1024 * 1024;
 const RESUME_EXTENSIONS = ['pdf', 'doc', 'docx'];
 
-function resumeFilename(name, role, file) {
-  const extension = file.name.split('.').pop()?.toLowerCase() || 'pdf';
-  const safePart = (value, fallback) =>
-    String(value || '')
-      .normalize('NFKD')
-      .replace(/[^\w\s-]/g, '')
-      .trim()
-      .replace(/[\s_-]+/g, '-')
-      .replace(/^-+|-+$/g, '')
-      .slice(0, 80) || fallback;
-  return `${safePart(name, 'applicant')}-${safePart(role, 'open-role')}-resume.${extension}`;
-}
-
 async function uploadResume(file, applicantName, roleTitle) {
-  const renamedFile = new File([file], resumeFilename(applicantName, roleTitle, file), {
-    type: file.type,
-    lastModified: file.lastModified,
+  const fileData = await new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = () => reject(new Error('Failed to read resume file'));
+    reader.readAsDataURL(file);
   });
-  const formData = new FormData();
-  formData.append('file', renamedFile, renamedFile.name);
-  formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
-  const response = await fetch(
-    `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/raw/upload`,
-    { method: 'POST', body: formData },
-  );
+
+  const response = await fetch('/api/upload-resume', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify({
+      fileName: file.name,
+      fileData,
+      applicantName,
+      roleTitle,
+    }),
+  });
+
   const data = await response.json().catch(() => null);
-  if (!response.ok || !data?.secure_url) {
-    throw new Error(data?.error?.message || 'Resume upload failed');
+  if (!response.ok || !data?.url) {
+    throw new Error(data?.error || 'Resume upload failed');
   }
-  return data.secure_url;
+  return data.url;
 }
 
 const TECH_OPTIONS = [

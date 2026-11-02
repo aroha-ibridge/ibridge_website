@@ -9,19 +9,19 @@ import { WHY_IBRIDGE } from './sharedDefaults';
  */
 const dataEngineeringProgram = {
   seo: {
-    title: 'Data Engineering Course | Learn SQL, Python, AWS & ETL',
+    title: 'Data Engineering Training in Bangalore | iBridge360',
     description:
-      'Learn Data Engineering with SQL, Python, ETL, Data Warehousing, AWS Cloud, Power BI, Linux, and practical data engineering skills.',
+      'Join data engineering training in Bangalore. Learn SQL, Python, ETL, data warehousing and AWS with live projects and job assistance. Book a free demo.',
   },
   path: '/courses/data-engineering-course-bangalore',
   pageId: '508',
 
   hero: {
-    title: 'Data Engineering Course',
+    title: 'Foundational Data Engineering Course',
     description:
-      'Build job-ready Data Engineering skills through a structured 3-month program covering SQL, Python, Data Warehousing, ETL, AWS Cloud, Power BI, and Linux. Gain hands-on experience through real-world projects, mentor support, and a capstone project designed to prepare you for Data Engineering roles.',
-    formSource: 'Data Engineering page — inline form',
-    formCourse: 'Data Engineering',
+      'Build job-ready Data Engineering skills through a structured 3-month foundational program covering SQL, Python, Data Warehousing, ETL, AWS Cloud, Power BI, and Linux. Gain hands-on experience through real-world projects, mentor support, and a capstone project designed to prepare you for Data Engineering roles.',
+    formSource: 'Foundational Data Engineering page — inline form',
+    formCourse: 'Foundational Data Engineering',
     formIdPrefix: 'de',
     useGradientTitle: false,
   },
@@ -37,7 +37,7 @@ const dataEngineeringProgram = {
   },
 
   curriculum: {
-    title: 'Data Engineering Course',
+    title: 'Foundational Data Engineering Course',
     titleAccent: 'Curriculum',
     modules: dataEngineeringCurriculum,
   },
@@ -45,17 +45,17 @@ const dataEngineeringProgram = {
   whyIbridge: WHY_IBRIDGE,
 
   certificate: {
-    title: 'Earn Your Data Engineering',
+    title: 'Earn Your Foundational Data Engineering',
     titleAccent: 'Certificate',
     description:
-      'Receive an iBridge360 course completion certificate that validates your learning and practical skills in Data Engineering, including data processing, SQL, Python, ETL, data warehousing, cloud technologies, and related industry skills.',
+      'Receive an iBridge360 course completion certificate that validates your learning and practical skills in Foundational Data Engineering, including data processing, SQL, Python, ETL, data warehousing, cloud technologies, and related industry skills.',
     descriptionSecondary: '',
     image: '/wp-content/uploads/2026/07/data-engineering-certificate.png',
-    imageAlt: 'Sample Data Engineering Program Certificate of Completion from iBridge360',
+    imageAlt: 'Sample Foundational Data Engineering Program Certificate of Completion from iBridge360',
   },
 
   projects: {
-    title: 'Hands-On Data Engineering',
+    title: 'Hands-On Foundational Data Engineering',
     titleAccent: 'Projects',
     description:
       'Apply your Data Engineering skills to practical business scenarios involving data ingestion, transformation, warehousing, analytics, and cloud-based workflows.',
@@ -63,7 +63,7 @@ const dataEngineeringProgram = {
   },
 
   career: {
-    title: 'Career Opportunities After a Data Engineering Course',
+    title: 'Career Opportunities After a Foundational Data Engineering Course',
     description:
       'A strong foundation in SQL, Python, data warehousing, ETL, cloud technologies, and data processing can prepare learners for several entry-level and junior data roles.',
     roles: [
@@ -78,29 +78,29 @@ const dataEngineeringProgram = {
 
   faq: {
     description:
-      'Everything you need to know about the Data Engineering course — curriculum, learning experience, placements, and enrollment.',
+      'Everything you need to know about the Foundational Data Engineering course — curriculum, learning experience, placements, and enrollment.',
     categories: dataEngineeringFaqCategories,
   },
 
   cta: {
-    title: 'Start Your Data Engineering Career',
+    title: 'Start Your Foundational Data Engineering Career',
     description:
       'Build job-ready Data Engineering skills with practical training, industry-focused projects, expert guidance, and career support from iBridge360.',
     ctaLabel: 'Get Course Details',
     supportingText:
-      'Speak with an iBridge360 course advisor to get details about the Data Engineering curriculum, upcoming batches, fees, payment options, and enrollment.',
+      'Speak with an iBridge360 course advisor to get details about the Foundational Data Engineering curriculum, upcoming batches, fees, payment options, and enrollment.',
     phoneLabel: 'Call/WhatsApp: +91 96112 60360',
     phoneHref: 'tel:+919611260360',
     whatsappHref: 'https://wa.me/919611260360',
   },
 
   modal: {
-    programName: 'Data Engineering',
+    programName: 'Foundational Data Engineering',
     title: 'Ready to Become a Data Engineer?',
     description:
       'Kickstart your journey into building scalable data pipelines. Fill out the form below, and our learning advisors will help you choose the right batch, walk you through the curriculum, and answer all your questions.',
     panelImage: '/wp-content/uploads/2024/03/Data-Engineering.png',
-    panelImageAlt: 'Data Engineering program',
+    panelImageAlt: 'Foundational Data Engineering program',
   },
 };
 

@@ -1,20 +1,15 @@
 /**
- * Appends a careers application to the private Google Sheet via Apps Script.
- * The web app URL and secret stay on the server.
+ * Handles a career application:
+ * 1. Dispatches an immediate lead notification email to support@ibridge360.com via DreamHost SMTP.
+ * 2. Appends to the private Google Sheet if configured.
  */
+import { sendCareerLeadNotificationEmail } from './leadEmailHandler.js';
 
 function clean(value, max) {
   return String(value || '').trim().slice(0, max);
 }
 
 export async function handleCareersSheet(body = {}) {
-  const sheetUrl = process.env.CAREERS_SHEET_URL;
-  const secret = process.env.CAREERS_SHEET_SECRET;
-  if (!sheetUrl || !secret) {
-    console.error('[careers-sheet] CAREERS_SHEET_URL or CAREERS_SHEET_SECRET is missing');
-    return { status: 500, json: { ok: false, error: 'Careers sheet is not configured' } };
-  }
-
   const name = clean(body.name, 200);
   const email = clean(body.email, 200);
   const phone = clean(body.phone, 30);
@@ -56,9 +51,7 @@ export async function handleCareersSheet(body = {}) {
     .join('\n')
     .slice(0, 8000);
 
-  const payload = {
-    secret,
-    spreadsheetId: process.env.CAREERS_SPREADSHEET_ID || '',
+  const applicationData = {
     name,
     email,
     phone,
@@ -83,34 +76,41 @@ export async function handleCareersSheet(body = {}) {
     joiningDate,
   };
 
+  // 1. Dispatch email notification to support@ibridge360.com
+  let emailResult = { ok: false };
   try {
-    const first = await fetch(sheetUrl, {
-      method: 'POST',
-      redirect: 'manual',
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify(payload),
-      signal: AbortSignal.timeout(8000),
-    });
-
-    const location = first.headers.get('location');
-    if (first.status >= 300 && first.status < 400 && location) {
-      const second = await fetch(location, { method: 'GET', signal: AbortSignal.timeout(8000) });
-      const data = await second.json().catch(() => null);
-      if (second.ok && data?.ok) return { status: 200, json: { ok: true } };
-      return {
-        status: 502,
-        json: { ok: false, error: data?.error || 'Sheet did not accept the application' },
-      };
-    }
-
-    const data = await first.json().catch(() => null);
-    if (first.ok && data?.ok) return { status: 200, json: { ok: true } };
-    return {
-      status: 502,
-      json: { ok: false, error: data?.error || 'Sheet did not accept the application' },
-    };
-  } catch (error) {
-    console.error('[careers-sheet]', error?.message || error);
-    return { status: 502, json: { ok: false, error: 'Could not reach the careers sheet' } };
+    emailResult = await sendCareerLeadNotificationEmail(applicationData);
+  } catch (emailErr) {
+    console.error('[careers-sheet] Failed to dispatch email notification:', emailErr);
   }
+
+  // 2. Append to Google Sheet (if configured)
+  const sheetUrl = process.env.CAREERS_SHEET_URL;
+  const secret = process.env.CAREERS_SHEET_SECRET;
+  if (sheetUrl && secret) {
+    const payload = {
+      ...applicationData,
+      secret,
+      spreadsheetId: process.env.CAREERS_SPREADSHEET_ID || '',
+    };
+
+    try {
+      const first = await fetch(sheetUrl, {
+        method: 'POST',
+        redirect: 'manual',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload),
+        signal: AbortSignal.timeout(8000),
+      });
+
+      const location = first.headers.get('location');
+      if (first.status >= 300 && first.status < 400 && location) {
+        await fetch(location, { method: 'GET', signal: AbortSignal.timeout(8000) });
+      }
+    } catch (sheetErr) {
+      console.warn('[careers-sheet] Google Sheet append warning:', sheetErr?.message || sheetErr);
+    }
+  }
+
+  return { status: 200, json: { ok: true, emailSent: emailResult.ok } };
 }

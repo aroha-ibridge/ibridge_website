@@ -5,6 +5,8 @@ function DataEngineeringProgramCtaSection({
   title = 'Ready to Start Your Data Engineering Journey?',
   description = 'Join the next batch and build job-ready skills with hands-on projects, expert mentorship, and an industry-recognized certification.',
   ctaLabel = 'Enquire Now',
+  brochureUrl,
+  brochureLabel = 'Download Brochure',
   supportingText,
   phoneLabel,
   phoneHref,
@@ -29,7 +31,7 @@ function DataEngineeringProgramCtaSection({
           <p className="mt-3 text-white/85 text-[15px] md:text-base leading-relaxed">
             {description}
           </p>
-          <div className="mt-7 flex justify-center">
+          <div className="mt-7 flex justify-center gap-4 flex-wrap">
             <Button
               href={ENQUIRE_POPUP_LINK}
               variant="secondary"
@@ -38,6 +40,23 @@ function DataEngineeringProgramCtaSection({
             >
               {ctaLabel}
             </Button>
+            {brochureUrl ? (
+              <a
+                href={brochureUrl}
+                download="master-data-engineering-brochure.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-full bg-white/15 hover:bg-white text-white hover:text-[#18479F] font-semibold text-sm border border-white/35 transition-all duration-200"
+                style={{ color: '#ffffff', textDecoration: 'none' }}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span style={{ color: 'inherit' }}>{brochureLabel}</span>
+              </a>
+            ) : null}
           </div>
           {supportingText ? (
             <p className="mt-5 text-sm leading-relaxed text-white/80 md:text-[15px]">

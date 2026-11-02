@@ -39,8 +39,17 @@ export const PROGRAMS_MEGA_CATEGORIES = [
 /** All program cards used across categories */
 export const PROGRAMS_MEGA_COURSES = [
   {
+    id: 'master-data-engineering',
+    title: 'Master in Data Engineering',
+    desc: 'SQL, Python, Spark, Databricks, Snowflake, Airflow, and Cloud Data Engineering.',
+    to: '/courses/master-data-engineering-program-bangalore',
+    duration: '24 Weeks',
+    color: '#18479f',
+    categories: ['popular', 'data-engineering'],
+  },
+  {
     id: 'data-engineering',
-    title: 'Data Engineering',
+    title: 'Foundational Data Engineering',
     desc: 'SQL, Python, ETL, AWS Cloud, Power BI — build production pipelines.',
     to: '/courses/data-engineering-course-bangalore',
     duration: '3 Months',
@@ -168,6 +177,7 @@ export const PROGRAMS_MEGA_COURSES = [
 
 /** Fixed order for Popular Courses */
 const POPULAR_COURSE_IDS = [
+  'master-data-engineering',
   'data-engineering',
   'data-analytics',
   'full-stack',
