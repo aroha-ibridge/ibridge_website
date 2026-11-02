@@ -28,8 +28,11 @@ export async function saveMarketingEnquiry(fields) {
       (typeof window !== 'undefined' ? window.location.href : ''),
   };
 
-  try {
-    const response = await fetch(learnerApiUrl('/api/marketing-enquiries'), {
+  const primaryUrl = learnerApiUrl('/api/marketing-enquiries');
+  const fallbackUrl = '/api/marketing-enquiries';
+
+  async function postJson(url) {
+    const response = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -37,25 +40,38 @@ export async function saveMarketingEnquiry(fields) {
       },
       body: JSON.stringify(payload),
     });
-
     let data = null;
     try {
       data = await response.json();
     } catch {
       // ignore parse errors
     }
+    return { ok: response.ok, status: response.status, data };
+  }
 
-    if (response.ok) {
+  try {
+    let result = null;
+    try {
+      result = await postJson(primaryUrl);
+    } catch (primaryErr) {
+      if (primaryUrl !== fallbackUrl) {
+        result = await postJson(fallbackUrl);
+      } else {
+        throw primaryErr;
+      }
+    }
+
+    if (result && result.ok) {
       return {
         success: true,
-        data: data?.data,
+        data: result.data?.data,
       };
     }
 
     return {
       success: false,
       message:
-        data?.message ||
+        result?.data?.message ||
         'Unable to save your enquiry. Please try again or call +91 9611260360.',
     };
   } catch {

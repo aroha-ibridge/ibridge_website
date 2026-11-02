@@ -156,6 +156,40 @@ const server = http.createServer(async (req, res) => {
     }
   }
 
+  if (url.startsWith('/api/marketing-enquiries')) {
+    if (req.method === 'OPTIONS') {
+      res.writeHead(204, {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST, OPTIONS',
+        'Access-Control-Allow-Headers': 'Content-Type, Accept',
+      });
+      return res.end();
+    }
+    if (req.method !== 'POST') {
+      return sendJson(res, 405, { error: 'Method not allowed' });
+    }
+    try {
+      const body = await readJsonBody(req);
+      const targetOrigin = (
+        process.env.PUBLIC_LEARNER_API_ORIGIN ||
+        process.env.PUBLIC_API_ORIGIN ||
+        'https://lms.ibridge360.com'
+      ).replace(/\/+$/, '');
+      const upstream = await fetch(`${targetOrigin}/api/marketing-enquiries`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(body || {}),
+      });
+      const data = await upstream.json().catch(() => ({}));
+      return sendJson(res, upstream.status, data);
+    } catch (err) {
+      return sendJson(res, 500, { ok: false, error: err.message || 'Marketing enquiry proxy failed' });
+    }
+  }
+
   const pathname = url.split('?')[0];
   const filePath = resolveFile(pathname);
   if (!filePath) {

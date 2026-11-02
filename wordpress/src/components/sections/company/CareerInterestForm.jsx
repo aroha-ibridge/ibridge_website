@@ -1,7 +1,10 @@
 import { useId, useState } from 'react';
 
 import { Button, Field, Input, Label, Select, Textarea } from '../../ui';
-import { submitEnquiry } from '../../../utils/enquiryFormSubmit';
+import { showFormMessage } from '../../../utils/enquiryFormSubmit';
+import { saveMarketingEnquiry } from '../../../utils/saveMarketingEnquiry';
+import { withBase } from '../../../utils/siteBase';
+import { closeEnquirePopup } from '../../../constants/enquirePopupLink';
 import { validateEmail, validatePhone } from '../../../utils/formValidation';
 import '../../../styles/company-pages.css';
 import '../../../styles/careers-page.css';
@@ -288,7 +291,22 @@ export function InterestForm({
       return;
     }
     application.resumeUrl = resumeUrl;
-    await submitEnquiry({
+
+    try {
+      await saveCareersApplication(application);
+    } catch (err) {
+      console.error('Failed to submit career application:', err);
+      showFormMessage(
+        form,
+        'Unable to save right now. Please try again or email support@ibridge360.com.',
+        'danger'
+      );
+      setSubmitting(false);
+      return;
+    }
+
+    // Mirror to marketing enquiries MongoDB collection in background (non-blocking)
+    saveMarketingEnquiry({
       name,
       phone,
       email,
@@ -314,10 +332,13 @@ export function InterestForm({
         resumeUrl,
       }),
       source,
-      messageContainer: form,
-      beforeRedirect: () => saveCareersApplication(application),
+      pageUrl: window.location.href,
+    }).catch((err) => {
+      console.warn('Marketing enquiry mirror failed (non-blocking):', err);
     });
-    setSubmitting(false);
+
+    closeEnquirePopup();
+    window.location.assign(withBase('/thank-you'));
   };
 
   return (
