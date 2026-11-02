@@ -103,6 +103,7 @@ let pendingEnquiry = {
   courseName: '',
   coursePrice: '',
   source: '',
+  isBrochure: false,
 };
 
 /** @deprecated use setPendingEnquiryContext — kept for program CTA modal */
@@ -112,18 +113,20 @@ export function setPendingEnquiryContext({
   courseName = '',
   coursePrice = '',
   source = '',
+  isBrochure = false,
 } = {}) {
   pendingEnquiry = {
     courseName: typeof courseName === 'string' ? courseName.trim() : '',
     coursePrice: typeof coursePrice === 'string' ? coursePrice.trim() : '',
     source: typeof source === 'string' ? source.trim() : '',
+    isBrochure: Boolean(isBrochure),
   };
   pendingOverride = pendingEnquiry.courseName;
 }
 
 export function consumePendingEnquiryContext() {
   const snapshot = { ...pendingEnquiry };
-  pendingEnquiry = { courseName: '', coursePrice: '', source: '' };
+  pendingEnquiry = { courseName: '', coursePrice: '', source: '', isBrochure: false };
   pendingOverride = '';
   return snapshot;
 }
@@ -192,6 +195,7 @@ export function openEnquirePopupWithCourse(courseName, coursePrice = '', options
     courseName: name,
     coursePrice: price,
     source: name ? source : '',
+    isBrochure: Boolean(options?.isBrochure),
   });
 
   window.setTimeout(() => {
@@ -204,3 +208,82 @@ export function openEnquirePopupWithCourse(courseName, coursePrice = '', options
     trigger.remove();
   }, 0);
 }
+
+const BROCHURE_DOWNLOAD_KEY = 'ibridge_pending_brochure_download';
+
+export function setPendingBrochureDownload(info) {
+  if (typeof window === 'undefined') return;
+  if (!info) {
+    sessionStorage.removeItem(BROCHURE_DOWNLOAD_KEY);
+    return;
+  }
+  sessionStorage.setItem(BROCHURE_DOWNLOAD_KEY, JSON.stringify(info));
+}
+
+export function getPendingBrochureDownload() {
+  if (typeof window === 'undefined') return null;
+  const raw = sessionStorage.getItem(BROCHURE_DOWNLOAD_KEY);
+  if (!raw) return null;
+  try {
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
+}
+
+export function consumePendingBrochureDownload() {
+  const info = getPendingBrochureDownload();
+  if (typeof window !== 'undefined') {
+    sessionStorage.removeItem(BROCHURE_DOWNLOAD_KEY);
+  }
+  return info;
+}
+
+export function triggerBrochureDownload(url, filename) {
+  if (typeof document === 'undefined' || !url) return;
+  const a = document.createElement('a');
+  a.href = url;
+  if (filename) {
+    a.download = filename;
+  } else {
+    const parts = url.split('/');
+    a.download = parts[parts.length - 1] || 'brochure.pdf';
+  }
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => {
+    a.remove();
+  }, 100);
+}
+
+/**
+ * Intercepts brochure download: saves download details and opens the Enquiry popup.
+ *
+ * @param {string} brochureUrl
+ * @param {string} courseName
+ * @param {Object} [options]
+ */
+export function openBrochureDownloadPopup(brochureUrl, courseName = '', options = {}) {
+  if (typeof document === 'undefined') return;
+
+  const url = typeof brochureUrl === 'string' ? brochureUrl.trim() : '';
+  const name = typeof courseName === 'string' ? courseName.trim() : '';
+  const filename = options?.filename || url.split('/').pop() || 'brochure.pdf';
+  const source = options?.source || `Brochure download — ${name || 'Program'}`;
+
+  setPendingBrochureDownload({
+    url,
+    filename,
+    courseName: name,
+    source,
+    timestamp: Date.now(),
+  });
+
+  openEnquirePopupWithCourse(name, '', {
+    source,
+    isBrochure: true,
+  });
+}
+

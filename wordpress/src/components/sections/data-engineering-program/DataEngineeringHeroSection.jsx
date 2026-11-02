@@ -1,5 +1,6 @@
 import EnquiryForm from '../../forms/EnquiryForm';
 import AlumniLogoMarquee from '../shared/AlumniLogoMarquee';
+import { openBrochureDownloadPopup } from '../../../utils/programContext';
 
 /**
  * Program hero — original Data Engineering design.
@@ -87,11 +88,9 @@ function DataEngineeringHeroSection({
       					</span>
       					</button>
       			{brochureUrl ? (
-      				<a
-      					href={brochureUrl}
-      					download="master-data-engineering-brochure.pdf"
-      					target="_blank"
-      					rel="noopener noreferrer"
+      				<button
+      					type="button"
+      					onClick={() => openBrochureDownloadPopup(brochureUrl, formCourse || title)}
       					className="elementor-button elementor-button-link hero-action-btn"
       					style={{
       						...heroBtnBaseStyle,
@@ -104,7 +103,7 @@ function DataEngineeringHeroSection({
       						<line x1="12" y1="15" x2="12" y2="3" />
       					</svg>
       					<span>{brochureLabel}</span>
-      				</a>
+      				</button>
       			) : null}
       		</div>
       				</div>

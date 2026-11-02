@@ -64,12 +64,20 @@ function EnquiryForm({
     setSubmitSource(source);
   }, [fixedCourse, pathname, search, source]);
 
+  const [isBrochure, setIsBrochure] = useState(false);
+
   useEffect(() => {
     const onPopupOpen = (event) => {
       const nextCourse = event.detail?.courseName || resolveDefaultCourse(fixedCourse);
       if (nextCourse) setCourse(nextCourse);
       if (event.detail?.coursePrice) setCoursePrice(event.detail.coursePrice);
       if (event.detail?.source) setSubmitSource(event.detail.source);
+      setIsBrochure(
+        Boolean(
+          event.detail?.isBrochure ||
+            event.detail?.source?.toLowerCase().includes('brochure'),
+        ),
+      );
     };
 
     window.addEventListener('enquire-popup-opened', onPopupOpen);
@@ -119,7 +127,14 @@ function EnquiryForm({
   return (
     <div className={`ibridge-enquiry-form ${className}`.trim()}>
       <div className="ibridge-enquiry-form__header">
-        <h2 className="ibridge-enquiry-form__title">{title}</h2>
+        <h2 className="ibridge-enquiry-form__title">
+          {isBrochure ? 'Download Course Brochure' : title}
+        </h2>
+        {isBrochure && (
+          <p className="ibridge-enquiry-form__subtitle text-xs text-white/80 mt-1 mb-0">
+            Enter your details below to download the complete curriculum brochure.
+          </p>
+        )}
       </div>
 
       <form
@@ -236,7 +251,11 @@ function EnquiryForm({
           <input type="hidden" name="form_fields[enquirySource]" value={submitSource} readOnly />
 
           <button type="submit" className="ibridge-enquiry-form__submit" disabled={submitting}>
-            {submitting ? 'Sending…' : 'Send'}
+            {submitting
+              ? 'Preparing download…'
+              : isBrochure
+                ? 'Download Brochure'
+                : 'Send'}
           </button>
         </div>
       </form>

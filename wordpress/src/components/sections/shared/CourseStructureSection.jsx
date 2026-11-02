@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 
 import { Container, Section, cn } from '../../ui';
+import { openBrochureDownloadPopup } from '../../../utils/programContext';
 
 /**
  * Premium Course Structure section.
@@ -388,16 +389,13 @@ function CourseStructureSection({
                 </div>
               </div>
 
-              <a
-                href={syllabusUrl}
-                download="master-data-engineering-brochure.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full text-white font-semibold text-sm transition-all duration-200 shrink-0 hover:-translate-y-0.5"
+              <button
+                type="button"
+                onClick={() => openBrochureDownloadPopup(syllabusUrl, title)}
+                className="group inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-full text-white font-semibold text-sm transition-all duration-200 shrink-0 hover:-translate-y-0.5 cursor-pointer border-0"
                 style={{
                   backgroundColor: '#18479F',
                   color: '#ffffff',
-                  textDecoration: 'none',
                   boxShadow: '0 8px 20px -4px rgba(24, 71, 159, 0.38)',
                 }}
               >
@@ -418,7 +416,7 @@ function CourseStructureSection({
                   <polyline points="7 10 12 15 17 10" />
                   <line x1="12" y1="15" x2="12" y2="3" />
                 </svg>
-              </a>
+              </button>
             </div>
           </div>
         )}

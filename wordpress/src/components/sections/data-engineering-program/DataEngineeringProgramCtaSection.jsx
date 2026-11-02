@@ -1,5 +1,6 @@
 import ENQUIRE_POPUP_LINK from '../../../constants/enquirePopupLink';
 import { Button, Container, Section } from '../../ui';
+import { openBrochureDownloadPopup } from '../../../utils/programContext';
 
 function DataEngineeringProgramCtaSection({
   title = 'Ready to Start Your Data Engineering Journey?',
@@ -41,13 +42,11 @@ function DataEngineeringProgramCtaSection({
               {ctaLabel}
             </Button>
             {brochureUrl ? (
-              <a
-                href={brochureUrl}
-                download="master-data-engineering-brochure.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-full bg-white/15 hover:bg-white text-white hover:text-[#18479F] font-semibold text-sm border border-white/35 transition-all duration-200"
-                style={{ color: '#ffffff', textDecoration: 'none' }}
+              <button
+                type="button"
+                onClick={() => openBrochureDownloadPopup(brochureUrl, title)}
+                className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-full bg-white/15 hover:bg-white text-white hover:text-[#18479F] font-semibold text-sm border border-white/35 transition-all duration-200 cursor-pointer"
+                style={{ color: '#ffffff' }}
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -55,7 +54,7 @@ function DataEngineeringProgramCtaSection({
                   <line x1="12" y1="15" x2="12" y2="3" />
                 </svg>
                 <span style={{ color: 'inherit' }}>{brochureLabel}</span>
-              </a>
+              </button>
             ) : null}
           </div>
           {supportingText ? (

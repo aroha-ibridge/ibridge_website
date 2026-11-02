@@ -215,10 +215,12 @@ function useElementorPopups() {
           getEnquiryPageDefaults()?.courseName ||
           getCurrentProgramName();
         const coursePrice = pending.coursePrice || '';
-        const enquirySource = pending.source || '';
+        const isBrochure = Boolean(
+          pending.isBrochure || enquirySource.toLowerCase().includes('brochure'),
+        );
         window.dispatchEvent(
           new CustomEvent('enquire-popup-opened', {
-            detail: { courseName, coursePrice, source: enquirySource },
+            detail: { courseName, coursePrice, source: enquirySource, isBrochure },
           }),
         );
       }

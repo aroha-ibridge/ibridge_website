@@ -3,6 +3,7 @@ import { closeEnquirePopup } from '../constants/enquirePopupLink';
 import { saveMarketingEnquiry } from './saveMarketingEnquiry';
 import { validateEmail, validatePhone } from './formValidation';
 import { withBase } from './siteBase';
+import { getPendingBrochureDownload, triggerBrochureDownload } from './programContext';
 
 const MSG_SAVE_FAIL =
   'Unable to save your enquiry. Please try again or email support@ibridge360.com.';
@@ -110,6 +111,12 @@ export async function submitEnquiry(fields) {
           // The enquiry is already saved. A sheet failure should not block the applicant.
         }
       }
+
+      const pendingBrochure = getPendingBrochureDownload();
+      if (pendingBrochure?.url) {
+        triggerBrochureDownload(pendingBrochure.url, pendingBrochure.filename);
+      }
+
       redirectToThankYou();
       return { success: true, reset: true, submitted: true, redirected: true };
     }
