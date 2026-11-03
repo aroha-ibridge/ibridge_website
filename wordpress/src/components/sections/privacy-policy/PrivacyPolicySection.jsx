@@ -1,7 +1,7 @@
 function PrivacyPolicySection() {
   return (
     <>
-      <section data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-section elementor-top-section elementor-element elementor-element-5f94ee08 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="5f94ee08" data-element_type="section">
+      <section data-particle_enable="false" data-particle-mobile-disabled="false" className="elementor-section elementor-top-section elementor-element elementor-element-5f94ee08 elementor-section-boxed elementor-section-height-default elementor-section-height-default privacy-policy-section" data-id="5f94ee08" data-element_type="section">
       						<div className="elementor-container elementor-column-gap-default">
       					<div className="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3e2e7689" data-id="3e2e7689" data-element_type="column">
       			<div className="elementor-widget-wrap elementor-element-populated">

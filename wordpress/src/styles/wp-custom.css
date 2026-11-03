@@ -2182,7 +2182,13 @@ body.marketing-site .program-cta-modal button.program-cta-modal__close:focus-vis
 
 /* Fixed header is removed from flow — push page content down by its height. */
 .marketing-shell--fixed-header .site-main {
-	padding-top: 76px;
+	padding-top: 84px;
+}
+
+@media (max-width: 1024.98px) {
+	.marketing-shell--fixed-header .site-main {
+		padding-top: 56px;
+	}
 }
 
 @media (min-width: 1025px) {
@@ -2191,12 +2197,14 @@ body.marketing-site .program-cta-modal button.program-cta-modal__close:focus-vis
 		background: #18479f !important;
 		background-color: #18479f !important;
 		color: #fff;
-		font-size: 13px;
+		font-size: 12px;
+		line-height: 1.2;
 	}
 
 	.site-header-utility__inner {
 		width: min(1170px, calc(100% - 48px));
-		min-height: 38px;
+		min-height: 28px !important;
+		height: 28px !important;
 		margin: 0 auto;
 		display: flex;
 		align-items: center;
@@ -2209,12 +2217,35 @@ body.marketing-site .program-cta-modal button.program-cta-modal__close:focus-vis
 	.site-header-utility__actions {
 		display: inline-flex;
 		align-items: center;
-		gap: 0.65rem;
+		gap: 0.5rem;
 		white-space: nowrap;
+		font-size: 12px;
 	}
 
 	.site-header-utility__actions {
-		gap: 1.25rem;
+		gap: 1rem;
+	}
+
+	/* Compact main header row */
+	.elementor-21071 .elementor-element.elementor-element-3a159bf9 {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+
+	.elementor-21071 .elementor-element.elementor-element-3a159bf9 > .elementor-container {
+		min-height: 56px !important;
+		height: 56px !important;
+	}
+
+	.elementor-21071 .elementor-element.elementor-element-500d76d6 img {
+		max-height: 34px !important;
+		width: auto !important;
+		object-fit: contain;
+		display: block;
+	}
+
+	.elementor-21071 .elementor-element.elementor-element-2827ad8 .elementskit-menu-container {
+		height: 56px !important;
 	}
 
 	.site-header-utility a {
@@ -2290,9 +2321,10 @@ body.marketing-site .program-cta-modal button.program-cta-modal__close:focus-vis
 		align-items: center;
 		visibility: visible !important;
 		white-space: nowrap;
-		min-height: 38px !important;
-		padding: 0.5rem 0.8rem !important;
-		font-size: 0.9rem !important;
+		min-height: 32px !important;
+		height: 32px !important;
+		padding: 0 0.85rem !important;
+		font-size: 0.875rem !important;
 		line-height: 1 !important;
 		border-radius: 0.35rem !important;
 	}
@@ -3165,4 +3197,30 @@ html.local-dev .rc-anchor-error-msg-container {
 
 .elementor-9 .learner-type-card .text + .divider {
 	margin-top: 1rem;
+}
+
+/* Mobile & tablet compact header */
+@media (max-width: 1024.98px) {
+	.elementor-21071 .elementor-element.elementor-element-d9fc0d5 {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+
+	.elementor-21071 .elementor-element.elementor-element-d9fc0d5 > .elementor-container {
+		min-height: 56px !important;
+		height: 56px !important;
+	}
+
+	.elementor-21071 .elementor-element.elementor-element-0481457 img {
+		max-height: 32px !important;
+		width: auto !important;
+	}
+}
+
+/* Legal & content pages — ensure comfortable breathing room below fixed header */
+.elementor-3 .elementor-element-5f94ee08,
+.elementor-page-3 .elementor-element-5f94ee08,
+.privacy-policy-section {
+	padding-top: 40px !important;
+	padding-bottom: 60px !important;
 }
