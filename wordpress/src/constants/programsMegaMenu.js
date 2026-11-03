@@ -43,7 +43,7 @@ export const PROGRAMS_MEGA_COURSES = [
     title: 'Master in Data Engineering',
     desc: 'SQL, Python, Spark, Databricks, Snowflake, Airflow, and Cloud Data Engineering.',
     to: '/courses/master-data-engineering-program-bangalore',
-    duration: '24 Weeks',
+    duration: '6 Months',
     color: '#18479f',
     categories: ['popular', 'data-engineering'],
   },
